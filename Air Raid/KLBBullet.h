@@ -8,10 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum BulletTypes : NSUInteger
+{
+                //Damage Velocity isAirBullet
+    btDefault,    //  2    10.0        y
+    btMachineGun, //  1    20.0        y
+    btCannon,     //  4     5.0        y
+} BulletTypes;
+
 @interface KLBBullet : NSObject
 
-@property (nonatomic) CGFloat speed;
+@property (nonatomic) CGFloat velocity;
 @property (nonatomic) int damage;
 @property (nonatomic) bool isAirBullet;
+@property (nonatomic) BulletTypes bulletType;
+
+- (instancetype) initWithBulletType:(BulletTypes)b;
 
 @end

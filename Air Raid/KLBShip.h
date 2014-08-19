@@ -8,15 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+@class KLBTurret;
+
 @interface KLBShip : NSObject
 
 @property (nonatomic) int healthMaximum;
 @property (nonatomic) int healthRemaining;
 @property (nonatomic) int airBombs;
 @property (nonatomic) CGFloat velocity;
-@property (nonatomic) CGFloat xCoordinate;
-@property (nonatomic) CGFloat yCoordinate;
+@property (nonatomic) CGPoint coordinates;
 
-@property (nonatomic,retain) NSMutableArray *turrets;
+@property (nonatomic,retain) NSMutableDictionary *turrets; //key:angle - value:KLBTurret
+
+- (void) setHealthMaximum:(int)healthMaximum;
+- (void) setHealthRemaining:(int)healthRemaining;
+- (void) setAirBombs:(int)airBombs;
+- (void) setVelocity:(CGFloat)velocity;
+- (void) setCoordinates:(CGPoint)coordinates;
+
+- (void) addTurret:(KLBTurret *)t;
 
 @end

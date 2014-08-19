@@ -9,10 +9,22 @@
 #import <Foundation/Foundation.h>
 @class KLBBullet;
 
+typedef enum TurretTypes : NSUInteger
+{
+                  //Firing Speed
+    ttDefault,    //    1.0
+    ttMachineGun, //    2.0
+    ttCannon,     //    0.5
+} TurretTypes;
+
 @interface KLBTurret : NSObject
 
 @property (nonatomic) CGFloat angle;
 @property (nonatomic) CGFloat firingSpeed;
 @property (nonatomic,assign) KLBBullet *bullet;
+@property (nonatomic) TurretTypes turretType;
+
+- (instancetype) initWithTurretType:(TurretTypes)t;
+- (void) setAngle:(CGFloat)angle;
 
 @end
