@@ -11,8 +11,6 @@
 
 @implementation KLBShipView
 
-//@synthesize ship = _ship;
-
 - (instancetype) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
@@ -21,8 +19,6 @@
         UIImage *shipImage = [UIImage imageNamed:@"neutral.png"];
         self.image = shipImage;
         self.frame = CGRectMake(x, y, shipImage.size.width, shipImage.size.height);
-//        self.ship = [[KLBShip alloc] init];
-//        [self.ship setCoordinates:CGPointMake(x, y)];
     }
     return self;
 }
@@ -45,7 +41,6 @@
 }
 
 - (void)updateCoordinatesX:(CGFloat) x Y:(CGFloat) y {
-    NSLog(@"Updating ship view coordinates...");
     [self setFrame:CGRectMake(x, y, self.image.size.width, self.image.size.height)];
     [self setNeedsDisplay];
 }

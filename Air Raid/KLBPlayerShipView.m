@@ -19,8 +19,6 @@
         UIImage *shipImage = [UIImage imageNamed:@"player.png"];
         self.image = shipImage;
         self.frame = CGRectMake(x, y, shipImage.size.width, shipImage.size.height);
-//        self.ship = [[KLBShip alloc] init];
-//        [self.ship setCoordinates:CGPointMake(x, y)];
     }
     return self;
 }

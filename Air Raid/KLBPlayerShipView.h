@@ -12,6 +12,4 @@
 
 @interface KLBPlayerShipView : KLBShipView
 
-//@property (nonatomic, unsafe_unretained) KLBShip *ship;
-
 @end

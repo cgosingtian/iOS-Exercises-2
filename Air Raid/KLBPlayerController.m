@@ -33,7 +33,6 @@
 }
 
 - (void) refreshShipView {
-    NSLog(@"Refreshing ship view...");
     CGFloat x = _playerShip.coordinates.x;
     CGFloat y = _playerShip.coordinates.y;
     [_playerView updateCoordinatesX:x Y:y];
@@ -44,40 +43,34 @@
     CGFloat x = _playerShip.coordinates.x - velocity;
     CGFloat y = _playerShip.coordinates.y;
     _playerShip.coordinates = CGPointMake(x, y);
-    NSLog(@"player coordinates [left]: %f,%f",x,y);
 }
 - (void) stepShipRight {
     CGFloat velocity = _playerShip.velocity;
     CGFloat x = _playerShip.coordinates.x + velocity;
     CGFloat y = _playerShip.coordinates.y;
     _playerShip.coordinates = CGPointMake(x, y);
-    NSLog(@"player coordinates [right]: %f,%f",x,y);
 }
 
 #pragma mark - Ship Control Protocol
 -(void)shipWillMoveLeft {
-    NSLog(@"SHIP WILL MOVE LEFT");
     [self stepShipLeft];
     
     [self shipDidMoveLeft];
 }
 
 -(void)shipDidMoveLeft {
-    NSLog(@"SHIP DID MOVE LEFT");
-    [self refreshShipView];
+    [self refreshShipView]; // do this last
 }
 
 -(void)shipWillMoveRight {
-    NSLog(@"SHIP WILL MOVE RIGHT");
     [self stepShipRight];
     
     [self shipDidMoveRight];
 }
 
 -(void)shipDidMoveRight {
-    NSLog(@"SHIP DID MOVE RIGHT");
     
-    [self refreshShipView];
+    [self refreshShipView]; // do this last
 }
 
 -(void)shipWillFire {

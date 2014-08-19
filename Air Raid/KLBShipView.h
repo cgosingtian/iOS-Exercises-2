@@ -11,8 +11,6 @@
 
 @interface KLBShipView : UIImageView
 
-//@property (nonatomic, unsafe_unretained) KLBShip *ship;
-
 - (void)updateCoordinatesX:(CGFloat)x Y:(CGFloat)y;
 
 @end
