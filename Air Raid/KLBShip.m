@@ -16,7 +16,8 @@
             airBombs = _airBombs,
             velocity = _velocity,
             coordinates = _coordinates,
-            turrets = _turrets;
+            turrets = _turrets,
+            pointsAwarded = _pointsAwarded;
 
 #pragma mark - Dealloc
 - (void) dealloc {

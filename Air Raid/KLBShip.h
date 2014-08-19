@@ -17,6 +17,7 @@
 @property (nonatomic) int airBombs;
 @property (nonatomic) CGFloat velocity;
 @property (nonatomic) CGPoint coordinates;
+@property (nonatomic) int pointsAwarded;
 
 @property (nonatomic,retain) NSMutableDictionary *turrets; //key:angle - value:KLBTurret
 

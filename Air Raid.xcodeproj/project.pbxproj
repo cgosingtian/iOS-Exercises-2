@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F58729F19A32B2800CF0264 /* KLBPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F58729E19A32B2800CF0264 /* KLBPlayerController.m */; };
 		4FC6BABF19A2D371001DC678 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BABE19A2D371001DC678 /* Foundation.framework */; };
 		4FC6BAC119A2D371001DC678 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BAC019A2D371001DC678 /* CoreGraphics.framework */; };
 		4FC6BAC319A2D371001DC678 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BAC219A2D371001DC678 /* UIKit.framework */; };
@@ -25,6 +26,14 @@
 		4FC6BAF619A2E863001DC678 /* KLBShip.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BAF519A2E863001DC678 /* KLBShip.m */; };
 		4FC6BAF919A2E943001DC678 /* KLBTurret.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BAF819A2E943001DC678 /* KLBTurret.m */; };
 		4FC6BAFC19A2E9BB001DC678 /* KLBBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BAFB19A2E9BB001DC678 /* KLBBullet.m */; };
+		4FC6BB0319A3017C001DC678 /* KLBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BB0219A3017C001DC678 /* KLBPlayer.m */; };
+		4FC6BB0819A30432001DC678 /* KLBBattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BB0619A30432001DC678 /* KLBBattleViewController.m */; };
+		4FC6BB0919A30432001DC678 /* KLBBattleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6BB0719A30432001DC678 /* KLBBattleViewController.xib */; };
+		4FC6BB0C19A30944001DC678 /* KLBShipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BB0B19A30944001DC678 /* KLBShipView.m */; };
+		4FC6BB1119A31C62001DC678 /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6BB0E19A31C62001DC678 /* enemy.png */; };
+		4FC6BB1219A31C62001DC678 /* neutral.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6BB0F19A31C62001DC678 /* neutral.png */; };
+		4FC6BB1319A31C62001DC678 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6BB1019A31C62001DC678 /* player.png */; };
+		4FC6BB1619A325C3001DC678 /* KLBPlayerShipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BB1519A325C3001DC678 /* KLBPlayerShipView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F58729D19A32B2800CF0264 /* KLBPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBPlayerController.h; sourceTree = "<group>"; };
+		4F58729E19A32B2800CF0264 /* KLBPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBPlayerController.m; sourceTree = "<group>"; };
+		4F5872A119A32B8600CF0264 /* KLBShipControlProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLBShipControlProtocol.h; sourceTree = "<group>"; };
 		4FC6BABB19A2D371001DC678 /* Air Raid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air Raid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC6BABE19A2D371001DC678 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FC6BAC019A2D371001DC678 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +74,18 @@
 		4FC6BAF819A2E943001DC678 /* KLBTurret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBTurret.m; sourceTree = "<group>"; };
 		4FC6BAFA19A2E9BB001DC678 /* KLBBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBBullet.h; sourceTree = "<group>"; };
 		4FC6BAFB19A2E9BB001DC678 /* KLBBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBBullet.m; sourceTree = "<group>"; };
+		4FC6BB0119A3017C001DC678 /* KLBPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBPlayer.h; sourceTree = "<group>"; };
+		4FC6BB0219A3017C001DC678 /* KLBPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBPlayer.m; sourceTree = "<group>"; };
+		4FC6BB0519A30432001DC678 /* KLBBattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBBattleViewController.h; sourceTree = "<group>"; };
+		4FC6BB0619A30432001DC678 /* KLBBattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBBattleViewController.m; sourceTree = "<group>"; };
+		4FC6BB0719A30432001DC678 /* KLBBattleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KLBBattleViewController.xib; sourceTree = "<group>"; };
+		4FC6BB0A19A30944001DC678 /* KLBShipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBShipView.h; sourceTree = "<group>"; };
+		4FC6BB0B19A30944001DC678 /* KLBShipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBShipView.m; sourceTree = "<group>"; };
+		4FC6BB0E19A31C62001DC678 /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy.png; sourceTree = "<group>"; };
+		4FC6BB0F19A31C62001DC678 /* neutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutral.png; sourceTree = "<group>"; };
+		4FC6BB1019A31C62001DC678 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		4FC6BB1419A325C3001DC678 /* KLBPlayerShipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBPlayerShipView.h; sourceTree = "<group>"; };
+		4FC6BB1519A325C3001DC678 /* KLBPlayerShipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBPlayerShipView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F5872A019A32B5600CF0264 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4F5872A119A32B8600CF0264 /* KLBShipControlProtocol.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		4FC6BAB219A2D371001DC678 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +156,10 @@
 		4FC6BAC619A2D371001DC678 /* Air Raid */ = {
 			isa = PBXGroup;
 			children = (
+				4F5872A019A32B5600CF0264 /* Protocols */,
+				4FC6BB0D19A31C45001DC678 /* Images */,
+				4FC6BB0419A302E3001DC678 /* Views */,
+				4FC6BAFD19A2FF8F001DC678 /* Controllers */,
 				4FC6BAF319A2E848001DC678 /* Models */,
 				4FC6BACF19A2D371001DC678 /* KLBAppDelegate.h */,
 				4FC6BAD019A2D371001DC678 /* KLBAppDelegate.m */,
@@ -172,8 +208,43 @@
 				4FC6BAF519A2E863001DC678 /* KLBShip.m */,
 				4FC6BAF719A2E943001DC678 /* KLBTurret.h */,
 				4FC6BAF819A2E943001DC678 /* KLBTurret.m */,
+				4FC6BB0119A3017C001DC678 /* KLBPlayer.h */,
+				4FC6BB0219A3017C001DC678 /* KLBPlayer.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		4FC6BAFD19A2FF8F001DC678 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4FC6BB0519A30432001DC678 /* KLBBattleViewController.h */,
+				4FC6BB0619A30432001DC678 /* KLBBattleViewController.m */,
+				4FC6BB0719A30432001DC678 /* KLBBattleViewController.xib */,
+				4F58729D19A32B2800CF0264 /* KLBPlayerController.h */,
+				4F58729E19A32B2800CF0264 /* KLBPlayerController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4FC6BB0419A302E3001DC678 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4FC6BB0A19A30944001DC678 /* KLBShipView.h */,
+				4FC6BB0B19A30944001DC678 /* KLBShipView.m */,
+				4FC6BB1419A325C3001DC678 /* KLBPlayerShipView.h */,
+				4FC6BB1519A325C3001DC678 /* KLBPlayerShipView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4FC6BB0D19A31C45001DC678 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4FC6BB0E19A31C62001DC678 /* enemy.png */,
+				4FC6BB0F19A31C62001DC678 /* neutral.png */,
+				4FC6BB1019A31C62001DC678 /* player.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +323,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FC6BB0919A30432001DC678 /* KLBBattleViewController.xib in Resources */,
 				4FC6BACB19A2D371001DC678 /* InfoPlist.strings in Resources */,
+				4FC6BB1319A31C62001DC678 /* player.png in Resources */,
+				4FC6BB1219A31C62001DC678 /* neutral.png in Resources */,
+				4FC6BB1119A31C62001DC678 /* enemy.png in Resources */,
 				4FC6BAD619A2D371001DC678 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,10 +347,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F58729F19A32B2800CF0264 /* KLBPlayerController.m in Sources */,
+				4FC6BB0819A30432001DC678 /* KLBBattleViewController.m in Sources */,
 				4FC6BAD119A2D371001DC678 /* KLBAppDelegate.m in Sources */,
 				4FC6BAF619A2E863001DC678 /* KLBShip.m in Sources */,
 				4FC6BAF919A2E943001DC678 /* KLBTurret.m in Sources */,
 				4FC6BAFC19A2E9BB001DC678 /* KLBBullet.m in Sources */,
+				4FC6BB0C19A30944001DC678 /* KLBShipView.m in Sources */,
+				4FC6BB0319A3017C001DC678 /* KLBPlayer.m in Sources */,
+				4FC6BB1619A325C3001DC678 /* KLBPlayerShipView.m in Sources */,
 				4FC6BACD19A2D371001DC678 /* main.m in Sources */,
 				4FC6BAD419A2D371001DC678 /* Air_Raid.xcdatamodeld in Sources */,
 			);
@@ -474,6 +554,7 @@
 				4FC6BAEF19A2D371001DC678 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FC6BAF019A2D371001DC678 /* Build configuration list for PBXNativeTarget "Air RaidTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +563,7 @@
 				4FC6BAF219A2D371001DC678 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
