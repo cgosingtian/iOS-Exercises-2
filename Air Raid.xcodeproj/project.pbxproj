@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4FC6BABF19A2D371001DC678 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BABE19A2D371001DC678 /* Foundation.framework */; };
+		4FC6BAC119A2D371001DC678 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BAC019A2D371001DC678 /* CoreGraphics.framework */; };
+		4FC6BAC319A2D371001DC678 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BAC219A2D371001DC678 /* UIKit.framework */; };
+		4FC6BAC519A2D371001DC678 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BAC419A2D371001DC678 /* CoreData.framework */; };
+		4FC6BACB19A2D371001DC678 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6BAC919A2D371001DC678 /* InfoPlist.strings */; };
+		4FC6BACD19A2D371001DC678 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BACC19A2D371001DC678 /* main.m */; };
+		4FC6BAD119A2D371001DC678 /* KLBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BAD019A2D371001DC678 /* KLBAppDelegate.m */; };
+		4FC6BAD419A2D371001DC678 /* Air_Raid.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BAD219A2D371001DC678 /* Air_Raid.xcdatamodeld */; };
+		4FC6BAD619A2D371001DC678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6BAD519A2D371001DC678 /* Images.xcassets */; };
+		4FC6BADD19A2D371001DC678 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BADC19A2D371001DC678 /* XCTest.framework */; };
+		4FC6BADE19A2D371001DC678 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BABE19A2D371001DC678 /* Foundation.framework */; };
+		4FC6BADF19A2D371001DC678 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BAC219A2D371001DC678 /* UIKit.framework */; };
+		4FC6BAE019A2D371001DC678 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BAC419A2D371001DC678 /* CoreData.framework */; };
+		4FC6BAE819A2D371001DC678 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6BAE619A2D371001DC678 /* InfoPlist.strings */; };
+		4FC6BAEA19A2D371001DC678 /* Air_RaidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BAE919A2D371001DC678 /* Air_RaidTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4FC6BAE119A2D371001DC678 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FC6BAB319A2D371001DC678 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FC6BABA19A2D371001DC678;
+			remoteInfo = "Air Raid";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4FC6BABB19A2D371001DC678 /* Air Raid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air Raid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FC6BABE19A2D371001DC678 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4FC6BAC019A2D371001DC678 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4FC6BAC219A2D371001DC678 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4FC6BAC419A2D371001DC678 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4FC6BAC819A2D371001DC678 /* Air Raid-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Air Raid-Info.plist"; sourceTree = "<group>"; };
+		4FC6BACA19A2D371001DC678 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4FC6BACC19A2D371001DC678 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4FC6BACE19A2D371001DC678 /* Air Raid-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Air Raid-Prefix.pch"; sourceTree = "<group>"; };
+		4FC6BACF19A2D371001DC678 /* KLBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLBAppDelegate.h; sourceTree = "<group>"; };
+		4FC6BAD019A2D371001DC678 /* KLBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLBAppDelegate.m; sourceTree = "<group>"; };
+		4FC6BAD319A2D371001DC678 /* Air_Raid.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Air_Raid.xcdatamodel; sourceTree = "<group>"; };
+		4FC6BAD519A2D371001DC678 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4FC6BADB19A2D371001DC678 /* Air RaidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Air RaidTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FC6BADC19A2D371001DC678 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4FC6BAE519A2D371001DC678 /* Air RaidTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Air RaidTests-Info.plist"; sourceTree = "<group>"; };
+		4FC6BAE719A2D371001DC678 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4FC6BAE919A2D371001DC678 /* Air_RaidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Air_RaidTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4FC6BAB819A2D371001DC678 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FC6BAC119A2D371001DC678 /* CoreGraphics.framework in Frameworks */,
+				4FC6BAC519A2D371001DC678 /* CoreData.framework in Frameworks */,
+				4FC6BAC319A2D371001DC678 /* UIKit.framework in Frameworks */,
+				4FC6BABF19A2D371001DC678 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FC6BAD819A2D371001DC678 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FC6BADD19A2D371001DC678 /* XCTest.framework in Frameworks */,
+				4FC6BAE019A2D371001DC678 /* CoreData.framework in Frameworks */,
+				4FC6BADF19A2D371001DC678 /* UIKit.framework in Frameworks */,
+				4FC6BADE19A2D371001DC678 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4FC6BAB219A2D371001DC678 = {
+			isa = PBXGroup;
+			children = (
+				4FC6BAC619A2D371001DC678 /* Air Raid */,
+				4FC6BAE319A2D371001DC678 /* Air RaidTests */,
+				4FC6BABD19A2D371001DC678 /* Frameworks */,
+				4FC6BABC19A2D371001DC678 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4FC6BABC19A2D371001DC678 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4FC6BABB19A2D371001DC678 /* Air Raid.app */,
+				4FC6BADB19A2D371001DC678 /* Air RaidTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4FC6BABD19A2D371001DC678 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FC6BABE19A2D371001DC678 /* Foundation.framework */,
+				4FC6BAC019A2D371001DC678 /* CoreGraphics.framework */,
+				4FC6BAC219A2D371001DC678 /* UIKit.framework */,
+				4FC6BAC419A2D371001DC678 /* CoreData.framework */,
+				4FC6BADC19A2D371001DC678 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4FC6BAC619A2D371001DC678 /* Air Raid */ = {
+			isa = PBXGroup;
+			children = (
+				4FC6BACF19A2D371001DC678 /* KLBAppDelegate.h */,
+				4FC6BAD019A2D371001DC678 /* KLBAppDelegate.m */,
+				4FC6BAD519A2D371001DC678 /* Images.xcassets */,
+				4FC6BAD219A2D371001DC678 /* Air_Raid.xcdatamodeld */,
+				4FC6BAC719A2D371001DC678 /* Supporting Files */,
+			);
+			path = "Air Raid";
+			sourceTree = "<group>";
+		};
+		4FC6BAC719A2D371001DC678 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4FC6BAC819A2D371001DC678 /* Air Raid-Info.plist */,
+				4FC6BAC919A2D371001DC678 /* InfoPlist.strings */,
+				4FC6BACC19A2D371001DC678 /* main.m */,
+				4FC6BACE19A2D371001DC678 /* Air Raid-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4FC6BAE319A2D371001DC678 /* Air RaidTests */ = {
+			isa = PBXGroup;
+			children = (
+				4FC6BAE919A2D371001DC678 /* Air_RaidTests.m */,
+				4FC6BAE419A2D371001DC678 /* Supporting Files */,
+			);
+			path = "Air RaidTests";
+			sourceTree = "<group>";
+		};
+		4FC6BAE419A2D371001DC678 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4FC6BAE519A2D371001DC678 /* Air RaidTests-Info.plist */,
+				4FC6BAE619A2D371001DC678 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4FC6BABA19A2D371001DC678 /* Air Raid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FC6BAED19A2D371001DC678 /* Build configuration list for PBXNativeTarget "Air Raid" */;
+			buildPhases = (
+				4FC6BAB719A2D371001DC678 /* Sources */,
+				4FC6BAB819A2D371001DC678 /* Frameworks */,
+				4FC6BAB919A2D371001DC678 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Air Raid";
+			productName = "Air Raid";
+			productReference = 4FC6BABB19A2D371001DC678 /* Air Raid.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4FC6BADA19A2D371001DC678 /* Air RaidTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FC6BAF019A2D371001DC678 /* Build configuration list for PBXNativeTarget "Air RaidTests" */;
+			buildPhases = (
+				4FC6BAD719A2D371001DC678 /* Sources */,
+				4FC6BAD819A2D371001DC678 /* Frameworks */,
+				4FC6BAD919A2D371001DC678 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FC6BAE219A2D371001DC678 /* PBXTargetDependency */,
+			);
+			name = "Air RaidTests";
+			productName = "Air RaidTests";
+			productReference = 4FC6BADB19A2D371001DC678 /* Air RaidTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4FC6BAB319A2D371001DC678 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KLB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "KLab Cyscorpions, Inc.";
+				TargetAttributes = {
+					4FC6BADA19A2D371001DC678 = {
+						TestTargetID = 4FC6BABA19A2D371001DC678;
+					};
+				};
+			};
+			buildConfigurationList = 4FC6BAB619A2D371001DC678 /* Build configuration list for PBXProject "Air Raid" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4FC6BAB219A2D371001DC678;
+			productRefGroup = 4FC6BABC19A2D371001DC678 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4FC6BABA19A2D371001DC678 /* Air Raid */,
+				4FC6BADA19A2D371001DC678 /* Air RaidTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4FC6BAB919A2D371001DC678 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FC6BACB19A2D371001DC678 /* InfoPlist.strings in Resources */,
+				4FC6BAD619A2D371001DC678 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FC6BAD919A2D371001DC678 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FC6BAE819A2D371001DC678 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4FC6BAB719A2D371001DC678 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FC6BAD119A2D371001DC678 /* KLBAppDelegate.m in Sources */,
+				4FC6BACD19A2D371001DC678 /* main.m in Sources */,
+				4FC6BAD419A2D371001DC678 /* Air_Raid.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FC6BAD719A2D371001DC678 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FC6BAEA19A2D371001DC678 /* Air_RaidTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4FC6BAE219A2D371001DC678 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FC6BABA19A2D371001DC678 /* Air Raid */;
+			targetProxy = 4FC6BAE119A2D371001DC678 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4FC6BAC919A2D371001DC678 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FC6BACA19A2D371001DC678 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4FC6BAE619A2D371001DC678 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FC6BAE719A2D371001DC678 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4FC6BAEB19A2D371001DC678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4FC6BAEC19A2D371001DC678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4FC6BAEE19A2D371001DC678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Air Raid/Air Raid-Prefix.pch";
+				INFOPLIST_FILE = "Air Raid/Air Raid-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4FC6BAEF19A2D371001DC678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Air Raid/Air Raid-Prefix.pch";
+				INFOPLIST_FILE = "Air Raid/Air Raid-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4FC6BAF119A2D371001DC678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Air Raid.app/Air Raid";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Air Raid/Air Raid-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Air RaidTests/Air RaidTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4FC6BAF219A2D371001DC678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Air Raid.app/Air Raid";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Air Raid/Air Raid-Prefix.pch";
+				INFOPLIST_FILE = "Air RaidTests/Air RaidTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FC6BAB619A2D371001DC678 /* Build configuration list for PBXProject "Air Raid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FC6BAEB19A2D371001DC678 /* Debug */,
+				4FC6BAEC19A2D371001DC678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FC6BAED19A2D371001DC678 /* Build configuration list for PBXNativeTarget "Air Raid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FC6BAEE19A2D371001DC678 /* Debug */,
+				4FC6BAEF19A2D371001DC678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4FC6BAF019A2D371001DC678 /* Build configuration list for PBXNativeTarget "Air RaidTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FC6BAF119A2D371001DC678 /* Debug */,
+				4FC6BAF219A2D371001DC678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4FC6BAD219A2D371001DC678 /* Air_Raid.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4FC6BAD319A2D371001DC678 /* Air_Raid.xcdatamodel */,
+			);
+			currentVersion = 4FC6BAD319A2D371001DC678 /* Air_Raid.xcdatamodel */;
+			path = Air_Raid.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4FC6BAB319A2D371001DC678 /* Project object */;
+}
