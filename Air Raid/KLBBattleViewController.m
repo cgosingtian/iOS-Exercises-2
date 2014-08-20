@@ -51,6 +51,8 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
     _longPressRecognizer = nil;
     _panRecognizer = nil;
     
+    [_scorePlaceholderLabel release];
+    [_scoreActualLabel release];
     [super dealloc];
 }
 
@@ -73,6 +75,9 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
                                                                  action:@selector(handlePan:)];
         _panRecognizer.delegate = self;
         [self.view addGestureRecognizer:_panRecognizer];
+        
+        _scorePlaceholderLabel.font = [UIFont fontWithName:@"OCR A Std" size:15.0];
+        _scoreActualLabel.font = [UIFont fontWithName:@"OCR A Std" size:15.0];
     }
     return self;
 }
@@ -96,14 +101,14 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
             _playerControllerDelegate.isMoving = true;
             //move left or right
             if (_touchedLocation.x >= self.view.frame.size.width/2) {
-                _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:0.05
+                _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
                                                                    target:_playerControllerDelegate
                                                                  selector:@selector(shipWillMoveRight)
                                                                  userInfo:nil
                                                                   repeats:YES];
             }
             else {
-                _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:0.05
+                _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
                                                                    target:_playerControllerDelegate
                                                                  selector:@selector(shipWillMoveLeft)
                                                                  userInfo:nil

@@ -22,7 +22,9 @@ typedef enum BulletTypes : NSUInteger
 @property (nonatomic) int damage;
 @property (nonatomic) bool isAirBullet;
 @property (nonatomic) BulletTypes bulletType;
+@property (nonatomic) bool playerBullet;
 
-- (instancetype) initWithBulletType:(BulletTypes)b;
+- (instancetype) initWithBulletType:(BulletTypes)b playerBullet:(bool)p;
+- (bool) playerBullet;
 
 @end

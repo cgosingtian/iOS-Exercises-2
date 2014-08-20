@@ -19,6 +19,6 @@
 - (void)changeBulletImage:(BulletTypes)b;
 
 - (void) animateFadeIn;
-- (void) animateFadeBulletEffects;
+- (void) animateBulletEffects;
 
 @end

@@ -108,25 +108,25 @@
 }
 
 - (void) animateFadeIn {
-//    [self setAlpha:0.0];
-//    [UIView animateKeyframesWithDuration:0.2 delay:0.0 options:UIViewKeyframeAnimationOptionAutoreverse
-//    animations:^()
-//    {
-//        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:1.0 animations:^()
-//         {
-//             [self setAlpha:1.0];
-//         }];
-//    }
-//    completion:^(BOOL finished)
-//    {
-//        if (finished) {
-//            [self animateBulletEffects];
-//        }
-//    }];
+    [self setAlpha:0.0];
+    [UIView animateKeyframesWithDuration:0.1 delay:0.0 options:0
+    animations:^()
+    {
+        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:1.0 animations:^()
+         {
+             [self setAlpha:1.0];
+         }];
+    }
+    completion:^(BOOL finished)
+    {
+        if (finished) {
+            [self animateBulletEffects];
+        }
+    }];
 }
 
 - (void) animateBulletEffects {
-    [UIView animateKeyframesWithDuration:0.5 delay:0.0 options:UIViewKeyframeAnimationOptionRepeat animations:^(){
+    [UIView animateKeyframesWithDuration:0.2 delay:0.0 options:UIViewKeyframeAnimationOptionRepeat animations:^(){
         [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:1.0 animations:^(){
             if (_bullet) {
                 if (_bullet.bulletType == btMachineGun)

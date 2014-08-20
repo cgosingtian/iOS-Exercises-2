@@ -21,7 +21,6 @@
 }
 
 - (void)awakeFromNib {
-    NSLog(@"adding ca animation");
     [self addFallAnimationForLayer:self.layer];
 }
 

@@ -25,7 +25,7 @@
         }
         _playerView = shipView;
         if (!_playerShip) {
-            _playerShip = [[KLBShip alloc] init];
+            _playerShip = [[KLBShip alloc] initPlayerShip];
             _playerShip.coordinates = c;
             [self refreshShipView];
         }

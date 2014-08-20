@@ -17,7 +17,8 @@
             velocity = _velocity,
             coordinates = _coordinates,
             turrets = _turrets,
-            pointsAwarded = _pointsAwarded;
+            pointsAwarded = _pointsAwarded,
+            isPlayer = _isPlayer;
 
 #pragma mark - Dealloc
 - (void) dealloc {
@@ -37,13 +38,32 @@
     if (self) {
         _healthMaximum = 10;
         _healthRemaining = _healthMaximum;
-        _airBombs = 2;
-        _velocity = 5.0;
+        _airBombs = 0;
+        _velocity = 1.0;
         _coordinates.x = 0.0;
         _coordinates.y = 0.0;
         _turrets = [[NSMutableDictionary alloc] init];
         KLBTurret *defaultTurret = [[KLBTurret alloc] initWithTurretType:ttDefault owner:self];
-        [_turrets setObject:defaultTurret forKey:[NSString stringWithFormat:@"%f",defaultTurret.angle]];
+        [_turrets setObject:defaultTurret forKey:[NSString stringWithFormat:@"%f",270.0]];
+        _isPlayer = false;
+        //[defaultTurret release];
+    }
+    return self;
+}
+
+- (instancetype) initPlayerShip {
+    self = [super init];
+    if (self) {
+        _healthMaximum = 10;
+        _healthRemaining = _healthMaximum;
+        _airBombs = 2;
+        _velocity = 2.0;
+        _coordinates.x = 0.0;
+        _coordinates.y = 0.0;
+        _turrets = [[NSMutableDictionary alloc] init];
+        KLBTurret *defaultTurret = [[KLBTurret alloc] initWithTurretType:ttMachineGun owner:self];
+        [_turrets setObject:defaultTurret forKey:[NSString stringWithFormat:@"%f",90.0]];
+        _isPlayer = true;
         //[defaultTurret release];
     }
     return self;
@@ -56,6 +76,10 @@
 
 - (CGPoint) coordinates {
     return _coordinates;
+}
+
+- (bool) isPlayer {
+    return _isPlayer;
 }
 
 @end

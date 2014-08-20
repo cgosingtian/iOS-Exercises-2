@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface KLBBattleViewController : UIViewController
+@property (retain, nonatomic) IBOutlet UILabel *scorePlaceholderLabel;
+@property (retain, nonatomic) IBOutlet UILabel *scoreActualLabel;
 
 @end

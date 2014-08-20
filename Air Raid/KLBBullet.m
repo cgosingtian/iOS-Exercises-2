@@ -25,17 +25,18 @@
     return self;
 }
 
-- (instancetype) initWithBulletType:(BulletTypes)b {
+- (instancetype) initWithBulletType:(BulletTypes)b playerBullet:(bool)p {
     self = [self init];
+    _playerBullet = p;
     switch (b) {
         case btMachineGun:
-            [self setBulletType:b velocity:20.0 damage:1 isAirBullet:true];
+            [self setBulletType:b velocity:5.0 damage:1 isAirBullet:true];
             break;
         case btCannon:
-            [self setBulletType:b velocity:5.0 damage:4 isAirBullet:true];
+            [self setBulletType:b velocity:0.5 damage:4 isAirBullet:true];
             break;
         case btDefault:
-            [self setBulletType:btDefault velocity:10.0 damage:2 isAirBullet:true];
+            [self setBulletType:btDefault velocity:2.0 damage:2 isAirBullet:true];
             break;
         default:
             [self setBulletType:btDefault velocity:10.0 damage:2 isAirBullet:true];
@@ -49,6 +50,9 @@
     _velocity = v;
     _damage = d;
     _isAirBullet = a;
+}
+- (bool) playerBullet {
+    return _playerBullet;
 }
 
 @end

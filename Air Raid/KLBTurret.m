@@ -8,6 +8,7 @@
 
 #import "KLBTurret.h"
 #import "KLBBullet.h"
+#import "KLBShip.h"
 
 @implementation KLBTurret
 
@@ -32,7 +33,7 @@
     if (self) {
         _angle = 90.0;
         _firingSpeed = 1.0;
-        _bullet = [[KLBBullet alloc] initWithBulletType:btDefault];
+        _bullet = [[KLBBullet alloc] initWithBulletType:btDefault playerBullet:false];
         _turretType = ttDefault;
         _owner = nil;
     }
@@ -43,22 +44,24 @@
     self = [super init];
     KLBBullet *bulletInit;
     if (self) {
+        bool playerBullet = false;
+        if ([o isPlayer]) playerBullet = true;
         switch (t)
         {
             case ttMachineGun:
-                bulletInit = [[KLBBullet alloc] initWithBulletType:btMachineGun];
+                bulletInit = [[KLBBullet alloc] initWithBulletType:btMachineGun playerBullet:playerBullet];
                 [self setTurretType:t angle:0.0 firingSpeed:0.1 bullet:bulletInit];
                 break;
             case ttCannon:
-                bulletInit = [[KLBBullet alloc] initWithBulletType:btCannon];
+                bulletInit = [[KLBBullet alloc] initWithBulletType:btCannon playerBullet:playerBullet];
                 [self setTurretType:t angle:0.0 firingSpeed:1.0 bullet:bulletInit];
                 break;
             case ttDefault:
-                bulletInit = [[KLBBullet alloc] initWithBulletType:btDefault];
+                bulletInit = [[KLBBullet alloc] initWithBulletType:btDefault playerBullet:playerBullet];
                 [self setTurretType:t angle:0.0 firingSpeed:0.5 bullet:bulletInit];
                 break;
                 default:
-                bulletInit = [[KLBBullet alloc] initWithBulletType:btDefault];
+                bulletInit = [[KLBBullet alloc] initWithBulletType:btDefault playerBullet:playerBullet];
                 [self setTurretType:t angle:0.0 firingSpeed:0.5 bullet:bulletInit];
                 break;
         }

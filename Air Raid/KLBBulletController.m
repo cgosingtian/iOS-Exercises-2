@@ -8,8 +8,9 @@
 
 #import "KLBBulletController.h"
 #import "KLBBulletView.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface KLBBulletController ()
+@interface KLBBulletController () //<AVAudioPlayerDelegate>
 
 typedef enum BulletDirection {
     bdUp,
@@ -23,6 +24,7 @@ typedef enum BulletDirection {
 @property (nonatomic) NSTimer *timer;
 @property (nonatomic) CGFloat launchAngle;
 @property (nonatomic) CGPoint coordinates;
+@property (nonatomic) AVAudioPlayer *avPlayer;
 
 @end
 
@@ -35,7 +37,8 @@ typedef enum BulletDirection {
             bulletDirection = _bulletDirection,
             coordinates = _coordinates,
             traversedDistance = _traversedDistance,
-            timer = _timer;
+            timer = _timer,
+            avPlayer = _avPlayer;
 
 - (void) dealloc {
     [[self timer] invalidate];
@@ -68,6 +71,27 @@ typedef enum BulletDirection {
         [self matchBulletWithView];
         
         [bv updateCoordinatesX:c.x Y:c.y];
+        
+        NSString *soundFilePath =
+        [[NSBundle mainBundle] pathForResource: @"laser"
+                                        ofType: @"wav"];
+        
+        
+        NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
+        
+        NSError *error;
+        AVAudioPlayer *newPlayer =
+        [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL
+                                               error: &error];
+        
+        if (error) {
+            NSLog(@"%@",error);
+        }
+        
+        [fileURL release];
+        
+        _avPlayer = newPlayer;
+        [_avPlayer prepareToPlay];
     }
     return self;
 }
@@ -128,7 +152,10 @@ typedef enum BulletDirection {
 
 - (void) launchBullet {
     if (![self timer]) {
-        [self setTimer:[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveBullet:) userInfo:nil repeats:YES]];
+        if (_avPlayer) {
+            [_avPlayer play];
+        }
+        [self setTimer:[NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(moveBullet:) userInfo:nil repeats:YES]];
         [_bulletView animateFadeIn];
     }
 }
