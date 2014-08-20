@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F1A2AC919A45931001AAB94 /* bullet_cannon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2AC619A45931001AAB94 /* bullet_cannon2.png */; };
+		4F1A2ACA19A45931001AAB94 /* bullet_default2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2AC719A45931001AAB94 /* bullet_default2.png */; };
+		4F1A2ACB19A45931001AAB94 /* bullet_machinegun2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2AC819A45931001AAB94 /* bullet_machinegun2.png */; };
+		4F1A2ACF19A46D7E001AAB94 /* cloud1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2ACC19A46D7E001AAB94 /* cloud1.png */; };
+		4F1A2AD019A46D7E001AAB94 /* cloud2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2ACD19A46D7E001AAB94 /* cloud2.png */; };
+		4F1A2AD119A46D7E001AAB94 /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2ACE19A46D7E001AAB94 /* floor.png */; };
+		4F1A2AD419A46D9E001AAB94 /* KLBBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AD319A46D9E001AAB94 /* KLBBackground.m */; };
 		4F58729F19A32B2800CF0264 /* KLBPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F58729E19A32B2800CF0264 /* KLBPlayerController.m */; };
 		4F5872A519A34D1E00CF0264 /* bullet_cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5872A219A34D1E00CF0264 /* bullet_cannon.png */; };
 		4F5872A619A34D1E00CF0264 /* bullet_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5872A319A34D1E00CF0264 /* bullet_default.png */; };
@@ -53,6 +60,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F1A2AC619A45931001AAB94 /* bullet_cannon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet_cannon2.png; sourceTree = "<group>"; };
+		4F1A2AC719A45931001AAB94 /* bullet_default2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet_default2.png; sourceTree = "<group>"; };
+		4F1A2AC819A45931001AAB94 /* bullet_machinegun2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet_machinegun2.png; sourceTree = "<group>"; };
+		4F1A2ACC19A46D7E001AAB94 /* cloud1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud1.png; sourceTree = "<group>"; };
+		4F1A2ACD19A46D7E001AAB94 /* cloud2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud2.png; sourceTree = "<group>"; };
+		4F1A2ACE19A46D7E001AAB94 /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
+		4F1A2AD219A46D9E001AAB94 /* KLBBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBBackground.h; sourceTree = "<group>"; };
+		4F1A2AD319A46D9E001AAB94 /* KLBBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBBackground.m; sourceTree = "<group>"; };
 		4F58729D19A32B2800CF0264 /* KLBPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBPlayerController.h; sourceTree = "<group>"; };
 		4F58729E19A32B2800CF0264 /* KLBPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBPlayerController.m; sourceTree = "<group>"; };
 		4F5872A119A32B8600CF0264 /* KLBShipControlProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLBShipControlProtocol.h; sourceTree = "<group>"; };
@@ -254,6 +269,8 @@
 				4FC6BB1519A325C3001DC678 /* KLBPlayerShipView.m */,
 				4F5872A819A34D3700CF0264 /* KLBBulletView.h */,
 				4F5872A919A34D3700CF0264 /* KLBBulletView.m */,
+				4F1A2AD219A46D9E001AAB94 /* KLBBackground.h */,
+				4F1A2AD319A46D9E001AAB94 /* KLBBackground.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -261,6 +278,12 @@
 		4FC6BB0D19A31C45001DC678 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4F1A2ACC19A46D7E001AAB94 /* cloud1.png */,
+				4F1A2ACD19A46D7E001AAB94 /* cloud2.png */,
+				4F1A2ACE19A46D7E001AAB94 /* floor.png */,
+				4F1A2AC619A45931001AAB94 /* bullet_cannon2.png */,
+				4F1A2AC719A45931001AAB94 /* bullet_default2.png */,
+				4F1A2AC819A45931001AAB94 /* bullet_machinegun2.png */,
 				4F5872A219A34D1E00CF0264 /* bullet_cannon.png */,
 				4F5872A319A34D1E00CF0264 /* bullet_default.png */,
 				4F5872A419A34D1E00CF0264 /* bullet_machinegun.png */,
@@ -347,13 +370,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1A2ACF19A46D7E001AAB94 /* cloud1.png in Resources */,
 				4F5872A519A34D1E00CF0264 /* bullet_cannon.png in Resources */,
 				4F5872A619A34D1E00CF0264 /* bullet_default.png in Resources */,
+				4F1A2AD119A46D7E001AAB94 /* floor.png in Resources */,
 				4FC6BB0919A30432001DC678 /* KLBBattleViewController.xib in Resources */,
 				4FC6BACB19A2D371001DC678 /* InfoPlist.strings in Resources */,
 				4FC6BB1319A31C62001DC678 /* player.png in Resources */,
+				4F1A2ACB19A45931001AAB94 /* bullet_machinegun2.png in Resources */,
 				4FC6BB1219A31C62001DC678 /* neutral.png in Resources */,
+				4F1A2AD019A46D7E001AAB94 /* cloud2.png in Resources */,
 				4FC6BB1119A31C62001DC678 /* enemy.png in Resources */,
+				4F1A2ACA19A45931001AAB94 /* bullet_default2.png in Resources */,
+				4F1A2AC919A45931001AAB94 /* bullet_cannon2.png in Resources */,
 				4FC6BAD619A2D371001DC678 /* Images.xcassets in Resources */,
 				4F5872A719A34D1E00CF0264 /* bullet_machinegun.png in Resources */,
 			);
@@ -388,6 +417,7 @@
 				4F5872AD19A3502100CF0264 /* KLBBulletController.m in Sources */,
 				4F5872AA19A34D3700CF0264 /* KLBBulletView.m in Sources */,
 				4FC6BAD419A2D371001DC678 /* Air_Raid.xcdatamodeld in Sources */,
+				4F1A2AD419A46D9E001AAB94 /* KLBBackground.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,7 +55,7 @@ typedef enum BulletDirection {
     self = [super init];
     if (self) {
         if (!bv) {
-            bv = [[KLBBulletView alloc] init];
+            bv = [[KLBBulletView alloc] initWithBulletType:b];
         }
         _bulletView = bv;
         _bullet = b;
@@ -129,6 +129,7 @@ typedef enum BulletDirection {
 - (void) launchBullet {
     if (![self timer]) {
         [self setTimer:[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveBullet:) userInfo:nil repeats:YES]];
+        [_bulletView animateFadeIn];
     }
 }
 

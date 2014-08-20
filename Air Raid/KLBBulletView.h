@@ -11,7 +11,14 @@
 
 @interface KLBBulletView : UIImageView
 
+@property (nonatomic,retain) KLBBullet* bullet;
+
+- (instancetype)initWithBulletType:(KLBBullet *)b;
+
 - (void)updateCoordinatesX:(CGFloat)x Y:(CGFloat)y;
 - (void)changeBulletImage:(BulletTypes)b;
+
+- (void) animateFadeIn;
+- (void) animateFadeBulletEffects;
 
 @end
