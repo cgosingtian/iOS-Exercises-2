@@ -26,5 +26,5 @@ typedef enum BulletTypes : NSUInteger
 
 - (instancetype) initWithBulletType:(BulletTypes)b playerBullet:(bool)p;
 - (bool) playerBullet;
-
+- (CGFloat) velocity;
 @end

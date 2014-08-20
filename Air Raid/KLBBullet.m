@@ -15,21 +15,8 @@
             isAirBullet = _isAirBullet,
             bulletType = _bulletType;
 
-- (void) dealloc {
-    
-    [super dealloc];
-}
-
 #pragma mark - Initializers
 //Designated Initializer
-- (instancetype) init {
-    self = [super init];
-    if (self) {
-        [self setBulletType:btDefault velocity:10.0 damage:2 isAirBullet:true];
-    }
-    return self;
-}
-
 - (instancetype) initWithBulletType:(BulletTypes)b playerBullet:(bool)p {
     self = [self init];
     _playerBullet = p;
@@ -49,6 +36,14 @@
     return self;
 }
 
+- (instancetype) init {
+    self = [super init];
+    if (self) {
+        self = [self initWithBulletType:btDefault playerBullet:false];
+    }
+    return self;
+}
+
 #pragma mark - Getters and Setters
 - (void) setBulletType:(BulletTypes)b velocity:(CGFloat)v damage:(int)d isAirBullet:(bool)a {
     _bulletType = b;
@@ -58,6 +53,9 @@
 }
 - (bool) playerBullet {
     return _playerBullet;
+}
+- (CGFloat) velocity {
+    return _velocity;
 }
 
 @end

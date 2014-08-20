@@ -43,18 +43,16 @@ typedef enum BulletDirection {
 
 - (void) dealloc {
 //    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    _avPlayer.delegate = nil;
-    
-    [[self timer] invalidate];
-    [[self timer] release];
-    [_bulletView release];
-    [_bullet release];
-    [_avPlayer release];
-    _avPlayer = nil;
+//    [[self timer] invalidate];
+//    [[self timer] release];
+//    [_bulletView release];
+//    [_bullet release];
+//    [_avPlayer release];
+//    _avPlayer = nil;
     
     [self setTimer:nil];
-    _bulletView = nil;
-    _bullet = nil;
+//    _bulletView = nil;
+//    _bullet = nil;
     
     [super dealloc];
 }
@@ -67,6 +65,7 @@ typedef enum BulletDirection {
             bv = [[KLBBulletView alloc] initWithBulletType:b];
         }
         _bulletView = bv;
+        [bv release];
         _bullet = b;
         _launchAngle = [self limitAngle:a];
         _coordinates = c;
@@ -90,8 +89,6 @@ typedef enum BulletDirection {
         _avPlayer.delegate = self;
         [_avPlayer prepareToPlay];
         [fileURL release];
-        
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(update) name:KLB_UPDATE_GAME_NOTIFICATION object:nil];
     }
     return self;
 }
@@ -125,8 +122,12 @@ typedef enum BulletDirection {
 }
 
 - (void) moveBullet:(id) sender {
-    if (_bullet) {
-        CGFloat velocity = _bullet.velocity;
+    if (_traversedDistance > _maximumDistance) {
+        [[self timer] invalidate];
+        [self setTimer:nil];
+        self = nil;
+    } else if (_bullet) {
+        CGFloat velocity = [_bullet velocity];
         switch (_bulletDirection) {
             case bdUp:
                 _coordinates.y-=velocity;
@@ -144,17 +145,10 @@ typedef enum BulletDirection {
         [_bulletView updateCoordinatesX:(_coordinates.x) Y:_coordinates.y];
         _traversedDistance += velocity;
     }
-    else {
-        NSLog(@"bullet nil");
-        [[self timer] invalidate];
-    }
-    
-    if (_traversedDistance >= _maximumDistance) {
-        [[self timer] invalidate];
-//        [[self timer ] release];
-//        [self setTimer:nil];
-        self = nil;
-    }
+//    else {
+//        NSLog(@"bullet nil");
+//        [[self timer] invalidate];
+//    }
 }
 
 - (void) launchBullet {
@@ -169,13 +163,9 @@ typedef enum BulletDirection {
 
 #pragma mark - AVAudioPlayer Protocol
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    _avPlayer.delegate = nil;
     [_avPlayer release]; // releases the player object
 }
-
-#pragma mark - Game Loop Update
-//- (void) update {
-//    [self moveBullet:nil];
-//}
 
 #pragma mark - Getters and Setters
 - (NSTimer *)timer {

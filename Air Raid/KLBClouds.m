@@ -11,6 +11,7 @@
 
 @implementation KLBClouds
 
+#pragma mark - Initializers
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -20,45 +21,38 @@
     return self;
 }
 
+#pragma mark - View States
 - (void)awakeFromNib {
     [self addFallAnimationForLayer:self.layer];
 }
 
+#pragma mark - Animation
 - (void)addFallAnimationForLayer:(CALayer *)layer{
     [CATransaction begin];
-    // The keyPath to animate
-    NSString *keyPath = @"transform.translation.y";
+
+    NSString *keyPathTranslationY = @"transform.translation.y";
+    NSString *keyPathTransparency = @"opacity";
     
-    // Allocate a CAKeyFrameAnimation for the specified keyPath.
+    // --- TRANSLATION KEYFRAME SETUP START ---
     CAKeyframeAnimation *translation = [[CAKeyframeAnimation alloc] init];
-    [translation setKeyPath:keyPath];
-    
-    // Set animation duration and repeat
+    [translation setKeyPath:keyPathTranslationY];
     translation.duration = 5.0f;
-    //translation.repeatCount = HUGE_VAL;
     
     // Allocate array to hold the values to interpolate
     NSMutableArray *values = [[NSMutableArray alloc] init];
-    
-    // Add the start value
-    // The animation starts at a y offset of 0.0
     [values addObject:[NSNumber numberWithFloat:0.0f]];
-    
-    // Add the end value
-    // The animation finishes when the ball would contact the bottom of the screen
-    // This point is calculated by finding the height of the applicationFrame
-    // and subtracting the height of the ball.
     CGFloat height = [[UIScreen mainScreen] applicationFrame].size.height + layer.frame.size.height;
     [values addObject:[NSNumber numberWithFloat:height]];
     
     // Set the values that should be interpolated during the animation
     translation.values = values;
+    // --- TRANSLATION KEYFRAME SETUP END ---
     
+    // --- TRANSPARENCY KEYFRAME SETUP START ---
     CAKeyframeAnimation *transparency = [[CAKeyframeAnimation alloc] init];
 
-    [transparency setKeyPath:@"opacity"];
+    [transparency setKeyPath:keyPathTransparency];
     transparency.duration = translation.duration;
-    //transparency.repeatCount = HUGE_VAL;
     
     NSMutableArray *transparencyValues = [[NSMutableArray alloc] init];
     [transparencyValues addObject:[NSNumber numberWithFloat:0.0]];
@@ -66,9 +60,9 @@
     [transparencyValues addObject:[NSNumber numberWithFloat:0.0]];
     transparency.values = transparencyValues;
     
-    //translation.autoreverses = NO;
-    //transparency.autoreverses = YES;
+    // --- TRANSPARENCY KEYFRAME SETUP START ---
     
+    // This block repeats the animation but also randomizes the location and size of the cloud
     [CATransaction setCompletionBlock:^()
      {
          [values release];
@@ -87,8 +81,10 @@
          
          self.frame = CGRectMake(randomPoint.x, randomPoint.y, randomSize.width, randomSize.height);
      }];
-    [layer addAnimation:translation forKey:keyPath];
-    [layer addAnimation:transparency forKey:@"opacity"];
+    
+    [layer addAnimation:translation forKey:keyPathTranslationY];
+    [layer addAnimation:transparency forKey:keyPathTransparency];
+    
     [CATransaction commit];
 }
 

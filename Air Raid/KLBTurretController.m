@@ -53,11 +53,12 @@
     if (_canFire) {
         KLBShip *owner = [_turret owner];
         _coordinates = [owner coordinates];
-        //[owner release];
+        _coordinates.x += 15.0;
         KLBBullet *turretBullet = [_turret bullet];
         CGFloat tAngle = [_turret angle];
         KLBBulletController *bulletController = [[KLBBulletController alloc] initWithBulletView:nil bullet:turretBullet launchAngle:tAngle coordinates:_coordinates];
         [bulletController launchBullet];
+        [bulletController release];
     }
 }
 

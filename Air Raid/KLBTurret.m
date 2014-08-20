@@ -31,18 +31,6 @@
 
 #pragma mark - Initializers
 // Designated Initializer
-- (instancetype) init {
-    self = [super init];
-    if (self) {
-        _angle = 90.0;
-        _firingSpeed = 1.0;
-        _bullet = [[KLBBullet alloc] initWithBulletType:btDefault playerBullet:false];
-        _turretType = ttDefault;
-        _owner = nil;
-    }
-    return self;
-}
-
 - (instancetype) initWithTurretType:(TurretTypes)t owner:(KLBShip *)o {
     self = [super init];
     KLBBullet *bulletInit;
@@ -76,8 +64,15 @@
     return self;
 }
 
-#pragma mark - Getters and Setters
+- (instancetype) init {
+    self = [super init];
+    if (self) {
+        self = [self initWithTurretType:ttDefault owner:nil];
+    }
+    return self;
+}
 
+#pragma mark - Getters and Setters
 - (void) setAngle:(CGFloat)angle {
     _angle = angle;
 }

@@ -13,6 +13,7 @@
 @synthesize score = _score,
             name = _name;
 
+#pragma mark - Initializers
 - (instancetype) init {
     self = [super init];
     if (self) {
@@ -22,6 +23,7 @@
     return self;
 }
 
+#pragma mark - Getters and Setters
 - (void) setName:(NSString *)name {
     _name = name;
 }

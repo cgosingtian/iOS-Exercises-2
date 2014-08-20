@@ -50,7 +50,7 @@
     }
     return self;
 }
-
+// Designated Initializer for Player
 - (instancetype) initPlayerShip {
     self = [super init];
     if (self) {
@@ -69,11 +69,13 @@
     return self;
 }
 
+#pragma mark - Utility
 - (void) addTurret:(KLBTurret *)t
 {
     [_turrets setObject:t forKey:[NSString stringWithFormat:@"%f",t.angle]];
 }
 
+#pragma mark - Getters and Setters
 - (CGPoint) coordinates {
     return _coordinates;
 }

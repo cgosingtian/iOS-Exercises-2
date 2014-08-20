@@ -11,6 +11,7 @@
 
 @implementation KLBPlayerShipView
 
+#pragma mark - Initializers
 - (instancetype) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
@@ -42,15 +43,7 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
+#pragma mark - Animation
 - (void) animateNormalDirection {
     UIView *myView = self;
     CALayer *layer = myView.layer;
@@ -78,5 +71,14 @@
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 125.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
     layer.transform = rotationAndPerspectiveTransform;
 }
+
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 @end

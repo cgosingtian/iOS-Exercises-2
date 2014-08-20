@@ -17,6 +17,8 @@
             playerView = _playerView,
             playerShip = _playerShip;
 
+#pragma mark - Initializers
+// Designated Initializer
 - (instancetype) initWithShipView:(KLBPlayerShipView *)shipView coordinates:(CGPoint)c {
     self = [super init];
     if (self) {
@@ -35,6 +37,7 @@
     return self;
 }
 
+#pragma mark - Ship View Updates
 - (void) refreshShipView {
     CGFloat x = _playerShip.coordinates.x;
     CGFloat y = _playerShip.coordinates.y;
@@ -43,6 +46,7 @@
     [self shipDidMove];
 }
 
+#pragma mark - Ship Model Updates: Movement
 - (void) stepShipLeft {
     CGFloat velocity = _playerShip.velocity;
     CGFloat x = _playerShip.coordinates.x - velocity;

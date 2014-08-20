@@ -11,12 +11,14 @@
 
 @implementation KLBBulletView
 
+#pragma mark - Dealloc
 - (void) dealloc {
     [_bullet release];
     _bullet = nil;
     [super dealloc];
 }
 
+#pragma mark - Initializers
 - (instancetype) initWithBulletType:(KLBBullet *)b {
     self = [super init];
     if (self) {
@@ -71,28 +73,13 @@
     return self;
 }
 
-//- (instancetype)init {
-//    self = [super init];
-//    if (self) {
-//        [NSException raise:@"Wrong initializer" format:@"Use initWithCoder"];
-//    }
-//    return self;
-//}
-//
-//- (id)initWithFrame:(CGRect)frame
-//{
-//    self = [super initWithFrame:frame];
-//    if (self) {
-//        [NSException raise:@"Wrong initializer" format:@"Use initWithCoder"];
-//    }
-//    return self;
-//}
-
+#pragma mark - View Movement
 - (void)updateCoordinatesX:(CGFloat) x Y:(CGFloat) y {
     [self setFrame:CGRectMake(x, y, self.image.size.width, self.image.size.height)];
     //[self setNeedsDisplay];
 }
 
+#pragma mark - View Image
 - (void)changeBulletImage:(BulletTypes)b {
     if (b == btMachineGun)
     {
@@ -113,6 +100,7 @@
     }
 }
 
+#pragma mark - Animation
 - (void) animateFadeIn {
     [self setAlpha:0.0];
     [UIView animateKeyframesWithDuration:0.1 delay:0.0 options:0

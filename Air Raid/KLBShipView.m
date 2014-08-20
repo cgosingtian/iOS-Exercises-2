@@ -11,6 +11,7 @@
 
 @implementation KLBShipView
 
+#pragma mark - Initializers
 - (instancetype) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
@@ -40,9 +41,9 @@
     return self;
 }
 
+#pragma mark - View Movement
 - (void)updateCoordinatesX:(CGFloat) x Y:(CGFloat) y {
     [self setFrame:CGRectMake(x, y, self.image.size.width, self.image.size.height)];
-    //[self setNeedsDisplay];
 }
 
 /*

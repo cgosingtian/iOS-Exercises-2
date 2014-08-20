@@ -22,6 +22,8 @@
             moveSpeed = _moveSpeed,
             animationInterval = _animationInterval;
 
+#pragma mark - Initializers
+// Designated Initializer
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
@@ -33,20 +35,13 @@
     return self;
 }
 
+#pragma mark - View States
 - (void)awakeFromNib {
     _maxHeight = self.image.size.height;
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:_animationInterval target:self selector:@selector(animateBackground) userInfo:nil repeats:YES];
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
+#pragma mark - Animation
 - (void) animateBackground {
     _distanceTravelled += _moveSpeed;
     float yMovement = (-1*(self.image.size.height/2)) + _distanceTravelled;
