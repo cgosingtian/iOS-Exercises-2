@@ -26,6 +26,7 @@
 - (void) setAirBombs:(int)airBombs;
 - (void) setVelocity:(CGFloat)velocity;
 - (void) setCoordinates:(CGPoint)coordinates;
+- (CGPoint)coordinates;
 
 - (void) addTurret:(KLBTurret *)t;
 

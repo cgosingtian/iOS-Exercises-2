@@ -23,6 +23,7 @@
     KLBBattleViewController *battleViewController = [[KLBBattleViewController alloc] init];
 
     self.window.rootViewController = battleViewController;
+    [battleViewController release];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

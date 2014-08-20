@@ -10,6 +10,7 @@
 #import "KLBShipView.h"
 #import "KLBPlayerShipView.h"
 #import "KLBPlayerController.h"
+#import "KLBTurretController.h"
 
 static float const touchBottomBufferVerticalPercentage = 0.35;
 
@@ -139,6 +140,13 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
     CGPoint c = CGPointMake(x, y);
     
     _playerControllerDelegate = [[KLBPlayerController alloc] initWithShipView:_playerShipView coordinates:c];
+    
+    //load player turrets
+    NSMutableDictionary *turretDict = [_playerControllerDelegate playerShip].turrets;
+    for (NSString *key in turretDict) {
+        KLBTurretController *tc = [[KLBTurretController alloc] initWithTurret:[turretDict objectForKey:key] owner:[_playerControllerDelegate playerShip]];
+        [tc activateTurret];
+    }
 }
 
 

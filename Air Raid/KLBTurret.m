@@ -14,7 +14,8 @@
 @synthesize angle = _angle,
             firingSpeed = _firingSpeed,
             bullet = _bullet,
-            turretType = _turretType;
+            turretType = _turretType,
+            owner = _owner;
 
 #pragma mark - Dealloc
 - (void) dealloc {
@@ -29,15 +30,16 @@
 - (instancetype) init {
     self = [super init];
     if (self) {
-        _angle = 0.0;
+        _angle = 90.0;
         _firingSpeed = 1.0;
         _bullet = [[KLBBullet alloc] initWithBulletType:btDefault];
         _turretType = ttDefault;
+        _owner = nil;
     }
     return self;
 }
 
-- (instancetype) initWithTurretType:(TurretTypes)t {
+- (instancetype) initWithTurretType:(TurretTypes)t owner:(KLBShip *)o {
     self = [super init];
     KLBBullet *bulletInit;
     if (self) {
@@ -45,23 +47,26 @@
         {
             case ttMachineGun:
                 bulletInit = [[KLBBullet alloc] initWithBulletType:btMachineGun];
-                [self setTurretType:t angle:0.0 firingSpeed:2.0 bullet:bulletInit];
+                [self setTurretType:t angle:0.0 firingSpeed:0.1 bullet:bulletInit];
                 break;
             case ttCannon:
                 bulletInit = [[KLBBullet alloc] initWithBulletType:btCannon];
-                [self setTurretType:t angle:0.0 firingSpeed:0.5 bullet:bulletInit];
+                [self setTurretType:t angle:0.0 firingSpeed:1.0 bullet:bulletInit];
                 break;
             case ttDefault:
                 bulletInit = [[KLBBullet alloc] initWithBulletType:btDefault];
-                [self setTurretType:t angle:0.0 firingSpeed:1.0 bullet:bulletInit];
+                [self setTurretType:t angle:0.0 firingSpeed:0.5 bullet:bulletInit];
                 break;
                 default:
                 bulletInit = [[KLBBullet alloc] initWithBulletType:btDefault];
-                [self setTurretType:t angle:0.0 firingSpeed:1.0 bullet:bulletInit];
+                [self setTurretType:t angle:0.0 firingSpeed:0.5 bullet:bulletInit];
                 break;
         }
+        //[bulletInit release];
+        
+        _owner = o;
     }
-    [bulletInit release];
+    
     return self;
 }
 
@@ -76,6 +81,18 @@
     _angle = a;
     _firingSpeed = f;
     _bullet = b;
+}
+
+- (CGFloat) firingSpeed {
+    return _firingSpeed;
+}
+
+- (KLBBullet *) bullet {
+    return _bullet;
+}
+
+- (KLBShip *) owner {
+    return _owner;
 }
 
 @end

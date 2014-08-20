@@ -9,6 +9,7 @@
 #import "KLBPlayerController.h"
 #import "KLBPlayer.h"
 #import "KLBPlayerShipView.h"
+#import "KLBTurret.h"
 
 @implementation KLBPlayerController
 
@@ -42,16 +43,35 @@
     CGFloat velocity = _playerShip.velocity;
     CGFloat x = _playerShip.coordinates.x - velocity;
     CGFloat y = _playerShip.coordinates.y;
-    _playerShip.coordinates = CGPointMake(x, y);
+
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    
+    CGFloat maxWidth = window.frame.size.width - _playerView.frame.size.width;
+    CGFloat minWidth = 0;
+    
+    if (x < maxWidth && x > minWidth) {
+        _playerShip.coordinates = CGPointMake(x, y);
+    }
 }
 - (void) stepShipRight {
     CGFloat velocity = _playerShip.velocity;
     CGFloat x = _playerShip.coordinates.x + velocity;
     CGFloat y = _playerShip.coordinates.y;
-    _playerShip.coordinates = CGPointMake(x, y);
+    
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    
+    CGFloat maxWidth = window.frame.size.width - _playerView.frame.size.width;
+    CGFloat minWidth = 0;
+    
+    if (x < maxWidth && x > minWidth) {
+        _playerShip.coordinates = CGPointMake(x, y);
+    }
 }
 
 #pragma mark - Ship Control Protocol
+-(void)shipDidMove {
+    
+}
 -(void)shipWillMoveLeft {
     [self stepShipLeft];
     
@@ -59,6 +79,7 @@
 }
 
 -(void)shipDidMoveLeft {
+    [self shipDidMove];
     [self refreshShipView]; // do this last
 }
 
@@ -70,6 +91,7 @@
 
 -(void)shipDidMoveRight {
     
+    [self shipDidMove];
     [self refreshShipView]; // do this last
 }
 

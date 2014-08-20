@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class KLBBullet;
+@class KLBShip;
 
 typedef enum TurretTypes : NSUInteger
 {
@@ -19,12 +20,15 @@ typedef enum TurretTypes : NSUInteger
 
 @interface KLBTurret : NSObject
 
+@property (nonatomic,retain) KLBShip *owner;
 @property (nonatomic) CGFloat angle;
 @property (nonatomic) CGFloat firingSpeed;
 @property (nonatomic,assign) KLBBullet *bullet;
 @property (nonatomic) TurretTypes turretType;
 
-- (instancetype) initWithTurretType:(TurretTypes)t;
+- (instancetype) initWithTurretType:(TurretTypes)t owner:(KLBShip *)o;
 - (void) setAngle:(CGFloat)angle;
-
+- (CGFloat) firingSpeed;
+- (KLBBullet *) bullet;
+- (KLBShip *) owner;
 @end

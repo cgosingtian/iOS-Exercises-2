@@ -18,7 +18,7 @@
         float y = 0.0;
         UIImage *shipImage = [UIImage imageNamed:@"neutral.png"];
         self.image = shipImage;
-        self.frame = CGRectMake(x, y, shipImage.size.width, shipImage.size.height);
+        self.frame = CGRectMake(x, y, self.image.size.width, self.image.size.height);
     }
     return self;
 }

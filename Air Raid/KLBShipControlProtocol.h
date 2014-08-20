@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol KLBShipControlProtocol <NSObject>
+-(void)shipDidMove;
 -(void)shipWillMoveLeft;
 -(void)shipDidMoveLeft;
 -(void)shipWillMoveRight;
