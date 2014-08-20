@@ -49,4 +49,31 @@
 }
 */
 
+- (void) animateNormalDirection {
+    UIView *myView = self;
+    CALayer *layer = myView.layer;
+    CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+    rotationAndPerspectiveTransform.m34 = 1.0 / -500;
+    rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 0.0f, 0.0f, 1.0f, 0.0f);
+    layer.transform = rotationAndPerspectiveTransform;
+}
+
+- (void) animateRightTurn {
+    UIView *myView = self;
+    CALayer *layer = myView.layer;
+    CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+    rotationAndPerspectiveTransform.m34 = 1.0 / -500;
+    rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 45.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
+    layer.transform = rotationAndPerspectiveTransform;
+}
+
+- (void) animateLeftTurn {
+    UIView *myView = self;
+    CALayer *layer = myView.layer;
+    CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+    rotationAndPerspectiveTransform.m34 = 1.0 / -500;
+    rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 125.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
+    layer.transform = rotationAndPerspectiveTransform;
+}
+
 @end

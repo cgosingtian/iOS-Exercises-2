@@ -46,7 +46,6 @@
 //}
 
 - (void)updateCoordinatesX:(CGFloat) x Y:(CGFloat) y {
-    NSLog(@"%f,%f",x,y);
     [self setFrame:CGRectMake(x, y, self.image.size.width, self.image.size.height)];
     [self setNeedsDisplay];
 }

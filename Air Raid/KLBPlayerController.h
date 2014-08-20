@@ -18,6 +18,10 @@
 @property (nonatomic,unsafe_unretained) KLBPlayerShipView *playerView;
 @property (nonatomic,retain) KLBShip *playerShip;
 
+@property (nonatomic) bool isMoving;
+
 - (instancetype) initWithShipView:(KLBPlayerShipView *)shipView coordinates:(CGPoint)c;
+
+- (void)setIsMoving:(bool)isMoving;
 
 @end

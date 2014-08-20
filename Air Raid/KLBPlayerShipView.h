@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "KLBShipView.h"
+#import "KLBShipControlProtocol.h"
 @class KLBShip;
 
 @interface KLBPlayerShipView : KLBShipView
+
+- (void) animateRightTurn;
+- (void) animateLeftTurn;
+- (void) animateNormalDirection;
 
 @end

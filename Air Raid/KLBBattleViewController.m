@@ -85,13 +85,17 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
 
         [_longPressTimer invalidate];
         _longPressTimer = nil;
+        NSLog(@"ismoving false");
+        _playerControllerDelegate.isMoving = false;
     }
     else {
         if (sender.state == UIGestureRecognizerStateBegan) {
             CGPoint touchLocation = [sender locationInView:self.view];
         
             _touchedLocation = touchLocation;
-        
+            
+            NSLog(@"ismoving true");
+            _playerControllerDelegate.isMoving = true;
             //move left or right
             if (_touchedLocation.x >= self.view.frame.size.width/2) {
                 _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:0.05

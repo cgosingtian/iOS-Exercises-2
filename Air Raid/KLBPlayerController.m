@@ -29,6 +29,8 @@
             _playerShip.coordinates = c;
             [self refreshShipView];
         }
+        
+        _isMoving = false;
     }
     return self;
 }
@@ -37,6 +39,8 @@
     CGFloat x = _playerShip.coordinates.x;
     CGFloat y = _playerShip.coordinates.y;
     [_playerView updateCoordinatesX:x Y:y];
+    
+    [self shipDidMove];
 }
 
 - (void) stepShipLeft {
@@ -68,13 +72,26 @@
     }
 }
 
+#pragma mark - Getters and Setters
+- (void)setIsMoving:(bool)b {
+    if (b) {
+        _isMoving = true;
+    }
+    else {
+        _isMoving = false;
+        [_playerView animateNormalDirection];
+    }
+}
+
 #pragma mark - Ship Control Protocol
 -(void)shipDidMove {
-    
+
 }
 -(void)shipWillMoveLeft {
     [self stepShipLeft];
-    
+    if (_isMoving) {
+        [_playerView animateLeftTurn];
+    }
     [self shipDidMoveLeft];
 }
 
@@ -85,12 +102,13 @@
 
 -(void)shipWillMoveRight {
     [self stepShipRight];
-    
+    if (_isMoving) {
+        [_playerView animateRightTurn];
+    }
     [self shipDidMoveRight];
 }
 
 -(void)shipDidMoveRight {
-    
     [self shipDidMove];
     [self refreshShipView]; // do this last
 }
