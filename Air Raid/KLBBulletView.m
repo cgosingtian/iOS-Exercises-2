@@ -11,6 +11,12 @@
 
 @implementation KLBBulletView
 
+- (void) dealloc {
+    [_bullet release];
+    _bullet = nil;
+    [super dealloc];
+}
+
 - (instancetype) initWithBulletType:(KLBBullet *)b {
     self = [super init];
     if (self) {

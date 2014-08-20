@@ -18,9 +18,9 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
 
 @property (nonatomic) bool touchMoved;
 @property (nonatomic) CGPoint touchedLocation;
-@property (nonatomic) KLBPlayerController<KLBShipControlProtocol> *playerControllerDelegate;
-@property (nonatomic) UILongPressGestureRecognizer *longPressRecognizer;
-@property (nonatomic) UIPanGestureRecognizer *panRecognizer;
+@property (nonatomic,retain) KLBPlayerController<KLBShipControlProtocol> *playerControllerDelegate;
+@property (nonatomic,retain) UILongPressGestureRecognizer *longPressRecognizer;
+@property (nonatomic,retain) UIPanGestureRecognizer *panRecognizer;
 @property (nonatomic,retain) NSTimer *longPressTimer;
 
 @property (retain, nonatomic) IBOutlet KLBPlayerShipView *playerShipView;
@@ -151,9 +151,11 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
     //load player turrets
     NSMutableDictionary *turretDict = [_playerControllerDelegate playerShip].turrets;
     for (NSString *key in turretDict) {
-        KLBTurretController *tc = [[KLBTurretController alloc] initWithTurret:[turretDict objectForKey:key] owner:[_playerControllerDelegate playerShip]];
+        KLBTurretController *tc = [[[KLBTurretController alloc] initWithTurret:[turretDict objectForKey:key] owner:[_playerControllerDelegate playerShip]] autorelease];
         [tc activateTurret];
     }
+    
+    
 }
 
 

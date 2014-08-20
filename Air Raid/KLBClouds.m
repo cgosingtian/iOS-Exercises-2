@@ -30,7 +30,8 @@
     NSString *keyPath = @"transform.translation.y";
     
     // Allocate a CAKeyFrameAnimation for the specified keyPath.
-    CAKeyframeAnimation *translation = [CAKeyframeAnimation animationWithKeyPath:keyPath];
+    CAKeyframeAnimation *translation = [[CAKeyframeAnimation alloc] init];
+    [translation setKeyPath:keyPath];
     
     // Set animation duration and repeat
     translation.duration = 5.0f;
@@ -53,16 +54,27 @@
     // Set the values that should be interpolated during the animation
     translation.values = values;
     
-    CAKeyframeAnimation *transparency = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
+    CAKeyframeAnimation *transparency = [[CAKeyframeAnimation alloc] init];
+
+    [transparency setKeyPath:@"opacity"];
     transparency.duration = translation.duration;
     //transparency.repeatCount = HUGE_VAL;
-    transparency.values = @[@0.0,@0.5,@0.0];
+    
+    NSMutableArray *transparencyValues = [[NSMutableArray alloc] init];
+    [transparencyValues addObject:[NSNumber numberWithFloat:0.0]];
+    [transparencyValues addObject:[NSNumber numberWithFloat:0.5]];
+    [transparencyValues addObject:[NSNumber numberWithFloat:0.0]];
+    transparency.values = transparencyValues;
     
     //translation.autoreverses = NO;
     //transparency.autoreverses = YES;
     
     [CATransaction setCompletionBlock:^()
      {
+         [values release];
+         [transparencyValues release];
+         [transparency release];
+         [translation release];
          [self addFallAnimationForLayer:self.layer];
          
          CGPoint randomPoint;

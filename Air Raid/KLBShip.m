@@ -46,7 +46,7 @@
         KLBTurret *defaultTurret = [[KLBTurret alloc] initWithTurretType:ttDefault owner:self];
         [_turrets setObject:defaultTurret forKey:[NSString stringWithFormat:@"%f",270.0]];
         _isPlayer = false;
-        //[defaultTurret release];
+        [defaultTurret release];
     }
     return self;
 }
@@ -64,7 +64,7 @@
         KLBTurret *defaultTurret = [[KLBTurret alloc] initWithTurretType:ttMachineGun owner:self];
         [_turrets setObject:defaultTurret forKey:[NSString stringWithFormat:@"%f",90.0]];
         _isPlayer = true;
-        //[defaultTurret release];
+        [defaultTurret release];
     }
     return self;
 }

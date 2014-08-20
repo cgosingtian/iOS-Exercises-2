@@ -15,6 +15,11 @@
             isAirBullet = _isAirBullet,
             bulletType = _bulletType;
 
+- (void) dealloc {
+    
+    [super dealloc];
+}
+
 #pragma mark - Initializers
 //Designated Initializer
 - (instancetype) init {

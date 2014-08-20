@@ -9,8 +9,9 @@
 #import "KLBBulletController.h"
 #import "KLBBulletView.h"
 #import <AVFoundation/AVFoundation.h>
+#import "KLBConstants.h"
 
-@interface KLBBulletController () //<AVAudioPlayerDelegate>
+@interface KLBBulletController () <AVAudioPlayerDelegate>
 
 typedef enum BulletDirection {
     bdUp,
@@ -24,7 +25,7 @@ typedef enum BulletDirection {
 @property (nonatomic) NSTimer *timer;
 @property (nonatomic) CGFloat launchAngle;
 @property (nonatomic) CGPoint coordinates;
-@property (nonatomic) AVAudioPlayer *avPlayer;
+@property (nonatomic,retain) AVAudioPlayer *avPlayer;
 
 @end
 
@@ -41,10 +42,15 @@ typedef enum BulletDirection {
             avPlayer = _avPlayer;
 
 - (void) dealloc {
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    _avPlayer.delegate = nil;
+    
     [[self timer] invalidate];
     [[self timer] release];
     [_bulletView release];
     [_bullet release];
+    [_avPlayer release];
+    _avPlayer = nil;
     
     [self setTimer:nil];
     _bulletView = nil;
@@ -79,19 +85,13 @@ typedef enum BulletDirection {
         
         NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
         
-        NSError *error;
-        AVAudioPlayer *newPlayer =
-        [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL
-                                               error: &error];
-        
-        if (error) {
-            NSLog(@"%@",error);
-        }
-        
+        _avPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL
+                                                          error: nil];
+        _avPlayer.delegate = self;
+        [_avPlayer prepareToPlay];
         [fileURL release];
         
-        _avPlayer = newPlayer;
-        [_avPlayer prepareToPlay];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(update) name:KLB_UPDATE_GAME_NOTIFICATION object:nil];
     }
     return self;
 }
@@ -125,23 +125,30 @@ typedef enum BulletDirection {
 }
 
 - (void) moveBullet:(id) sender {
-    CGFloat velocity = _bullet.velocity;
-    switch (_bulletDirection) {
-        case bdUp:
-            _coordinates.y-=velocity;
-            break;
-        case bdDown:
-            _coordinates.y+=velocity;
-            break;
-        case bdLeft:
-            _coordinates.x-=velocity;
-            break;
-        case bdRight:
-            _coordinates.x+=velocity;
-            break;
+    if (_bullet) {
+        CGFloat velocity = _bullet.velocity;
+        switch (_bulletDirection) {
+            case bdUp:
+                _coordinates.y-=velocity;
+                break;
+            case bdDown:
+                _coordinates.y+=velocity;
+                break;
+            case bdLeft:
+                _coordinates.x-=velocity;
+                break;
+            case bdRight:
+                _coordinates.x+=velocity;
+                break;
+        }
+        [_bulletView updateCoordinatesX:(_coordinates.x) Y:_coordinates.y];
+        _traversedDistance += velocity;
     }
-    [_bulletView updateCoordinatesX:(_coordinates.x) Y:_coordinates.y];
-    _traversedDistance += velocity;
+    else {
+        NSLog(@"bullet nil");
+        [[self timer] invalidate];
+    }
+    
     if (_traversedDistance >= _maximumDistance) {
         [[self timer] invalidate];
 //        [[self timer ] release];
@@ -159,6 +166,16 @@ typedef enum BulletDirection {
         [_bulletView animateFadeIn];
     }
 }
+
+#pragma mark - AVAudioPlayer Protocol
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    [_avPlayer release]; // releases the player object
+}
+
+#pragma mark - Game Loop Update
+//- (void) update {
+//    [self moveBullet:nil];
+//}
 
 #pragma mark - Getters and Setters
 - (NSTimer *)timer {

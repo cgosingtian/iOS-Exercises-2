@@ -20,6 +20,7 @@
 @implementation KLBTurretController
 
 - (void) dealloc {
+    NSLog(@"Deallocating Turret");
     [_timer invalidate];
     [_timer release];
     [_turret release];
@@ -50,10 +51,13 @@
 
 - (void) fireBullets: (id)sender {
     if (_canFire) {
-        _coordinates = [[_turret owner] coordinates];
-        KLBBulletController *bulletController = [[KLBBulletController alloc] initWithBulletView:nil bullet:[_turret bullet] launchAngle:[_turret angle] coordinates:_coordinates];
+        KLBShip *owner = [_turret owner];
+        _coordinates = [owner coordinates];
+        //[owner release];
+        KLBBullet *turretBullet = [_turret bullet];
+        CGFloat tAngle = [_turret angle];
+        KLBBulletController *bulletController = [[KLBBulletController alloc] initWithBulletView:nil bullet:turretBullet launchAngle:tAngle coordinates:_coordinates];
         [bulletController launchBullet];
-//        [bulletController release];
     }
 }
 

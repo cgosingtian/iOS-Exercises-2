@@ -20,7 +20,10 @@
 
 #pragma mark - Dealloc
 - (void) dealloc {
+    [_owner release];
     [_bullet release];
+    
+    _owner = nil;
     _bullet = nil;
     
     [super dealloc];

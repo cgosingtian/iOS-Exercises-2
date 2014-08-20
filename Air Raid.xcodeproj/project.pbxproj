@@ -20,6 +20,7 @@
 		4F1A2AE019A49062001AAB94 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2ADF19A49062001AAB94 /* AudioToolbox.framework */; };
 		4F1A2AE219A493A3001AAB94 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2AE119A493A3001AAB94 /* AVFoundation.framework */; };
 		4F1A2AE419A495CB001AAB94 /* laser.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2AE319A495CB001AAB94 /* laser.aifc */; };
+		4F1A2AE719A49EA1001AAB94 /* KLBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AE619A49EA1001AAB94 /* KLBConstants.m */; };
 		4F58729F19A32B2800CF0264 /* KLBPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F58729E19A32B2800CF0264 /* KLBPlayerController.m */; };
 		4F5872A519A34D1E00CF0264 /* bullet_cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5872A219A34D1E00CF0264 /* bullet_cannon.png */; };
 		4F5872A619A34D1E00CF0264 /* bullet_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5872A319A34D1E00CF0264 /* bullet_default.png */; };
@@ -81,6 +82,8 @@
 		4F1A2ADF19A49062001AAB94 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4F1A2AE119A493A3001AAB94 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4F1A2AE319A495CB001AAB94 /* laser.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = laser.aifc; sourceTree = "<group>"; };
+		4F1A2AE519A49EA1001AAB94 /* KLBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBConstants.h; sourceTree = "<group>"; };
+		4F1A2AE619A49EA1001AAB94 /* KLBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBConstants.m; sourceTree = "<group>"; };
 		4F58729D19A32B2800CF0264 /* KLBPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBPlayerController.h; sourceTree = "<group>"; };
 		4F58729E19A32B2800CF0264 /* KLBPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBPlayerController.m; sourceTree = "<group>"; };
 		4F5872A119A32B8600CF0264 /* KLBShipControlProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLBShipControlProtocol.h; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 				4FC6BAF819A2E943001DC678 /* KLBTurret.m */,
 				4FC6BB0119A3017C001DC678 /* KLBPlayer.h */,
 				4FC6BB0219A3017C001DC678 /* KLBPlayer.m */,
+				4F1A2AE519A49EA1001AAB94 /* KLBConstants.h */,
+				4F1A2AE619A49EA1001AAB94 /* KLBConstants.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -449,6 +454,7 @@
 				4F9F0D5619A43A4400C40A37 /* KLBTurretController.m in Sources */,
 				4FC6BACD19A2D371001DC678 /* main.m in Sources */,
 				4F5872AD19A3502100CF0264 /* KLBBulletController.m in Sources */,
+				4F1A2AE719A49EA1001AAB94 /* KLBConstants.m in Sources */,
 				4F5872AA19A34D3700CF0264 /* KLBBulletView.m in Sources */,
 				4FC6BAD419A2D371001DC678 /* Air_Raid.xcdatamodeld in Sources */,
 				4F1A2AD419A46D9E001AAB94 /* KLBBackground.m in Sources */,
