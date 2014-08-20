@@ -84,7 +84,7 @@
 
 - (void)updateCoordinatesX:(CGFloat) x Y:(CGFloat) y {
     [self setFrame:CGRectMake(x, y, self.image.size.width, self.image.size.height)];
-    [self setNeedsDisplay];
+    //[self setNeedsDisplay];
 }
 
 - (void)changeBulletImage:(BulletTypes)b {
@@ -108,21 +108,21 @@
 }
 
 - (void) animateFadeIn {
-    [self setAlpha:0.0];
-    [UIView animateKeyframesWithDuration:0.2 delay:0.0 options:UIViewKeyframeAnimationOptionAutoreverse
-    animations:^()
-    {
-        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:1.0 animations:^()
-         {
-             [self setAlpha:1.0];
-         }];
-    }
-    completion:^(BOOL finished)
-    {
-        if (finished) {
-            [self animateBulletEffects];
-        }
-    }];
+//    [self setAlpha:0.0];
+//    [UIView animateKeyframesWithDuration:0.2 delay:0.0 options:UIViewKeyframeAnimationOptionAutoreverse
+//    animations:^()
+//    {
+//        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:1.0 animations:^()
+//         {
+//             [self setAlpha:1.0];
+//         }];
+//    }
+//    completion:^(BOOL finished)
+//    {
+//        if (finished) {
+//            [self animateBulletEffects];
+//        }
+//    }];
 }
 
 - (void) animateBulletEffects {

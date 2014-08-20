@@ -42,7 +42,7 @@
 
 - (void)updateCoordinatesX:(CGFloat) x Y:(CGFloat) y {
     [self setFrame:CGRectMake(x, y, self.image.size.width, self.image.size.height)];
-    [self setNeedsDisplay];
+    //[self setNeedsDisplay];
 }
 
 /*

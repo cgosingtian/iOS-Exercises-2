@@ -50,7 +50,6 @@
 
 - (void) fireBullets: (id)sender {
     if (_canFire) {
-        NSLog(@"FIRING bullet: %@", [[_turret bullet] class]);
         _coordinates = [[_turret owner] coordinates];
         KLBBulletController *bulletController = [[KLBBulletController alloc] initWithBulletView:nil bullet:[_turret bullet] launchAngle:[_turret angle] coordinates:_coordinates];
         [bulletController launchBullet];

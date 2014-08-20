@@ -14,6 +14,8 @@
 		4F1A2AD019A46D7E001AAB94 /* cloud2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2ACD19A46D7E001AAB94 /* cloud2.png */; };
 		4F1A2AD119A46D7E001AAB94 /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2ACE19A46D7E001AAB94 /* floor.png */; };
 		4F1A2AD419A46D9E001AAB94 /* KLBBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AD319A46D9E001AAB94 /* KLBBackground.m */; };
+		4F1A2AD619A47828001AAB94 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2AD519A47828001AAB94 /* QuartzCore.framework */; };
+		4F1A2AD919A4785A001AAB94 /* KLBClouds.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AD819A4785A001AAB94 /* KLBClouds.m */; };
 		4F58729F19A32B2800CF0264 /* KLBPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F58729E19A32B2800CF0264 /* KLBPlayerController.m */; };
 		4F5872A519A34D1E00CF0264 /* bullet_cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5872A219A34D1E00CF0264 /* bullet_cannon.png */; };
 		4F5872A619A34D1E00CF0264 /* bullet_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5872A319A34D1E00CF0264 /* bullet_default.png */; };
@@ -68,6 +70,9 @@
 		4F1A2ACE19A46D7E001AAB94 /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
 		4F1A2AD219A46D9E001AAB94 /* KLBBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBBackground.h; sourceTree = "<group>"; };
 		4F1A2AD319A46D9E001AAB94 /* KLBBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBBackground.m; sourceTree = "<group>"; };
+		4F1A2AD519A47828001AAB94 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4F1A2AD719A4785A001AAB94 /* KLBClouds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBClouds.h; sourceTree = "<group>"; };
+		4F1A2AD819A4785A001AAB94 /* KLBClouds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBClouds.m; sourceTree = "<group>"; };
 		4F58729D19A32B2800CF0264 /* KLBPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBPlayerController.h; sourceTree = "<group>"; };
 		4F58729E19A32B2800CF0264 /* KLBPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBPlayerController.m; sourceTree = "<group>"; };
 		4F5872A119A32B8600CF0264 /* KLBShipControlProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLBShipControlProtocol.h; sourceTree = "<group>"; };
@@ -123,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1A2AD619A47828001AAB94 /* QuartzCore.framework in Frameworks */,
 				4FC6BAC119A2D371001DC678 /* CoreGraphics.framework in Frameworks */,
 				4FC6BAC519A2D371001DC678 /* CoreData.framework in Frameworks */,
 				4FC6BAC319A2D371001DC678 /* UIKit.framework in Frameworks */,
@@ -174,6 +180,7 @@
 		4FC6BABD19A2D371001DC678 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4F1A2AD519A47828001AAB94 /* QuartzCore.framework */,
 				4FC6BABE19A2D371001DC678 /* Foundation.framework */,
 				4FC6BAC019A2D371001DC678 /* CoreGraphics.framework */,
 				4FC6BAC219A2D371001DC678 /* UIKit.framework */,
@@ -271,6 +278,8 @@
 				4F5872A919A34D3700CF0264 /* KLBBulletView.m */,
 				4F1A2AD219A46D9E001AAB94 /* KLBBackground.h */,
 				4F1A2AD319A46D9E001AAB94 /* KLBBackground.m */,
+				4F1A2AD719A4785A001AAB94 /* KLBClouds.h */,
+				4F1A2AD819A4785A001AAB94 /* KLBClouds.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -412,6 +421,7 @@
 				4FC6BB0C19A30944001DC678 /* KLBShipView.m in Sources */,
 				4FC6BB0319A3017C001DC678 /* KLBPlayer.m in Sources */,
 				4FC6BB1619A325C3001DC678 /* KLBPlayerShipView.m in Sources */,
+				4F1A2AD919A4785A001AAB94 /* KLBClouds.m in Sources */,
 				4F9F0D5619A43A4400C40A37 /* KLBTurretController.m in Sources */,
 				4FC6BACD19A2D371001DC678 /* main.m in Sources */,
 				4F5872AD19A3502100CF0264 /* KLBBulletController.m in Sources */,

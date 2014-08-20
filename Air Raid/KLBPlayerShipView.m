@@ -19,6 +19,8 @@
         UIImage *shipImage = [UIImage imageNamed:@"player.png"];
         self.image = shipImage;
         self.frame = CGRectMake(x, y, self.image.size.width, self.image.size.height);
+        
+        self.layer.zPosition = 100;
     }
     return self;
 }
@@ -70,6 +72,7 @@
 - (void) animateLeftTurn {
     UIView *myView = self;
     CALayer *layer = myView.layer;
+    
     CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
     rotationAndPerspectiveTransform.m34 = 1.0 / -500;
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 125.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);

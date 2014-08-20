@@ -85,7 +85,6 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
 
         [_longPressTimer invalidate];
         _longPressTimer = nil;
-        NSLog(@"ismoving false");
         _playerControllerDelegate.isMoving = false;
     }
     else {
@@ -94,7 +93,6 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
         
             _touchedLocation = touchLocation;
             
-            NSLog(@"ismoving true");
             _playerControllerDelegate.isMoving = true;
             //move left or right
             if (_touchedLocation.x >= self.view.frame.size.width/2) {
