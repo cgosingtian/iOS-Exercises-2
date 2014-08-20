@@ -17,9 +17,9 @@
 		4F1A2AD619A47828001AAB94 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2AD519A47828001AAB94 /* QuartzCore.framework */; };
 		4F1A2AD919A4785A001AAB94 /* KLBClouds.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AD819A4785A001AAB94 /* KLBClouds.m */; };
 		4F1A2ADB19A48C3D001AAB94 /* OCRAStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2ADA19A48C3D001AAB94 /* OCRAStd.otf */; };
-		4F1A2ADE19A48FFD001AAB94 /* laser.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2ADD19A48FFD001AAB94 /* laser.wav */; };
 		4F1A2AE019A49062001AAB94 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2ADF19A49062001AAB94 /* AudioToolbox.framework */; };
 		4F1A2AE219A493A3001AAB94 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2AE119A493A3001AAB94 /* AVFoundation.framework */; };
+		4F1A2AE419A495CB001AAB94 /* laser.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2AE319A495CB001AAB94 /* laser.aifc */; };
 		4F58729F19A32B2800CF0264 /* KLBPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F58729E19A32B2800CF0264 /* KLBPlayerController.m */; };
 		4F5872A519A34D1E00CF0264 /* bullet_cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5872A219A34D1E00CF0264 /* bullet_cannon.png */; };
 		4F5872A619A34D1E00CF0264 /* bullet_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F5872A319A34D1E00CF0264 /* bullet_default.png */; };
@@ -78,9 +78,9 @@
 		4F1A2AD719A4785A001AAB94 /* KLBClouds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBClouds.h; sourceTree = "<group>"; };
 		4F1A2AD819A4785A001AAB94 /* KLBClouds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBClouds.m; sourceTree = "<group>"; };
 		4F1A2ADA19A48C3D001AAB94 /* OCRAStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRAStd.otf; sourceTree = "<group>"; };
-		4F1A2ADD19A48FFD001AAB94 /* laser.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser.wav; sourceTree = "<group>"; };
 		4F1A2ADF19A49062001AAB94 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4F1A2AE119A493A3001AAB94 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4F1A2AE319A495CB001AAB94 /* laser.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = laser.aifc; sourceTree = "<group>"; };
 		4F58729D19A32B2800CF0264 /* KLBPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBPlayerController.h; sourceTree = "<group>"; };
 		4F58729E19A32B2800CF0264 /* KLBPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBPlayerController.m; sourceTree = "<group>"; };
 		4F5872A119A32B8600CF0264 /* KLBShipControlProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLBShipControlProtocol.h; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		4F1A2ADC19A48FE7001AAB94 /* Sound Effects */ = {
 			isa = PBXGroup;
 			children = (
-				4F1A2ADD19A48FFD001AAB94 /* laser.wav */,
+				4F1A2AE319A495CB001AAB94 /* laser.aifc */,
 			);
 			name = "Sound Effects";
 			sourceTree = "<group>";
@@ -414,10 +414,10 @@
 				4F1A2AD019A46D7E001AAB94 /* cloud2.png in Resources */,
 				4FC6BB1119A31C62001DC678 /* enemy.png in Resources */,
 				4F1A2ACA19A45931001AAB94 /* bullet_default2.png in Resources */,
-				4F1A2ADE19A48FFD001AAB94 /* laser.wav in Resources */,
 				4F1A2AC919A45931001AAB94 /* bullet_cannon2.png in Resources */,
 				4FC6BAD619A2D371001DC678 /* Images.xcassets in Resources */,
 				4F5872A719A34D1E00CF0264 /* bullet_machinegun.png in Resources */,
+				4F1A2AE419A495CB001AAB94 /* laser.aifc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

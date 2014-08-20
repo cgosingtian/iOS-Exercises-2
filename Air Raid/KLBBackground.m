@@ -26,8 +26,8 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         _distanceTravelled = 0;
-        _moveSpeed = 5.0;
-        _animationInterval = 0.1;
+        _moveSpeed = 0.5;
+        _animationInterval = 0.01;
         [self resetPosition];
     }
     return self;

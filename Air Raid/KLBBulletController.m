@@ -74,7 +74,7 @@ typedef enum BulletDirection {
         
         NSString *soundFilePath =
         [[NSBundle mainBundle] pathForResource: @"laser"
-                                        ofType: @"wav"];
+                                        ofType: @"aifc"];
         
         
         NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
