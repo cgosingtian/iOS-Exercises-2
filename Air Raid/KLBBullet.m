@@ -18,7 +18,7 @@
 #pragma mark - Initializers
 //Designated Initializer
 - (instancetype) initWithBulletType:(BulletTypes)b playerBullet:(bool)p {
-    self = [self init];
+    self = [super init];
     _playerBullet = p;
     switch (b) {
         case btMachineGun:
