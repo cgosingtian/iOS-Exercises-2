@@ -13,9 +13,9 @@
 		4F1A2ACF19A46D7E001AAB94 /* cloud1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2ACC19A46D7E001AAB94 /* cloud1.png */; };
 		4F1A2AD019A46D7E001AAB94 /* cloud2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2ACD19A46D7E001AAB94 /* cloud2.png */; };
 		4F1A2AD119A46D7E001AAB94 /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2ACE19A46D7E001AAB94 /* floor.png */; };
-		4F1A2AD419A46D9E001AAB94 /* KLBBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AD319A46D9E001AAB94 /* KLBBackground.m */; };
+		4F1A2AD419A46D9E001AAB94 /* KLBBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AD319A46D9E001AAB94 /* KLBBackgroundView.m */; };
 		4F1A2AD619A47828001AAB94 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2AD519A47828001AAB94 /* QuartzCore.framework */; };
-		4F1A2AD919A4785A001AAB94 /* KLBClouds.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AD819A4785A001AAB94 /* KLBClouds.m */; };
+		4F1A2AD919A4785A001AAB94 /* KLBCloudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AD819A4785A001AAB94 /* KLBCloudView.m */; };
 		4F1A2ADB19A48C3D001AAB94 /* OCRAStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4F1A2ADA19A48C3D001AAB94 /* OCRAStd.otf */; };
 		4F1A2AE019A49062001AAB94 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2ADF19A49062001AAB94 /* AudioToolbox.framework */; };
 		4F1A2AE219A493A3001AAB94 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2AE119A493A3001AAB94 /* AVFoundation.framework */; };
@@ -73,11 +73,11 @@
 		4F1A2ACC19A46D7E001AAB94 /* cloud1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud1.png; sourceTree = "<group>"; };
 		4F1A2ACD19A46D7E001AAB94 /* cloud2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud2.png; sourceTree = "<group>"; };
 		4F1A2ACE19A46D7E001AAB94 /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
-		4F1A2AD219A46D9E001AAB94 /* KLBBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBBackground.h; sourceTree = "<group>"; };
-		4F1A2AD319A46D9E001AAB94 /* KLBBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBBackground.m; sourceTree = "<group>"; };
+		4F1A2AD219A46D9E001AAB94 /* KLBBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBBackgroundView.h; sourceTree = "<group>"; };
+		4F1A2AD319A46D9E001AAB94 /* KLBBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBBackgroundView.m; sourceTree = "<group>"; };
 		4F1A2AD519A47828001AAB94 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		4F1A2AD719A4785A001AAB94 /* KLBClouds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBClouds.h; sourceTree = "<group>"; };
-		4F1A2AD819A4785A001AAB94 /* KLBClouds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBClouds.m; sourceTree = "<group>"; };
+		4F1A2AD719A4785A001AAB94 /* KLBCloudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBCloudView.h; sourceTree = "<group>"; };
+		4F1A2AD819A4785A001AAB94 /* KLBCloudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBCloudView.m; sourceTree = "<group>"; };
 		4F1A2ADA19A48C3D001AAB94 /* OCRAStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRAStd.otf; sourceTree = "<group>"; };
 		4F1A2ADF19A49062001AAB94 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4F1A2AE119A493A3001AAB94 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -303,10 +303,10 @@
 				4FC6BB1519A325C3001DC678 /* KLBPlayerShipView.m */,
 				4F5872A819A34D3700CF0264 /* KLBBulletView.h */,
 				4F5872A919A34D3700CF0264 /* KLBBulletView.m */,
-				4F1A2AD219A46D9E001AAB94 /* KLBBackground.h */,
-				4F1A2AD319A46D9E001AAB94 /* KLBBackground.m */,
-				4F1A2AD719A4785A001AAB94 /* KLBClouds.h */,
-				4F1A2AD819A4785A001AAB94 /* KLBClouds.m */,
+				4F1A2AD219A46D9E001AAB94 /* KLBBackgroundView.h */,
+				4F1A2AD319A46D9E001AAB94 /* KLBBackgroundView.m */,
+				4F1A2AD719A4785A001AAB94 /* KLBCloudView.h */,
+				4F1A2AD819A4785A001AAB94 /* KLBCloudView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -450,14 +450,14 @@
 				4FC6BB0C19A30944001DC678 /* KLBShipView.m in Sources */,
 				4FC6BB0319A3017C001DC678 /* KLBPlayer.m in Sources */,
 				4FC6BB1619A325C3001DC678 /* KLBPlayerShipView.m in Sources */,
-				4F1A2AD919A4785A001AAB94 /* KLBClouds.m in Sources */,
+				4F1A2AD919A4785A001AAB94 /* KLBCloudView.m in Sources */,
 				4F9F0D5619A43A4400C40A37 /* KLBTurretController.m in Sources */,
 				4FC6BACD19A2D371001DC678 /* main.m in Sources */,
 				4F5872AD19A3502100CF0264 /* KLBBulletController.m in Sources */,
 				4F1A2AE719A49EA1001AAB94 /* KLBConstants.m in Sources */,
 				4F5872AA19A34D3700CF0264 /* KLBBulletView.m in Sources */,
 				4FC6BAD419A2D371001DC678 /* Air_Raid.xcdatamodeld in Sources */,
-				4F1A2AD419A46D9E001AAB94 /* KLBBackground.m in Sources */,
+				4F1A2AD419A46D9E001AAB94 /* KLBBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

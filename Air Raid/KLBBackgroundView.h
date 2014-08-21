@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KLBBackground : UIImageView
+@interface KLBBackgroundView : UIImageView
 
 @property (nonatomic) CGFloat moveSpeed;
 @property (nonatomic) float animationInterval;

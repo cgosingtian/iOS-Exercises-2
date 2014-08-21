@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 KLab Cyscorpions, Inc. All rights reserved.
 //
 
-#import "KLBBackground.h"
+#import "KLBBackgroundView.h"
 
-@interface KLBBackground ()
+@interface KLBBackgroundView ()
 
 @property (nonatomic) int maxHeight;
 @property (nonatomic) CGFloat distanceTravelled;
 
 @end
 
-@implementation KLBBackground
+@implementation KLBBackgroundView
 
 @synthesize maxHeight = _maxHeight,
             distanceTravelled = _distanceTravelled,

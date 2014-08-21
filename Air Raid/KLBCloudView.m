@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 KLab Cyscorpions, Inc. All rights reserved.
 //
 
-#import "KLBClouds.h"
+#import "KLBCloudView.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation KLBClouds
+@implementation KLBCloudView
 
 #pragma mark - Initializers
 - (id)initWithFrame:(CGRect)frame

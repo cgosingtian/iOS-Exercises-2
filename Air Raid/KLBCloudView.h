@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface KLBClouds : UIImageView
+@interface KLBCloudView : UIImageView
 
 @end
