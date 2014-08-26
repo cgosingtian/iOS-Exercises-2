@@ -12,8 +12,8 @@
 
 @interface KLBEnemyShipController : NSObject
 
-@property (nonatomic, retain) KLBShip *ship;
-@property (nonatomic, retain) KLBShipView *shipView;
+@property (retain, nonatomic) KLBShip *ship;
+@property (retain, nonatomic) KLBShipView *shipView;
 @property (nonatomic) CGPoint destinationCoordinates;
 
 - (instancetype) initWithShipView:(KLBShipView *)shipView coordinates:(CGPoint)c;

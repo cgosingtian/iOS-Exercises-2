@@ -10,8 +10,8 @@
 
 @interface KLBPlayer : NSObject
 
-@property (nonatomic,assign) int score;
-@property (nonatomic,retain) NSString *name;
+@property (assign, nonatomic) int score;
+@property (retain, nonatomic) NSString *name;
 
 - (void) setName:(NSString *)name;
 

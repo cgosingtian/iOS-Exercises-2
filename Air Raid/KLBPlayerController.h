@@ -14,9 +14,9 @@
 
 @interface KLBPlayerController : NSObject <KLBShipControlProtocol>
 
-@property (nonatomic,retain) KLBPlayer *player;
-@property (nonatomic,unsafe_unretained) KLBPlayerShipView *playerView;
-@property (nonatomic,retain) KLBShip *playerShip;
+@property (retain, nonatomic) KLBPlayer *player;
+@property (unsafe_unretained, nonatomic) KLBPlayerShipView *playerView;
+@property (retain, nonatomic) KLBShip *playerShip;
 
 - (instancetype) initWithShipView:(KLBPlayerShipView *)shipView coordinates:(CGPoint)c;
 

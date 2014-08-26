@@ -10,6 +10,8 @@
 
 NSString *const KLB_BOMB_EXPLOSION_NOTIFICATION = @"KLB_BOMB_EXPLOSION_NOTIFICATION";
 
+float const KLB_FONT_SIZE_STANDARD = 15.0;
+
 @implementation KLBConstants
 
 @end

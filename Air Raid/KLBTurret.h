@@ -20,10 +20,10 @@ typedef enum TurretTypes : NSUInteger
 
 @interface KLBTurret : NSObject
 
-@property (nonatomic,unsafe_unretained) KLBShip *owner;
+@property (unsafe_unretained, nonatomic) KLBShip *owner;
 @property (nonatomic) CGFloat angle;
 @property (nonatomic) CGFloat firingSpeed;
-@property (nonatomic,unsafe_unretained) KLBBullet *bullet;
+@property (unsafe_unretained, nonatomic) KLBBullet *bullet;
 @property (nonatomic) TurretTypes turretType;
 
 - (instancetype) initWithTurretType:(TurretTypes)t owner:(KLBShip *)o;

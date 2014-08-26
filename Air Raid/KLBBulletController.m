@@ -25,7 +25,7 @@ typedef enum BulletDirection {
 @property (nonatomic) NSTimer *timer;
 @property (nonatomic) CGFloat launchAngle;
 @property (nonatomic) CGPoint coordinates;
-@property (nonatomic,retain) AVAudioPlayer *avPlayer;
+@property (retain, nonatomic) AVAudioPlayer *avPlayer;
 
 @end
 

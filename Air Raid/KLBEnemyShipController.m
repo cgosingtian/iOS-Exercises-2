@@ -10,8 +10,8 @@
 #import "KLBTurretController.h"
 
 @interface KLBEnemyShipController ()
-@property (nonatomic,retain) NSTimer *aiTimer;
-@property (nonatomic,retain) NSTimer *waitTimer;
+@property (retain, nonatomic) NSTimer *aiTimer;
+@property (retain, nonatomic) NSTimer *waitTimer;
 @property (nonatomic) float waitSeconds; // ship will wait this long before moving again
 @end
 

@@ -11,7 +11,7 @@
 
 @interface KLBBulletView : UIImageView
 
-@property (nonatomic,unsafe_unretained) KLBBullet* bullet;
+@property (unsafe_unretained,nonatomic) KLBBullet* bullet;
 
 - (instancetype)initWithBulletType:(KLBBullet *)b;
 

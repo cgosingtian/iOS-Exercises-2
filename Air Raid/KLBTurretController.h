@@ -13,7 +13,7 @@
 @interface KLBTurretController : NSObject
 
 @property (nonatomic) bool canFire;
-@property (nonatomic,retain) KLBTurret *turret;
+@property (retain, nonatomic) KLBTurret *turret;
 @property (nonatomic) CGPoint coordinates;
 
 - (instancetype) initWithTurret:(KLBTurret *)t owner:(KLBShip *)o;

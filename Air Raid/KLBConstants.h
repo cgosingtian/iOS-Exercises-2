@@ -10,6 +10,8 @@
 
 extern NSString *const KLB_BOMB_EXPLOSION_NOTIFICATION;
 
+extern float const KLB_FONT_SIZE_STANDARD;
+
 @interface KLBConstants : NSObject
 
 @end
