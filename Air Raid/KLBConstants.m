@@ -8,7 +8,7 @@
 
 #import "KLBConstants.h"
 
-NSString *const KLB_UPDATE_GAME_NOTIFICATION = @"KLB_UPDATE_GAME_NOTIFICATION";
+NSString *const KLB_BOMB_EXPLOSION_NOTIFICATION = @"KLB_BOMB_EXPLOSION_NOTIFICATION";
 
 @implementation KLBConstants
 

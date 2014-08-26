@@ -10,6 +10,7 @@
 #import "KLBPlayer.h"
 #import "KLBPlayerShipView.h"
 #import "KLBTurret.h"
+#import "KLBConstants.h"
 
 @implementation KLBPlayerController
 
@@ -135,5 +136,6 @@
 
 -(void)shipDidLaunchBomb {
     NSLog(@"SHIP DID LAUNCH BOMB");
+    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_BOMB_EXPLOSION_NOTIFICATION object:self];
 }
 @end

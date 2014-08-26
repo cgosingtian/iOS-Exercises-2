@@ -44,6 +44,8 @@
         _coordinates.y = 0.0;
         _turrets = [[NSMutableDictionary alloc] init];
         KLBTurret *defaultTurret = [[KLBTurret alloc] initWithTurretType:ttDefault owner:self];
+        [defaultTurret setAngle:270.0];
+        [defaultTurret setFiringSpeed:2.0];
         [_turrets setObject:defaultTurret forKey:[NSString stringWithFormat:@"%f",270.0]];
         _isPlayer = false;
         [defaultTurret release];

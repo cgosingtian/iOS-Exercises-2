@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *const KLB_UPDATE_GAME_NOTIFICATION;
+extern NSString *const KLB_BOMB_EXPLOSION_NOTIFICATION;
 
 @interface KLBConstants : NSObject
 

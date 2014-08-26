@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F07C00219AC290400F8FEC3 /* KLBEnemyShipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F07C00119AC290400F8FEC3 /* KLBEnemyShipController.m */; };
 		4F1A2AD419A46D9E001AAB94 /* KLBBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AD319A46D9E001AAB94 /* KLBBackgroundView.m */; };
 		4F1A2AD619A47828001AAB94 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2AD519A47828001AAB94 /* QuartzCore.framework */; };
 		4F1A2AD919A4785A001AAB94 /* KLBCloudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AD819A4785A001AAB94 /* KLBCloudView.m */; };
@@ -67,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F07C00019AC290400F8FEC3 /* KLBEnemyShipController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBEnemyShipController.h; sourceTree = "<group>"; };
+		4F07C00119AC290400F8FEC3 /* KLBEnemyShipController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBEnemyShipController.m; sourceTree = "<group>"; };
 		4F1A2AD219A46D9E001AAB94 /* KLBBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBBackgroundView.h; sourceTree = "<group>"; };
 		4F1A2AD319A46D9E001AAB94 /* KLBBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBBackgroundView.m; sourceTree = "<group>"; };
 		4F1A2AD519A47828001AAB94 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -290,6 +293,8 @@
 				4F5872AC19A3502100CF0264 /* KLBBulletController.m */,
 				4F9F0D5419A43A4400C40A37 /* KLBTurretController.h */,
 				4F9F0D5519A43A4400C40A37 /* KLBTurretController.m */,
+				4F07C00019AC290400F8FEC3 /* KLBEnemyShipController.h */,
+				4F07C00119AC290400F8FEC3 /* KLBEnemyShipController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -449,6 +454,7 @@
 				4FC6BAFC19A2E9BB001DC678 /* KLBBullet.m in Sources */,
 				4FC6BB0C19A30944001DC678 /* KLBShipView.m in Sources */,
 				4FC6BB0319A3017C001DC678 /* KLBPlayer.m in Sources */,
+				4F07C00219AC290400F8FEC3 /* KLBEnemyShipController.m in Sources */,
 				4FC6BB1619A325C3001DC678 /* KLBPlayerShipView.m in Sources */,
 				4F1A2AD919A4785A001AAB94 /* KLBCloudView.m in Sources */,
 				4F9F0D5619A43A4400C40A37 /* KLBTurretController.m in Sources */,

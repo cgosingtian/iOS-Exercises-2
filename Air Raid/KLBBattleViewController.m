@@ -12,6 +12,8 @@
 #import "KLBPlayerController.h"
 #import "KLBTurretController.h"
 
+#import "KLBEnemyShipController.h" // debug
+
 static float const touchBottomBufferVerticalPercentage = 0.35;
 
 @interface KLBBattleViewController () <UIGestureRecognizerDelegate>
@@ -64,17 +66,17 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
         // Custom initialization
         _touchMoved = false;
         
-        _longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self
-                                                                 action:@selector(handleLongPress:)];
-        _longPressRecognizer.delegate = self;
-        _longPressRecognizer.minimumPressDuration = 0.05;
-        _longPressRecognizer.allowableMovement = 600.0;
-        [self.view addGestureRecognizer:_longPressRecognizer];
-        
-        _panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                                                 action:@selector(handlePan:)];
-        _panRecognizer.delegate = self;
-        [self.view addGestureRecognizer:_panRecognizer];
+//        _longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self
+//                                                                 action:@selector(handleLongPress:)];
+//        _longPressRecognizer.delegate = self;
+//        _longPressRecognizer.minimumPressDuration = 0.05;
+//        _longPressRecognizer.allowableMovement = 600.0;
+//        [self.view addGestureRecognizer:_longPressRecognizer];
+//        
+//        _panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self
+//                                                                 action:@selector(handlePan:)];
+//        _panRecognizer.delegate = self;
+//        [self.view addGestureRecognizer:_panRecognizer];
         
         _scorePlaceholderLabel.font = [UIFont fontWithName:@"OCR A Std" size:15.0];
         _scoreActualLabel.font = [UIFont fontWithName:@"OCR A Std" size:15.0];
@@ -83,46 +85,53 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
 }
 
 #pragma mark - Touch Controls
-- (void) handleLongPress:(UITapGestureRecognizer *)sender {
-    if (sender.state == UIGestureRecognizerStateCancelled ||
-        sender.state == UIGestureRecognizerStateFailed ||
-        sender.state == UIGestureRecognizerStateEnded) {
-
-        [_longPressTimer invalidate];
-        _longPressTimer = nil;
-        _playerControllerDelegate.isMoving = false;
-    }
-    else {
-        if (sender.state == UIGestureRecognizerStateBegan) {
-            CGPoint touchLocation = [sender locationInView:self.view];
-        
-            _touchedLocation = touchLocation;
-            
-            _playerControllerDelegate.isMoving = true;
-            //move left or right
-            if (_touchedLocation.x >= self.view.frame.size.width/2) {
-                _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
-                                                                   target:_playerControllerDelegate
-                                                                 selector:@selector(shipWillMoveRight)
-                                                                 userInfo:nil
-                                                                  repeats:YES];
-            }
-            else {
-                _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
-                                                                   target:_playerControllerDelegate
-                                                                 selector:@selector(shipWillMoveLeft)
-                                                                 userInfo:nil
-                                                                  repeats:YES];
-            }
-        }
-    }
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    CGPoint touchLocation = [touch locationInView:self.view];
+    
+    KLBEnemyShipController *enemyShipController = [[KLBEnemyShipController alloc] initWithShipView:nil coordinates:touchLocation];
+    [enemyShipController activateAI];
 }
-
-- (void)handlePan:(UIPanGestureRecognizer *)sender {
-    if (sender.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"BOMB");
-    }
-}
+//- (void) handleLongPress:(UITapGestureRecognizer *)sender {
+//    if (sender.state == UIGestureRecognizerStateCancelled ||
+//        sender.state == UIGestureRecognizerStateFailed ||
+//        sender.state == UIGestureRecognizerStateEnded) {
+//
+//        [_longPressTimer invalidate];
+//        _longPressTimer = nil;
+//        _playerControllerDelegate.isMoving = false;
+//    }
+//    else {
+//        if (sender.state == UIGestureRecognizerStateBegan) {
+//            CGPoint touchLocation = [sender locationInView:self.view];
+//        
+//            _touchedLocation = touchLocation;
+//            
+//            _playerControllerDelegate.isMoving = true;
+//            //move left or right
+//            if (_touchedLocation.x >= self.view.frame.size.width/2) {
+//                _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
+//                                                                   target:_playerControllerDelegate
+//                                                                 selector:@selector(shipWillMoveRight)
+//                                                                 userInfo:nil
+//                                                                  repeats:YES];
+//            }
+//            else {
+//                _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
+//                                                                   target:_playerControllerDelegate
+//                                                                 selector:@selector(shipWillMoveLeft)
+//                                                                 userInfo:nil
+//                                                                  repeats:YES];
+//            }
+//        }
+//    }
+//}
+//
+//- (void)handlePan:(UIPanGestureRecognizer *)sender {
+//    if (sender.state == UIGestureRecognizerStateEnded) {
+//        [_playerControllerDelegate shipWillLaunchBomb];
+//    }
+//}
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;

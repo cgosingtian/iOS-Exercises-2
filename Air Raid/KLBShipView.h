@@ -11,6 +11,7 @@
 
 @interface KLBShipView : UIImageView
 
+- (instancetype)initWithCoordinates:(CGPoint)coordinates;
 - (void)updateCoordinatesX:(CGFloat)x Y:(CGFloat)y;
 
 @end
