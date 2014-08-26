@@ -9,6 +9,12 @@
 #import "KLBCloudView.h"
 #import <QuartzCore/QuartzCore.h>
 
+float const KLB_CLOUD_ANIMATION_DURATION = 5.0;
+float const KLB_CLOUD_MAX_OPACITY = 0.5;
+float const KLB_CLOUD_MAX_HEIGHT_MULTIPLIER = 2.0; //versus image height
+float const KLB_CLOUD_WIDTH_MULTIPLIER = 2.5; //versus cloud height
+float const KLB_CLOUD_MAX_Y_ADJUSTMENT = 50;
+
 @implementation KLBCloudView
 
 #pragma mark - Initializers
@@ -36,11 +42,11 @@
     // --- TRANSLATION KEYFRAME SETUP START ---
     CAKeyframeAnimation *translation = [[CAKeyframeAnimation alloc] init];
     [translation setKeyPath:keyPathTranslationY];
-    translation.duration = 5.0f;
+    translation.duration = KLB_CLOUD_ANIMATION_DURATION;
     
     // Allocate array to hold the values to interpolate
     NSMutableArray *values = [[NSMutableArray alloc] init];
-    [values addObject:[NSNumber numberWithFloat:0.0f]];
+    [values addObject:[NSNumber numberWithFloat:KLB_ZERO_F]];
     CGFloat height = [[UIScreen mainScreen] applicationFrame].size.height + layer.frame.size.height;
     [values addObject:[NSNumber numberWithFloat:height]];
     
@@ -52,12 +58,12 @@
     CAKeyframeAnimation *transparency = [[CAKeyframeAnimation alloc] init];
 
     [transparency setKeyPath:keyPathTransparency];
-    transparency.duration = translation.duration;
+    transparency.duration = KLB_CLOUD_ANIMATION_DURATION;
     
     NSMutableArray *transparencyValues = [[NSMutableArray alloc] init];
-    [transparencyValues addObject:[NSNumber numberWithFloat:0.0]];
-    [transparencyValues addObject:[NSNumber numberWithFloat:0.5]];
-    [transparencyValues addObject:[NSNumber numberWithFloat:0.0]];
+    [transparencyValues addObject:[NSNumber numberWithFloat:KLB_ZERO_F]];
+    [transparencyValues addObject:[NSNumber numberWithFloat:KLB_CLOUD_MAX_OPACITY]];
+    [transparencyValues addObject:[NSNumber numberWithFloat:KLB_ZERO_F]];
     transparency.values = transparencyValues;
     
     // --- TRANSPARENCY KEYFRAME SETUP START ---
@@ -71,13 +77,16 @@
          [translation release];
          [self addFallAnimationForLayer:self.layer];
          
+         int screenHeight = (int)[[UIScreen mainScreen] applicationFrame].size.height;
+         int screenWidth = (int)[[UIScreen mainScreen] applicationFrame].size.width;
+         
          CGPoint randomPoint;
-         randomPoint.x = arc4random() % (int)[[UIScreen mainScreen] applicationFrame].size.width;
-         randomPoint.y = arc4random() % (int)[[UIScreen mainScreen] applicationFrame].size.height-50;
+         randomPoint.x = arc4random() % screenWidth;
+         randomPoint.y = arc4random() % screenHeight - KLB_CLOUD_MAX_Y_ADJUSTMENT;
+         
          CGSize randomSize;
-         //randomSize.width = arc4random() % (int)self.image.size.width;
-         randomSize.height = arc4random() % (int)self.image.size.height*2;
-         randomSize.width = randomSize.height * 2.5;
+         randomSize.height = arc4random() % (int)self.image.size.height * KLB_CLOUD_MAX_HEIGHT_MULTIPLIER;
+         randomSize.width = randomSize.height * KLB_CLOUD_WIDTH_MULTIPLIER;
          
          self.frame = CGRectMake(randomPoint.x, randomPoint.y, randomSize.width, randomSize.height);
      }];

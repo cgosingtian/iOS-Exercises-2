@@ -12,7 +12,7 @@
 @implementation KLBShipView
 
 #pragma mark - Initializers
-- (instancetype) initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
         float x = 0.0;
@@ -20,13 +20,6 @@
         UIImage *shipImage = [UIImage imageNamed:@"neutral.png"];
         self.image = shipImage;
         self.frame = CGRectMake(x, y, self.image.size.width, self.image.size.height);
-    }
-    return self;
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
     }
     return self;
 }
@@ -47,21 +40,13 @@
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-    }
-    return self;
-}
-
 #pragma mark - View Movement
 - (void)updateCoordinatesX:(CGFloat) x Y:(CGFloat) y {
     [self setFrame:CGRectMake(x, y, self.image.size.width, self.image.size.height)];
 }
 
 #pragma mark - Animation
-- (void) animateNormalDirection {
+- (void)animateNormalDirection {
     UIView *myView = self;
     CALayer *layer = myView.layer;
     CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
@@ -70,7 +55,7 @@
     layer.transform = rotationAndPerspectiveTransform;
 }
 
-- (void) animateRightTurn {
+- (void)animateRightTurn {
     UIView *myView = self;
     CALayer *layer = myView.layer;
     CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
@@ -79,10 +64,9 @@
     layer.transform = rotationAndPerspectiveTransform;
 }
 
-- (void) animateLeftTurn {
+- (void)animateLeftTurn {
     UIView *myView = self;
     CALayer *layer = myView.layer;
-    
     CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
     rotationAndPerspectiveTransform.m34 = 1.0 / -500;
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 125.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);

@@ -18,7 +18,7 @@
 @property (nonatomic) CGFloat velocity;
 @property (nonatomic) CGPoint coordinates;
 @property (nonatomic) int pointsAwarded;
-@property (nonatomic) bool isPlayer;
+@property (nonatomic) BOOL isPlayer;
 
 @property (nonatomic,retain) NSMutableDictionary *turrets; //key:angle - value:KLBTurret
 
@@ -32,6 +32,6 @@
 - (CGPoint)coordinates;
 
 - (void) addTurret:(KLBTurret *)t;
-- (bool) isPlayer;
+- (BOOL) isPlayer;
 
 @end

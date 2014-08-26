@@ -12,7 +12,7 @@
 
 @interface KLBTurretController : NSObject
 
-@property (nonatomic) bool canFire;
+@property (nonatomic) BOOL canFire;
 @property (retain, nonatomic) KLBTurret *turret;
 @property (nonatomic) CGPoint coordinates;
 

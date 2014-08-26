@@ -12,12 +12,6 @@
 
 @implementation KLBTurret
 
-@synthesize angle = _angle,
-            firingSpeed = _firingSpeed,
-            bullet = _bullet,
-            turretType = _turretType,
-            owner = _owner;
-
 #pragma mark - Dealloc
 - (void) dealloc {
     [_owner release];
@@ -31,34 +25,50 @@
 
 #pragma mark - Initializers
 // Designated Initializer
-- (instancetype) initWithTurretType:(TurretTypes)t owner:(KLBShip *)o {
+- (instancetype) initWithTurretType:(TurretTypes)turretType owner:(KLBShip *)shipOwner {
     self = [super init];
     KLBBullet *bulletInit;
     if (self) {
         bool playerBullet = false;
-        if ([o isPlayer]) playerBullet = true;
-        switch (t)
+        if ([shipOwner isPlayer]) playerBullet = true;
+        switch (turretType)
         {
             case ttMachineGun:
-                bulletInit = [[KLBBullet alloc] initWithBulletType:btMachineGun playerBullet:playerBullet];
-                [self setTurretType:t angle:0.0 firingSpeed:0.1 bullet:bulletInit];
+                bulletInit = [[KLBBullet alloc] initWithBulletType:btMachineGun
+                                                      playerBullet:playerBullet];
+                [self setTurretType:turretType
+                              angle:0.0
+                        firingSpeed:0.1
+                             bullet:bulletInit];
                 break;
             case ttCannon:
-                bulletInit = [[KLBBullet alloc] initWithBulletType:btCannon playerBullet:playerBullet];
-                [self setTurretType:t angle:0.0 firingSpeed:1.0 bullet:bulletInit];
+                bulletInit = [[KLBBullet alloc] initWithBulletType:btCannon
+                                                      playerBullet:playerBullet];
+                [self setTurretType:turretType
+                              angle:0.0
+                        firingSpeed:1.0
+                             bullet:bulletInit];
                 break;
             case ttDefault:
-                bulletInit = [[KLBBullet alloc] initWithBulletType:btDefault playerBullet:playerBullet];
-                [self setTurretType:t angle:0.0 firingSpeed:0.5 bullet:bulletInit];
+                bulletInit = [[KLBBullet alloc] initWithBulletType:btDefaultBulletType
+                                                      playerBullet:playerBullet];
+                [self setTurretType:turretType
+                              angle:0.0
+                        firingSpeed:0.5
+                             bullet:bulletInit];
                 break;
                 default:
-                bulletInit = [[KLBBullet alloc] initWithBulletType:btDefault playerBullet:playerBullet];
-                [self setTurretType:t angle:0.0 firingSpeed:0.5 bullet:bulletInit];
+                bulletInit = [[KLBBullet alloc] initWithBulletType:btDefaultBulletType
+                                                      playerBullet:playerBullet];
+                [self setTurretType:turretType
+                              angle:0.0
+                        firingSpeed:0.5
+                             bullet:bulletInit];
                 break;
         }
         //[bulletInit release];
         
-        _owner = o;
+        _owner = shipOwner;
     }
     
     return self;
@@ -77,11 +87,11 @@
     _angle = angle;
 }
 
-- (void) setTurretType:(TurretTypes)t angle:(CGFloat)a firingSpeed:(CGFloat)f bullet:(KLBBullet *)b {
-    _turretType = t;
-    _angle = a;
-    _firingSpeed = f;
-    _bullet = b;
+- (void) setTurretType:(TurretTypes)turretType angle:(CGFloat)angle firingSpeed:(CGFloat)firingSpeed bullet:(KLBBullet *)bullet {
+    _turretType = turretType;
+    _angle = angle;
+    _firingSpeed = firingSpeed;
+    _bullet = bullet;
 }
 
 - (CGFloat) firingSpeed {

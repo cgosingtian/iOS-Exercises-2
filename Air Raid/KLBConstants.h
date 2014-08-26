@@ -8,9 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+//Animation
+extern float const KLB_ANIMATION_INTERVAL;
+
+//Notifications
 extern NSString *const KLB_BOMB_EXPLOSION_NOTIFICATION;
 
+//Fonts
 extern float const KLB_FONT_SIZE_STANDARD;
+extern NSString *const KLB_DEFAULT_FONT;
+
+//Core Motion
+extern float const KLB_MOTION_UPDATE_INTERVAL;
+
+//Zero
+extern float const KLB_ZERO_F;
 
 @interface KLBConstants : NSObject
 

@@ -12,7 +12,7 @@
 @implementation KLBPlayerShipView
 
 #pragma mark - Initializers
-- (instancetype) initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
         float x = 0.0;
@@ -26,25 +26,8 @@
     return self;
 }
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [NSException raise:@"Wrong initializer" format:@"Use initWithCoder"];
-    }
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [NSException raise:@"Wrong initializer" format:@"Use initWithCoder"];
-    }
-    return self;
-}
-
 #pragma mark - Animation
-- (void) animateNormalDirection {
+- (void)animateNormalDirection {
     UIView *myView = self;
     CALayer *layer = myView.layer;
     CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
@@ -53,7 +36,7 @@
     layer.transform = rotationAndPerspectiveTransform;
 }
 
-- (void) animateRightTurn {
+- (void)animateRightTurn {
     UIView *myView = self;
     CALayer *layer = myView.layer;
     CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
@@ -62,10 +45,9 @@
     layer.transform = rotationAndPerspectiveTransform;
 }
 
-- (void) animateLeftTurn {
+- (void)animateLeftTurn {
     UIView *myView = self;
     CALayer *layer = myView.layer;
-    
     CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
     rotationAndPerspectiveTransform.m34 = 1.0 / -500;
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 125.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);

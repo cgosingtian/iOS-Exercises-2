@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 KLab Cyscorpions, Inc. All rights reserved.
 //
 
+#import <CoreMotion/CoreMotion.h>
+
 #import "KLBBattleViewController.h"
 #import "KLBShipView.h"
 #import "KLBPlayerShipView.h"
@@ -15,29 +17,25 @@
 
 #import "KLBEnemyShipController.h" // debug
 
-static float const touchBottomBufferVerticalPercentage = 0.35;
+float const KLB_TOUCH_BOTTOM_BUFFER_PERCENTAGE = 0.35;
+float const KLB_MINIMUM_PRESS_DURATION = 0.05;
+float const KLB_ALLOWABLE_MOVEMENT = 600.0;
 
 @interface KLBBattleViewController () <UIGestureRecognizerDelegate>
 
-@property (nonatomic) bool hasMovedTouch;
+@property (nonatomic) BOOL hasMovedTouch;
 @property (nonatomic) CGPoint touchedLocation;
 @property (retain, nonatomic) KLBPlayerController<KLBShipControlProtocol> *playerControllerDelegate;
 @property (retain, nonatomic) UILongPressGestureRecognizer *longPressRecognizer;
 @property (retain, nonatomic) UIPanGestureRecognizer *panRecognizer;
 @property (retain, nonatomic) NSTimer *longPressTimer;
+@property (retain, nonatomic) CMMotionManager *motionManager;
 
 @property (retain, nonatomic) IBOutlet KLBPlayerShipView *playerShipView;
 
 @end
 
 @implementation KLBBattleViewController
-
-@synthesize hasMovedTouch = _hasMovedTouch,
-            touchedLocation = _touchedLocation,
-            playerShipView = _playerShipView,
-            playerControllerDelegate = _playerControllerDelegate,
-            longPressRecognizer = _longPressRecognizer,
-            panRecognizer = _panRecognizer;
 
 #pragma mark - Dealloc
 - (void) dealloc {
@@ -65,13 +63,13 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _hasMovedTouch = false;
+        _hasMovedTouch = NO;
         
         _longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self
-                                                                 action:@selector(handleLongPress:)];
+                                                                             action:@selector(handleLongPress:)];
         _longPressRecognizer.delegate = self;
-        _longPressRecognizer.minimumPressDuration = 0.05;
-        _longPressRecognizer.allowableMovement = 600.0;
+        _longPressRecognizer.minimumPressDuration = KLB_MINIMUM_PRESS_DURATION;
+        _longPressRecognizer.allowableMovement = KLB_ALLOWABLE_MOVEMENT;
         [self.view addGestureRecognizer:_longPressRecognizer];
         
         _panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self
@@ -79,8 +77,14 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
         _panRecognizer.delegate = self;
         [self.view addGestureRecognizer:_panRecognizer];
         
-        _scorePlaceholderLabel.font = [UIFont fontWithName:@"OCR A Std" size:KLB_FONT_SIZE_STANDARD];
-        _scoreActualLabel.font = [UIFont fontWithName:@"OCR A Std" size:KLB_FONT_SIZE_STANDARD];
+        _scorePlaceholderLabel.font = [UIFont fontWithName:KLB_DEFAULT_FONT
+                                                      size:KLB_FONT_SIZE_STANDARD];
+        _scoreActualLabel.font = [UIFont fontWithName:@"OCR A Std"
+                                                 size:KLB_FONT_SIZE_STANDARD];
+        
+        self.motionManager = [[CMMotionManager alloc] init];
+        self.motionManager.accelerometerUpdateInterval = KLB_MOTION_UPDATE_INTERVAL;
+        self.motionManager.gyroUpdateInterval = KLB_MOTION_UPDATE_INTERVAL;
     }
     return self;
 }
@@ -93,7 +97,7 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
 
         [_longPressTimer invalidate];
         _longPressTimer = nil;
-        _playerControllerDelegate.isMoving = false;
+        _playerControllerDelegate.isMoving = NO;
     }
     else {
         if (sender.state == UIGestureRecognizerStateBegan) {
@@ -146,7 +150,7 @@ static float const touchBottomBufferVerticalPercentage = 0.35;
     // Do any additional setup after loading the view from its nib.
     
     CGFloat x = (self.view.frame.size.width / 2.0) - (_playerShipView.frame.size.width / 2.0);
-    CGFloat y = self.view.frame.size.height - (self.view.frame.size.height * touchBottomBufferVerticalPercentage);
+    CGFloat y = self.view.frame.size.height - (self.view.frame.size.height * KLB_TOUCH_BOTTOM_BUFFER_PERCENTAGE);
     CGPoint c = CGPointMake(x, y);
     
     _playerControllerDelegate = [[KLBPlayerController alloc] initWithShipView:_playerShipView coordinates:c];

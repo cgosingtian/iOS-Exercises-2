@@ -7,6 +7,10 @@
 //
 
 #import "KLBBackgroundView.h"
+#import "KLBConstants.h"
+
+float const KLB_BACKGROUND_DISTANCE_TRAVELLED_START = 0.0;
+float const KLB_BACKGROUND_MOVE_SPEED = 0.5;
 
 @interface KLBBackgroundView ()
 
@@ -17,19 +21,14 @@
 
 @implementation KLBBackgroundView
 
-@synthesize maxHeight = _maxHeight,
-            distanceTravelled = _distanceTravelled,
-            moveSpeed = _moveSpeed,
-            animationInterval = _animationInterval;
-
 #pragma mark - Initializers
 // Designated Initializer
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        _distanceTravelled = 0;
-        _moveSpeed = 0.5;
-        _animationInterval = 0.01;
+        _distanceTravelled = KLB_BACKGROUND_DISTANCE_TRAVELLED_START; // 0.0
+        _moveSpeed = KLB_BACKGROUND_MOVE_SPEED; // 0.5
+        _animationInterval = KLB_ANIMATION_INTERVAL;
         [self resetPosition];
     }
     return self;
@@ -38,23 +37,27 @@
 #pragma mark - View States
 - (void)awakeFromNib {
     _maxHeight = self.image.size.height;
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:_animationInterval target:self selector:@selector(animateBackground) userInfo:nil repeats:YES];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:_animationInterval
+                                                      target:self
+                                                    selector:@selector(animateBackground)
+                                                    userInfo:nil
+                                                     repeats:YES];
 }
 
 #pragma mark - Animation
 - (void) animateBackground {
     _distanceTravelled += _moveSpeed;
     float yMovement = (-1*(self.image.size.height/2)) + _distanceTravelled;
-    [self setFrame:CGRectMake(0.0, yMovement, self.image.size.width, self.image.size.height)];
+    [self setFrame:CGRectMake(0, yMovement, self.image.size.width, self.image.size.height)];
     
     if (_distanceTravelled >= _maxHeight/2) {
         [self resetPosition];
-        _distanceTravelled = 0.0;
+        _distanceTravelled = KLB_BACKGROUND_DISTANCE_TRAVELLED_START; // 0.0
     }
 }
 
 - (void) resetPosition {
-    [self setFrame:CGRectMake(0.0, -(self.image.size.height/2), self.image.size.width, self.image.size.height)];
+    [self setFrame:CGRectMake(0, -(self.image.size.height/2), self.image.size.width, self.image.size.height)];
 }
 
 /*

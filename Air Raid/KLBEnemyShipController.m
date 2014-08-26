@@ -39,7 +39,7 @@
         }
         
         _waitSeconds = 1.0;
-        _isMoving = false;
+        _isMoving = NO;
     }
     return self;
 }
@@ -51,7 +51,9 @@
         //weapons
         NSMutableDictionary *turretDict = _ship.turrets;
         for (NSString *key in turretDict) {
-            KLBTurretController *tc = [[[KLBTurretController alloc] initWithTurret:[turretDict objectForKey:key] owner:_ship] autorelease];
+            KLBTurretController *tc = [[[KLBTurretController alloc] initWithTurret:[turretDict objectForKey:key]
+                                                                             owner:_ship]
+                                       autorelease];
             [tc activateTurret];
         }
     }
@@ -83,12 +85,16 @@
 
 - (void) randomMove {
     if (_ship.healthRemaining > 0) {
-        _isMoving = true;
+        _isMoving = YES;
         //if destinationCoordinates == _ship.coordinates
         if (CGPointEqualToPoint(_destinationCoordinates, _ship.coordinates)) {
             // wait for waitSeconds time
             if (!_waitTimer) {
-                _waitTimer = [NSTimer scheduledTimerWithTimeInterval:_waitSeconds target:self selector:@selector(doneWaiting) userInfo:nil repeats:NO];
+                _waitTimer = [NSTimer scheduledTimerWithTimeInterval:_waitSeconds
+                                                              target:self
+                                                            selector:@selector(doneWaiting)
+                                                            userInfo:nil
+                                                             repeats:NO];
             }
             // then generate random coordinates (in the doneWaiting method)
         }
@@ -137,7 +143,7 @@
             [_shipView updateCoordinatesX:_ship.coordinates.x Y:_ship.coordinates.y];
         }
     } else {
-        _isMoving = false;
+        _isMoving = NO;
         [_aiTimer invalidate];
         _aiTimer = nil;
         

@@ -10,9 +10,6 @@
 
 @implementation KLBPlayer
 
-@synthesize score = _score,
-            name = _name;
-
 #pragma mark - Initializers
 - (instancetype) init {
     self = [super init];

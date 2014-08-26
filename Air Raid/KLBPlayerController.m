@@ -14,10 +14,6 @@
 
 @implementation KLBPlayerController
 
-@synthesize player = _player,
-            playerView = _playerView,
-            playerShip = _playerShip;
-
 #pragma mark - Initializers
 // Designated Initializer
 - (instancetype) initWithShipView:(KLBPlayerShipView *)shipView coordinates:(CGPoint)c {
@@ -33,7 +29,7 @@
             [self refreshShipView];
         }
         
-        _isMoving = false;
+        _isMoving = NO;
     }
     return self;
 }
@@ -78,12 +74,10 @@
 }
 
 #pragma mark - Getters and Setters
-- (void)setIsMoving:(bool)b {
-    if (b) {
-        _isMoving = true;
-    }
-    else {
-        _isMoving = false;
+- (void)setIsMoving:(BOOL)isMoving {
+    _isMoving = isMoving;
+
+    if (!isMoving) {
         [_playerView animateNormalDirection];
     }
 }
@@ -136,6 +130,7 @@
 
 -(void)shipDidLaunchBomb {
     NSLog(@"SHIP DID LAUNCH BOMB");
-    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_BOMB_EXPLOSION_NOTIFICATION object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_BOMB_EXPLOSION_NOTIFICATION
+                                                        object:self];
 }
 @end

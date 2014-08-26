@@ -13,8 +13,8 @@
 
 @interface KLBPlayerShipView : KLBShipView
 
-- (void) animateRightTurn;
-- (void) animateLeftTurn;
-- (void) animateNormalDirection;
+- (void)animateRightTurn;
+- (void)animateLeftTurn;
+- (void)animateNormalDirection;
 
 @end

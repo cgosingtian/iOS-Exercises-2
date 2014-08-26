@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+extern float const KLB_BACKGROUND_DISTANCE_TRAVELLED_START;
+extern float const KLB_BACKGROUND_MOVE_SPEED;
+
 @interface KLBBackgroundView : UIImageView
 
 @property (nonatomic) CGFloat moveSpeed;

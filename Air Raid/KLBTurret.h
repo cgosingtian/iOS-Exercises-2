@@ -12,10 +12,9 @@
 
 typedef enum TurretTypes : NSUInteger
 {
-                  //Firing Speed
-    ttDefault,    //    1.0
-    ttMachineGun, //    2.0
-    ttCannon,     //    0.5
+    ttDefault,
+    ttMachineGun,
+    ttCannon,
 } TurretTypes;
 
 @interface KLBTurret : NSObject

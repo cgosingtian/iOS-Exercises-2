@@ -10,21 +10,20 @@
 
 typedef enum BulletTypes : NSUInteger
 {
-                //Damage Velocity isAirBullet
-    btDefault,    //  2    10.0        y
-    btMachineGun, //  1    20.0        y
-    btCannon,     //  4     5.0        y
+    btDefaultBulletType,
+    btMachineGun,
+    btCannon,
 } BulletTypes;
 
 @interface KLBBullet : NSObject
 
 @property (nonatomic) CGFloat velocity;
 @property (nonatomic) int damage;
-@property (nonatomic) bool isAirBullet;
+@property (nonatomic) BOOL isAirBullet;
 @property (nonatomic) BulletTypes bulletType;
-@property (nonatomic) bool playerBullet;
+@property (nonatomic) BOOL isPlayerBullet;
 
-- (instancetype) initWithBulletType:(BulletTypes)b playerBullet:(bool)p;
-- (bool) playerBullet;
+- (instancetype) initWithBulletType:(BulletTypes)bulletType playerBullet:(BOOL)isPlayerBullet;
+- (BOOL) isPlayerBullet;
 - (CGFloat) velocity;
 @end

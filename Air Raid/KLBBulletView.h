@@ -13,12 +13,12 @@
 
 @property (unsafe_unretained,nonatomic) KLBBullet* bullet;
 
-- (instancetype)initWithBulletType:(KLBBullet *)b;
+- (instancetype)initWithBullet:(KLBBullet *)bullet;
 
 - (void)updateCoordinatesX:(CGFloat)x Y:(CGFloat)y;
-- (void)changeBulletImage:(BulletTypes)b;
+- (void)changeBulletImage:(BulletTypes)bulletType;
 
-- (void) animateFadeIn;
-- (void) animateBulletEffects;
+- (void)animateFadeIn;
+- (void)animateBulletEffects;
 
 @end

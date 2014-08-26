@@ -15,7 +15,10 @@
 @property (retain, nonatomic) KLBBulletView *bulletView;
 @property (retain, nonatomic) KLBBullet *bullet;
 
-- (instancetype) initWithBulletView:(KLBBulletView *)bv bullet:(KLBBullet *)b launchAngle:(CGFloat)a coordinates:(CGPoint)c;
+- (instancetype) initWithBulletView:(KLBBulletView *)bulletView
+                             bullet:(KLBBullet *)bullet
+                        launchAngle:(CGFloat)angle
+                        coordinates:(CGPoint)coordinates;
 - (void)launchBullet;
 
 @end

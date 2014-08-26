@@ -18,8 +18,8 @@
 
 - (instancetype) initWithShipView:(KLBShipView *)shipView coordinates:(CGPoint)c;
 
-@property (nonatomic) bool isMoving;
-- (void)setIsMoving:(bool)isMoving;
+@property (nonatomic) BOOL isMoving;
+- (void)setIsMoving:(BOOL)isMoving;
 
 - (void)activateAI;
 

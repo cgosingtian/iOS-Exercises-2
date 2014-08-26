@@ -11,15 +11,6 @@
 
 @implementation KLBShip
 
-@synthesize healthMaximum = _healthMaximum,
-            healthRemaining = _healthRemaining,
-            airBombs = _airBombs,
-            velocity = _velocity,
-            coordinates = _coordinates,
-            turrets = _turrets,
-            pointsAwarded = _pointsAwarded,
-            isPlayer = _isPlayer;
-
 #pragma mark - Dealloc
 - (void) dealloc {
     for (KLBTurret *turret in _turrets) {
@@ -43,10 +34,12 @@
         _coordinates.x = 0.0;
         _coordinates.y = 0.0;
         _turrets = [[NSMutableDictionary alloc] init];
-        KLBTurret *defaultTurret = [[KLBTurret alloc] initWithTurretType:ttDefault owner:self];
+        KLBTurret *defaultTurret = [[KLBTurret alloc] initWithTurretType:ttDefault
+                                                                   owner:self];
         [defaultTurret setAngle:270.0];
         [defaultTurret setFiringSpeed:2.0];
-        [_turrets setObject:defaultTurret forKey:[NSString stringWithFormat:@"%f",270.0]];
+        [_turrets setObject:defaultTurret
+                     forKey:[NSString stringWithFormat:@"%f",270.0]];
         _isPlayer = false;
         [defaultTurret release];
     }
@@ -63,9 +56,11 @@
         _coordinates.x = 0.0;
         _coordinates.y = 0.0;
         _turrets = [[NSMutableDictionary alloc] init];
-        KLBTurret *defaultTurret = [[KLBTurret alloc] initWithTurretType:ttMachineGun owner:self];
-        [_turrets setObject:defaultTurret forKey:[NSString stringWithFormat:@"%f",90.0]];
-        _isPlayer = true;
+        KLBTurret *defaultTurret = [[KLBTurret alloc] initWithTurretType:ttMachineGun
+                                                                   owner:self];
+        [_turrets setObject:defaultTurret
+                     forKey:[NSString stringWithFormat:@"%f",90.0]];
+        _isPlayer = YES;
         [defaultTurret release];
     }
     return self;
@@ -74,7 +69,8 @@
 #pragma mark - Utility
 - (void) addTurret:(KLBTurret *)t
 {
-    [_turrets setObject:t forKey:[NSString stringWithFormat:@"%f",t.angle]];
+    [_turrets setObject:t
+                 forKey:[NSString stringWithFormat:@"%f",t.angle]];
 }
 
 #pragma mark - Getters and Setters
@@ -82,7 +78,7 @@
     return _coordinates;
 }
 
-- (bool) isPlayer {
+- (BOOL) isPlayer {
     return _isPlayer;
 }
 

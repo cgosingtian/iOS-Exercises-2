@@ -23,7 +23,7 @@
     NSLog(@"Deallocating Turret");
     [_timer invalidate];
     [_timer release];
-    [_turret release];
+    //    [_turret release]; // not necessary due to nil, but keeping this comment to inform other coders
     _turret = nil;
     _timer = nil;
     [super dealloc];
@@ -32,7 +32,7 @@
 - (instancetype) initWithTurret:(KLBTurret *)t owner:(KLBShip *)o {
     self = [super init];
     if (self) {
-        _canFire = true;
+        _canFire = YES;
         _coordinates = [o coordinates];
         if (!t) {
             t = [[KLBTurret alloc] initWithTurretType:ttDefault owner:o];
@@ -56,7 +56,10 @@
         _coordinates.x += 15.0;
         KLBBullet *turretBullet = [_turret bullet];
         CGFloat tAngle = [_turret angle];
-        KLBBulletController *bulletController = [[KLBBulletController alloc] initWithBulletView:nil bullet:turretBullet launchAngle:tAngle coordinates:_coordinates];
+        KLBBulletController *bulletController = [[KLBBulletController alloc] initWithBulletView:nil
+                                                                                         bullet:turretBullet
+                                                                                    launchAngle:tAngle
+                                                                                    coordinates:_coordinates];
         [bulletController launchBullet];
         [bulletController release];
     }
