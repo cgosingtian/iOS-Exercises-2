@@ -185,4 +185,10 @@ CGFloat const KLB_ALLOWABLE_MOVEMENT = 600.0;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - View Controller Overrides
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
 @end
