@@ -32,6 +32,9 @@ float const KLB_ALLOWABLE_MOVEMENT = 600.0;
 @property (retain, nonatomic) CMMotionManager *motionManager;
 
 @property (retain, nonatomic) IBOutlet KLBPlayerShipView *playerShipView;
+@property (retain, nonatomic) IBOutlet UILabel *xLabelTest;
+@property (retain, nonatomic) IBOutlet UILabel *yLabelTest;
+@property (retain, nonatomic) IBOutlet UILabel *zLabelTest;
 
 @end
 
@@ -54,6 +57,9 @@ float const KLB_ALLOWABLE_MOVEMENT = 600.0;
     
     [_scorePlaceholderLabel release];
     [_scoreActualLabel release];
+    [_xLabelTest release];
+    [_yLabelTest release];
+    [_zLabelTest release];
     [super dealloc];
 }
 
@@ -81,10 +87,6 @@ float const KLB_ALLOWABLE_MOVEMENT = 600.0;
                                                       size:KLB_FONT_SIZE_STANDARD];
         _scoreActualLabel.font = [UIFont fontWithName:@"OCR A Std"
                                                  size:KLB_FONT_SIZE_STANDARD];
-        
-        self.motionManager = [[CMMotionManager alloc] init];
-        self.motionManager.accelerometerUpdateInterval = KLB_MOTION_UPDATE_INTERVAL;
-        self.motionManager.gyroUpdateInterval = KLB_MOTION_UPDATE_INTERVAL;
     }
     return self;
 }
@@ -161,6 +163,23 @@ float const KLB_ALLOWABLE_MOVEMENT = 600.0;
         KLBTurretController *tc = [[[KLBTurretController alloc] initWithTurret:[turretDict objectForKey:key] owner:[_playerControllerDelegate playerShip]] autorelease];
         [tc activateTurret];
     }
+    
+    self.motionManager = [[CMMotionManager alloc] init];
+    self.motionManager.accelerometerUpdateInterval = KLB_MOTION_UPDATE_INTERVAL;
+    self.motionManager.gyroUpdateInterval = KLB_MOTION_UPDATE_INTERVAL;
+    
+    [self.motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue]
+                                             withHandler:^
+     (CMAccelerometerData *accelerometerData, NSError *error)
+     {
+         _xLabelTest.text = [NSString stringWithFormat:@"%f",accelerometerData.acceleration.x];
+         _yLabelTest.text = [NSString stringWithFormat:@"%f",accelerometerData.acceleration.y];
+         _zLabelTest.text = [NSString stringWithFormat:@"%f",accelerometerData.acceleration.z];
+         
+         if(error){
+             NSLog(@"%@", error);
+         }
+     }];
 }
 
 #pragma mark - Memory Warning
