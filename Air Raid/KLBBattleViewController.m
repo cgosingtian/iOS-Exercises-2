@@ -15,26 +15,21 @@
 #import "KLBTurretController.h"
 #import "KLBConstants.h"
 
-#import "KLBEnemyShipController.h" // debug
-
-float const KLB_TOUCH_BOTTOM_BUFFER_PERCENTAGE = 0.35;
-float const KLB_MINIMUM_PRESS_DURATION = 0.05;
-float const KLB_ALLOWABLE_MOVEMENT = 600.0;
+CGFloat const KLB_TOUCH_BOTTOM_BUFFER_PERCENTAGE = 0.22;
+CGFloat const KLB_MINIMUM_PRESS_DURATION = 0.05;
+CGFloat const KLB_ALLOWABLE_MOVEMENT = 600.0;
 
 @interface KLBBattleViewController () <UIGestureRecognizerDelegate>
 
 @property (nonatomic) BOOL hasMovedTouch;
 @property (nonatomic) CGPoint touchedLocation;
-@property (retain, nonatomic) KLBPlayerController<KLBShipControlProtocol> *playerControllerDelegate;
+@property (retain, nonatomic) KLBPlayerController<KLBShipControlProtocol> *playerController;
 @property (retain, nonatomic) UILongPressGestureRecognizer *longPressRecognizer;
 @property (retain, nonatomic) UIPanGestureRecognizer *panRecognizer;
 @property (retain, nonatomic) NSTimer *longPressTimer;
 @property (retain, nonatomic) CMMotionManager *motionManager;
 
 @property (retain, nonatomic) IBOutlet KLBPlayerShipView *playerShipView;
-@property (retain, nonatomic) IBOutlet UILabel *xLabelTest;
-@property (retain, nonatomic) IBOutlet UILabel *yLabelTest;
-@property (retain, nonatomic) IBOutlet UILabel *zLabelTest;
 
 @end
 
@@ -45,21 +40,21 @@ float const KLB_ALLOWABLE_MOVEMENT = 600.0;
     _longPressRecognizer.delegate = nil;
     _panRecognizer.delegate = nil;
     
-    [_playerControllerDelegate release];
+    [_playerController release];
     [_playerShipView release];
     [_longPressRecognizer release];
     [_panRecognizer release];
     
-    _playerControllerDelegate = nil;
+    _playerController = nil;
     _playerShipView = nil;
     _longPressRecognizer = nil;
     _panRecognizer = nil;
     
     [_scorePlaceholderLabel release];
     [_scoreActualLabel release];
-    [_xLabelTest release];
-    [_yLabelTest release];
-    [_zLabelTest release];
+    [_motionManager release];
+    _motionManager = nil;
+    
     [super dealloc];
 }
 
@@ -85,7 +80,7 @@ float const KLB_ALLOWABLE_MOVEMENT = 600.0;
         
         _scorePlaceholderLabel.font = [UIFont fontWithName:KLB_DEFAULT_FONT
                                                       size:KLB_FONT_SIZE_STANDARD];
-        _scoreActualLabel.font = [UIFont fontWithName:@"OCR A Std"
+        _scoreActualLabel.font = [UIFont fontWithName:KLB_DEFAULT_FONT
                                                  size:KLB_FONT_SIZE_STANDARD];
     }
     return self;
@@ -99,7 +94,7 @@ float const KLB_ALLOWABLE_MOVEMENT = 600.0;
 
         [_longPressTimer invalidate];
         _longPressTimer = nil;
-        _playerControllerDelegate.isMoving = NO;
+        _playerController.isMoving = NO;
     }
     else {
         if (sender.state == UIGestureRecognizerStateBegan) {
@@ -107,18 +102,18 @@ float const KLB_ALLOWABLE_MOVEMENT = 600.0;
         
             _touchedLocation = touchLocation;
             
-            _playerControllerDelegate.isMoving = true;
+            _playerController.isMoving = true;
             //move left or right
             if (_touchedLocation.x >= self.view.frame.size.width/2) {
-                _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
-                                                                   target:_playerControllerDelegate
+                _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:KLB_ANIMATION_INTERVAL
+                                                                   target:_playerController
                                                                  selector:@selector(shipWillMoveRight)
                                                                  userInfo:nil
                                                                   repeats:YES];
             }
             else {
-                _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
-                                                                   target:_playerControllerDelegate
+                _longPressTimer = [NSTimer scheduledTimerWithTimeInterval:KLB_ANIMATION_INTERVAL
+                                                                   target:_playerController
                                                                  selector:@selector(shipWillMoveLeft)
                                                                  userInfo:nil
                                                                   repeats:YES];
@@ -129,7 +124,7 @@ float const KLB_ALLOWABLE_MOVEMENT = 600.0;
 
 - (void)handlePan:(UIPanGestureRecognizer *)sender {
     if (sender.state == UIGestureRecognizerStateEnded) {
-        [_playerControllerDelegate shipWillLaunchBomb];
+        [_playerController shipWillLaunchBomb];
     }
 }
 
@@ -151,16 +146,19 @@ float const KLB_ALLOWABLE_MOVEMENT = 600.0;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    CGFloat x = (self.view.frame.size.width / 2.0) - (_playerShipView.frame.size.width / 2.0);
-    CGFloat y = self.view.frame.size.height - (self.view.frame.size.height * KLB_TOUCH_BOTTOM_BUFFER_PERCENTAGE);
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    
+    CGFloat x = (screenWidth / 2.0) - (_playerShipView.frame.size.width / 2.0);
+    CGFloat y = screenHeight - (screenHeight * KLB_TOUCH_BOTTOM_BUFFER_PERCENTAGE);
     CGPoint c = CGPointMake(x, y);
     
-    _playerControllerDelegate = [[KLBPlayerController alloc] initWithShipView:_playerShipView coordinates:c];
+    _playerController = [[KLBPlayerController alloc] initWithShipView:_playerShipView coordinates:c];
     
     //load player turrets
-    NSMutableDictionary *turretDict = [_playerControllerDelegate playerShip].turrets;
+    NSMutableDictionary *turretDict = [_playerController playerShip].turrets;
     for (NSString *key in turretDict) {
-        KLBTurretController *tc = [[[KLBTurretController alloc] initWithTurret:[turretDict objectForKey:key] owner:[_playerControllerDelegate playerShip]] autorelease];
+        KLBTurretController *tc = [[[KLBTurretController alloc] initWithTurret:[turretDict objectForKey:key] owner:[_playerController playerShip]] autorelease];
         [tc activateTurret];
     }
     
@@ -172,9 +170,8 @@ float const KLB_ALLOWABLE_MOVEMENT = 600.0;
                                              withHandler:^
      (CMAccelerometerData *accelerometerData, NSError *error)
      {
-         _xLabelTest.text = [NSString stringWithFormat:@"%f",accelerometerData.acceleration.x];
-         _yLabelTest.text = [NSString stringWithFormat:@"%f",accelerometerData.acceleration.y];
-         _zLabelTest.text = [NSString stringWithFormat:@"%f",accelerometerData.acceleration.z];
+         //implement bomb message call here
+         //implement method to delegate bomb firing below
          
          if(error){
              NSLog(@"%@", error);

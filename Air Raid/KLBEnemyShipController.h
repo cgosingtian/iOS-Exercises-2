@@ -10,6 +10,8 @@
 #import "KLBShip.h"
 #import "KLBShipView.h"
 
+extern NSString *const KLB_ENEMY_SHIP_FILENAME;
+
 @interface KLBEnemyShipController : NSObject
 
 @property (retain, nonatomic) KLBShip *ship;

@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-extern float const KLB_TOUCH_BOTTOM_BUFFER_PERCENTAGE;
-extern float const KLB_MINIMUM_PRESS_DURATION;
-extern float const KLB_ALLOWABLE_MOVEMENT;
+extern CGFloat const KLB_TOUCH_BOTTOM_BUFFER_PERCENTAGE;
+extern CGFloat const KLB_MINIMUM_PRESS_DURATION;
+extern CGFloat const KLB_ALLOWABLE_MOVEMENT;
 
 @interface KLBBattleViewController : UIViewController
 @property (retain, nonatomic) IBOutlet UILabel *scorePlaceholderLabel;

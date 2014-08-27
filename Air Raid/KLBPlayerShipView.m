@@ -8,6 +8,10 @@
 
 #import "KLBPlayerShipView.h"
 #import "KLBShip.h"
+#import "KLBConstants.h"
+
+NSString *const KLB_PLAYER_SHIP_FILENAME = @"player.png";
+CGFloat const KLB_PLAYER_LAYER_Z = 100;
 
 @implementation KLBPlayerShipView
 
@@ -15,13 +19,13 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        float x = 0.0;
-        float y = 0.0;
-        UIImage *shipImage = [UIImage imageNamed:@"player.png"];
+        float x = KLB_ZERO_F;
+        float y = KLB_ZERO_F;
+        UIImage *shipImage = [UIImage imageNamed:KLB_PLAYER_SHIP_FILENAME];
         self.image = shipImage;
         self.frame = CGRectMake(x, y, self.image.size.width, self.image.size.height);
         
-        self.layer.zPosition = 100;
+        self.layer.zPosition = KLB_PLAYER_LAYER_Z;
     }
     return self;
 }

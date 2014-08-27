@@ -11,6 +11,20 @@
 #import <AVFoundation/AVFoundation.h>
 #import "KLBConstants.h"
 
+CGFloat const KLB_BULLET_MAXIMUM_DISTANCE = 500.0;
+
+NSString *const KLB_BULLET_SOUND_FILENAME_NO_EXTENSION = @"laser";
+NSString *const KLB_BULLET_SOUND_FILENAME_EXTENSION_ONLY = @"aifc";
+
+CGFloat const KLB_BULLET_MAXIMUM_ANGLE = 360.0;
+CGFloat const KLB_BULLET_ANGLE_INTERVAL = 45.0;
+CGFloat const KLB_BULLET_MINIMUM_ANGLE = 0.0;
+
+CGFloat const KLB_BULLET_ANGLE_LEFT = 0.0;
+CGFloat const KLB_BULLET_ANGLE_UP = 90.0;
+CGFloat const KLB_BULLET_ANGLE_RIGHT = 180.0;
+CGFloat const KLB_BULLET_ANGLE_DOWN = 270.0;
+
 @interface KLBBulletController () <AVAudioPlayerDelegate>
 
 typedef enum BulletDirection {
@@ -70,8 +84,8 @@ typedef enum BulletDirection {
         _launchAngle = [self limitAngle:angle];
         _coordinates = coordinates;
         
-        _maximumDistance = 500.0;
-        _traversedDistance = 0.0;
+        _maximumDistance = KLB_BULLET_MAXIMUM_DISTANCE;
+        _traversedDistance = KLB_ZERO_F;
         
         [self matchBulletWithView];
         
@@ -79,8 +93,8 @@ typedef enum BulletDirection {
                                      Y:coordinates.y];
         
         NSString *soundFilePath =
-        [[NSBundle mainBundle] pathForResource:@"laser"
-                                        ofType:@"aifc"];
+        [[NSBundle mainBundle] pathForResource:KLB_BULLET_SOUND_FILENAME_NO_EXTENSION
+                                        ofType:KLB_BULLET_SOUND_FILENAME_EXTENSION_ONLY];
         
         
         NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:soundFilePath];
@@ -97,22 +111,28 @@ typedef enum BulletDirection {
 // Due to complexities with having to compute trajectory with angles, we'll just
 // restrict firing to the vertical and horizontal axes
 - (CGFloat) limitAngle: (CGFloat)a {
-    CGFloat limitedAngle = 0.0;
+    CGFloat limitedAngle = KLB_ZERO_F;
     
     // wrap angle around 360 degrees
-    if (a > 360) a = fmodf(a, 360.0);
+    if (a > KLB_BULLET_MAXIMUM_ANGLE) a = fmodf(a, KLB_BULLET_MAXIMUM_ANGLE);
     
-    if ((a > 0.0 && a <= 45) || (a > 315 && a <= 360)) {
-        limitedAngle = 0.0;
+    CGFloat lastInterval = KLB_BULLET_MAXIMUM_ANGLE - KLB_BULLET_ANGLE_INTERVAL; // 315
+    CGFloat secondToTheLastInterval = lastInterval - KLB_BULLET_ANGLE_INTERVAL*2; // 225
+    CGFloat thirdToTheLastInterval = secondToTheLastInterval - KLB_BULLET_ANGLE_INTERVAL*2; // 135
+    
+    if ((a > KLB_BULLET_MINIMUM_ANGLE &&
+         a <= KLB_BULLET_ANGLE_INTERVAL) ||
+        (a > lastInterval && a <= KLB_BULLET_MAXIMUM_ANGLE)) {
+        limitedAngle = KLB_BULLET_ANGLE_LEFT;
         _bulletDirection = bdLeft;
-    } else if (a > 45 && a <= 135) {
-        limitedAngle = 90.0;
+    } else if (a > KLB_BULLET_ANGLE_INTERVAL && a <= thirdToTheLastInterval) {
+        limitedAngle = KLB_BULLET_ANGLE_UP;
         _bulletDirection = bdUp;
-    } else if (a > 135 && a <= 225) {
-        limitedAngle = 180.0;
+    } else if (a > thirdToTheLastInterval && a <= secondToTheLastInterval) {
+        limitedAngle = KLB_BULLET_ANGLE_RIGHT;
         _bulletDirection = bdRight;
-    } else if (a > 225 && a <= 315) {
-        limitedAngle = 270.0;
+    } else if (a > secondToTheLastInterval && a <= lastInterval) {
+        limitedAngle = KLB_BULLET_ANGLE_DOWN;
         _bulletDirection = bdDown;
     }
     return  limitedAngle;
@@ -153,7 +173,7 @@ typedef enum BulletDirection {
         if (_avPlayer) {
             [_avPlayer play];
         }
-        [self setTimer:[NSTimer scheduledTimerWithTimeInterval:0.01
+        [self setTimer:[NSTimer scheduledTimerWithTimeInterval:KLB_ANIMATION_INTERVAL
                                                         target:self
                                                       selector:@selector(moveBullet:)
                                                       userInfo:nil

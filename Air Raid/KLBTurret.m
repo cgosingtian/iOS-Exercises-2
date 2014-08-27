@@ -10,6 +10,11 @@
 #import "KLBBullet.h"
 #import "KLBShip.h"
 
+CGFloat const KLB_TURRET_ANGLE_DEFAULT = 0.0;
+CGFloat const KLB_TURRET_MACHINEGUN_FIRING_SPEED = 0.1;
+CGFloat const KLB_TURRET_CANNON_FIRING_SPEED = 1.0;
+CGFloat const KLB_TURRET_DEFAULT_FIRING_SPEED = 0.5;
+
 @implementation KLBTurret
 
 #pragma mark - Dealloc
@@ -37,32 +42,32 @@
                 bulletInit = [[KLBBullet alloc] initWithBulletType:btMachineGun
                                                       playerBullet:playerBullet];
                 [self setTurretType:turretType
-                              angle:0.0
-                        firingSpeed:0.1
+                              angle:KLB_TURRET_ANGLE_DEFAULT
+                        firingSpeed:KLB_TURRET_MACHINEGUN_FIRING_SPEED
                              bullet:bulletInit];
                 break;
             case ttCannon:
                 bulletInit = [[KLBBullet alloc] initWithBulletType:btCannon
                                                       playerBullet:playerBullet];
                 [self setTurretType:turretType
-                              angle:0.0
-                        firingSpeed:1.0
+                              angle:KLB_TURRET_ANGLE_DEFAULT
+                        firingSpeed:KLB_TURRET_CANNON_FIRING_SPEED
                              bullet:bulletInit];
                 break;
             case ttDefault:
                 bulletInit = [[KLBBullet alloc] initWithBulletType:btDefaultBulletType
                                                       playerBullet:playerBullet];
                 [self setTurretType:turretType
-                              angle:0.0
-                        firingSpeed:0.5
+                              angle:KLB_TURRET_ANGLE_DEFAULT
+                        firingSpeed:KLB_TURRET_DEFAULT_FIRING_SPEED
                              bullet:bulletInit];
                 break;
                 default:
                 bulletInit = [[KLBBullet alloc] initWithBulletType:btDefaultBulletType
                                                       playerBullet:playerBullet];
                 [self setTurretType:turretType
-                              angle:0.0
-                        firingSpeed:0.5
+                              angle:KLB_TURRET_ANGLE_DEFAULT
+                        firingSpeed:KLB_TURRET_DEFAULT_FIRING_SPEED
                              bullet:bulletInit];
                 break;
         }

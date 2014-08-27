@@ -1,6 +1,7 @@
 //
 //  KLBConstants.h
 //  Air Raid
+//  This file declares constants that require global scope.
 //
 //  Created by Chase Gosingtian on 8/20/14.
 //  Copyright (c) 2014 KLab Cyscorpions, Inc. All rights reserved.
@@ -23,6 +24,9 @@ extern float const KLB_MOTION_UPDATE_INTERVAL;
 
 //Zero
 extern float const KLB_ZERO_F;
+
+//One
+extern float const KLB_ONE_F;
 
 @interface KLBConstants : NSObject
 

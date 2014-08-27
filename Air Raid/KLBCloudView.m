@@ -9,11 +9,11 @@
 #import "KLBCloudView.h"
 #import <QuartzCore/QuartzCore.h>
 
-float const KLB_CLOUD_ANIMATION_DURATION = 5.0;
-float const KLB_CLOUD_MAX_OPACITY = 0.5;
-float const KLB_CLOUD_MAX_HEIGHT_MULTIPLIER = 2.0; //versus image height
-float const KLB_CLOUD_WIDTH_MULTIPLIER = 2.5; //versus cloud height
-float const KLB_CLOUD_MAX_Y_ADJUSTMENT = 50;
+CGFloat const KLB_CLOUD_ANIMATION_DURATION = 5.0;
+CGFloat const KLB_CLOUD_MAX_OPACITY = 0.5;
+CGFloat const KLB_CLOUD_MAX_HEIGHT_MULTIPLIER = 2.0; //versus image height
+CGFloat const KLB_CLOUD_WIDTH_MULTIPLIER = 2.5; //versus cloud height
+CGFloat const KLB_CLOUD_MAX_Y_ADJUSTMENT = 50;
 
 @implementation KLBCloudView
 
@@ -77,18 +77,20 @@ float const KLB_CLOUD_MAX_Y_ADJUSTMENT = 50;
          [translation release];
          [self addFallAnimationForLayer:self.layer];
          
-         int screenHeight = (int)[[UIScreen mainScreen] applicationFrame].size.height;
-         int screenWidth = (int)[[UIScreen mainScreen] applicationFrame].size.width;
+         NSUInteger screenHeight = (NSUInteger)[[UIScreen mainScreen] applicationFrame].size.height;
+         NSUInteger screenWidth = (NSUInteger)[[UIScreen mainScreen] applicationFrame].size.width;
          
          CGPoint randomPoint;
          randomPoint.x = arc4random() % screenWidth;
          randomPoint.y = arc4random() % screenHeight - KLB_CLOUD_MAX_Y_ADJUSTMENT;
          
          CGSize randomSize;
-         randomSize.height = arc4random() % (int)self.image.size.height * KLB_CLOUD_MAX_HEIGHT_MULTIPLIER;
+         randomSize.height = arc4random() % (NSUInteger)self.image.size.height * KLB_CLOUD_MAX_HEIGHT_MULTIPLIER;
          randomSize.width = randomSize.height * KLB_CLOUD_WIDTH_MULTIPLIER;
          
          self.frame = CGRectMake(randomPoint.x, randomPoint.y, randomSize.width, randomSize.height);
+         
+         self.alpha = KLB_ZERO_F; // prevents "snapping" between animations
      }];
     
     [layer addAnimation:translation forKey:keyPathTranslationY];
@@ -96,14 +98,5 @@ float const KLB_CLOUD_MAX_Y_ADJUSTMENT = 50;
     
     [CATransaction commit];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

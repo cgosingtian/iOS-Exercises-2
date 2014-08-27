@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+extern float const KLB_BULLET_MACHINEGUN_VELOCITY;
+extern float const KLB_BULLET_MACHINEGUN_DAMAGE;
+extern float const KLB_BULLET_CANNON_VELOCITY;
+extern float const KLB_BULLET_CANNON_DAMAGE;
+extern float const KLB_BULLET_DEFAULT_VELOCITY;
+extern float const KLB_BULLET_DEFAULT_DAMAGE;
+
 typedef enum BulletTypes : NSUInteger
 {
     btDefaultBulletType,

@@ -8,6 +8,13 @@
 
 #import "KLBBullet.h"
 
+float const KLB_BULLET_MACHINEGUN_VELOCITY = 5.0;
+float const KLB_BULLET_MACHINEGUN_DAMAGE = 1;
+float const KLB_BULLET_CANNON_VELOCITY = 0.5;
+float const KLB_BULLET_CANNON_DAMAGE = 4;
+float const KLB_BULLET_DEFAULT_VELOCITY = 2.0;
+float const KLB_BULLET_DEFAULT_DAMAGE = 2;
+
 @implementation KLBBullet
 
 #pragma mark - Initializers
@@ -18,26 +25,26 @@
     switch (bulletType) {
         case btMachineGun:
             [self setBulletType:bulletType
-                       velocity:5.0
-                         damage:1
+                       velocity:KLB_BULLET_MACHINEGUN_VELOCITY
+                         damage:KLB_BULLET_MACHINEGUN_DAMAGE
                     isAirBullet:true];
             break;
         case btCannon:
             [self setBulletType:bulletType
-                       velocity:0.5
-                         damage:4
+                       velocity:KLB_BULLET_CANNON_VELOCITY
+                         damage:KLB_BULLET_CANNON_DAMAGE
                     isAirBullet:true];
             break;
         case btDefaultBulletType:
             [self setBulletType:btDefaultBulletType
-                       velocity:2.0
-                         damage:2
+                       velocity:KLB_BULLET_DEFAULT_VELOCITY
+                         damage:KLB_BULLET_DEFAULT_DAMAGE
                     isAirBullet:true];
             break;
         default:
             [self setBulletType:btDefaultBulletType
-                       velocity:10.0
-                         damage:2
+                       velocity:KLB_BULLET_DEFAULT_VELOCITY
+                         damage:KLB_BULLET_DEFAULT_DAMAGE
                     isAirBullet:true];
     }
     return self;

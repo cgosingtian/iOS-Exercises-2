@@ -24,6 +24,9 @@ float const KLB_MOTION_UPDATE_INTERVAL = 0.2;
 //Zero
 float const KLB_ZERO_F = 0.0;
 
+//One
+float const KLB_ONE_F = 1.0;
+
 @implementation KLBConstants
 
 @end

@@ -9,12 +9,12 @@
 #import "KLBBackgroundView.h"
 #import "KLBConstants.h"
 
-float const KLB_BACKGROUND_DISTANCE_TRAVELLED_START = 0.0;
-float const KLB_BACKGROUND_MOVE_SPEED = 0.5;
+CGFloat const KLB_BACKGROUND_DISTANCE_TRAVELLED_START = 0.0;
+CGFloat const KLB_BACKGROUND_MOVE_SPEED = 0.5;
 
 @interface KLBBackgroundView ()
 
-@property (nonatomic) int maxHeight;
+@property (nonatomic) NSUInteger maxHeight;
 @property (nonatomic) CGFloat distanceTravelled;
 
 @end
@@ -28,16 +28,31 @@ float const KLB_BACKGROUND_MOVE_SPEED = 0.5;
     if (self) {
         _distanceTravelled = KLB_BACKGROUND_DISTANCE_TRAVELLED_START; // 0.0
         _moveSpeed = KLB_BACKGROUND_MOVE_SPEED; // 0.5
-        _animationInterval = KLB_ANIMATION_INTERVAL;
-        [self resetPosition];
+        //[self resetPosition];
+        [self setAutoresizingMask:UIViewAutoresizingNone];
     }
     return self;
 }
 
 #pragma mark - View States
 - (void)awakeFromNib {
-    _maxHeight = self.image.size.height;
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:_animationInterval
+    CGFloat imageHeight = self.image.size.height;
+    CGFloat screenScale = [[UIScreen mainScreen] scale];
+    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height * screenScale;
+    
+    CGFloat screenImageHeightDiscrepancy = [self computeScreenImageHeightDiscrepancy];
+    
+    if (screenHeight > imageHeight) {
+        imageHeight += screenImageHeightDiscrepancy;
+    } else {
+        imageHeight -= screenImageHeightDiscrepancy;
+    }
+    
+    _maxHeight = imageHeight;
+    
+    [self resetPosition];
+    
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:KLB_ANIMATION_INTERVAL
                                                       target:self
                                                     selector:@selector(animateBackground)
                                                     userInfo:nil
@@ -46,27 +61,39 @@ float const KLB_BACKGROUND_MOVE_SPEED = 0.5;
 
 #pragma mark - Animation
 - (void) animateBackground {
-    _distanceTravelled += _moveSpeed;
-    float yMovement = (-1*(self.image.size.height/2)) + _distanceTravelled;
-    [self setFrame:CGRectMake(0, yMovement, self.image.size.width, self.image.size.height)];
+    CGFloat frameWidth = self.frame.size.width;
+    CGFloat frameHeight = self.frame.size.height;
+    CGFloat currentYPosition = self.frame.origin.y;
+    CGPoint startLocation = CGPointMake(KLB_ZERO_F, currentYPosition);
+    CGFloat yMovement = startLocation.y + _moveSpeed;
     
-    if (_distanceTravelled >= _maxHeight/2) {
+    _distanceTravelled += _moveSpeed;
+    
+    CGRect nextMoveFrame = CGRectMake(startLocation.x, yMovement, frameWidth, frameHeight);
+    
+    [self setFrame:nextMoveFrame];
+    
+    if (_distanceTravelled >= (_maxHeight/2)) {
         [self resetPosition];
         _distanceTravelled = KLB_BACKGROUND_DISTANCE_TRAVELLED_START; // 0.0
     }
 }
 
 - (void) resetPosition {
-    [self setFrame:CGRectMake(0, -(self.image.size.height/2), self.image.size.width, self.image.size.height)];
+    CGFloat imageWidth = self.image.size.width;
+    
+    CGPoint startLocation = CGPointMake(KLB_ZERO_F, -(_maxHeight/2.0));
+    
+    CGRect imageRect = CGRectMake(startLocation.x, startLocation.y, imageWidth, _maxHeight);
+    [self setFrame:imageRect];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+- (CGFloat) computeScreenImageHeightDiscrepancy {
+    CGFloat imageHeight = self.image.size.height;
+    CGFloat screenScale = [[UIScreen mainScreen] scale];
+    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height * screenScale;
+    
+    return ABS(screenHeight- imageHeight);
 }
-*/
 
 @end

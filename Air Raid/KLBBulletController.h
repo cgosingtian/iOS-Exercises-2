@@ -11,7 +11,7 @@
 
 @interface KLBBulletController : NSObject
 
-@property (nonatomic) float maximumDistance; //destroy bullet after reaching this
+@property (nonatomic) CGFloat maximumDistance; //destroy bullet after reaching this
 @property (retain, nonatomic) KLBBulletView *bulletView;
 @property (retain, nonatomic) KLBBullet *bullet;
 

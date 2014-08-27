@@ -8,14 +8,17 @@
 
 #import "KLBPlayer.h"
 
+NSUInteger const KLB_STARTING_SCORE = 0;
+NSString *const KLB_DEFAULT_NAME = @"Player";
+
 @implementation KLBPlayer
 
 #pragma mark - Initializers
 - (instancetype) init {
     self = [super init];
     if (self) {
-        _score = 0;
-        _name = @"Player";
+        _score = KLB_STARTING_SCORE;
+        _name = KLB_DEFAULT_NAME;
     }
     return self;
 }

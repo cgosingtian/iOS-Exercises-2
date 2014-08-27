@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-extern float const KLB_CLOUD_ANIMATION_DURATION;
-extern float const KLB_CLOUD_MAX_OPACITY;
+extern CGFloat const KLB_CLOUD_ANIMATION_DURATION;
+extern CGFloat const KLB_CLOUD_MAX_OPACITY;
 
 @interface KLBCloudView : UIImageView
 

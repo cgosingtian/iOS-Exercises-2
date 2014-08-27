@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "KLBShipView.h"
 #import "KLBShipControlProtocol.h"
-@class KLBShip;
+
+extern NSString *const KLB_PLAYER_SHIP_FILENAME;
+extern CGFloat const KLB_PLAYER_LAYER_Z;
 
 @interface KLBPlayerShipView : KLBShipView
 

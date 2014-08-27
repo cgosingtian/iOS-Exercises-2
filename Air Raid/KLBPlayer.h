@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSUInteger const KLB_STARTING_SCORE;
+extern NSString *const KLB_DEFAULT_NAME;
+
 @interface KLBPlayer : NSObject
 
-@property (assign, nonatomic) int score;
+@property (assign, nonatomic) NSUInteger score;
 @property (retain, nonatomic) NSString *name;
 
 - (void) setName:(NSString *)name;

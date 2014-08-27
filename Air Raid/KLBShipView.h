@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 @class KLBShip;
 
+extern NSString *const KLB_NEUTRAL_SHIP_FILENAME;
+
 @interface KLBShipView : UIImageView
 
 - (instancetype)initWithCoordinates:(CGPoint)coordinates;

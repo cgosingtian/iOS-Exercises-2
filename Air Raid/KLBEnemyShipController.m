@@ -8,11 +8,14 @@
 
 #import "KLBEnemyShipController.h"
 #import "KLBTurretController.h"
+#import "KLBConstants.h"
+
+NSString *const KLB_ENEMY_SHIP_FILENAME = @"enemy.png";
+CGFloat const KLB_ENEMY_SHIP_WAIT_BEFORE_MOVE_SECONDS = 1.0;
 
 @interface KLBEnemyShipController ()
 @property (retain, nonatomic) NSTimer *aiTimer;
 @property (retain, nonatomic) NSTimer *waitTimer;
-@property (nonatomic) float waitSeconds; // ship will wait this long before moving again
 @end
 
 @implementation KLBEnemyShipController
@@ -24,7 +27,7 @@
     if (self) {
         if (!shipView) {
             shipView = [[KLBShipView alloc] initWithCoordinates:c];
-            shipView.image = [UIImage imageNamed:@"enemy.png"];
+            shipView.image = [UIImage imageNamed:KLB_ENEMY_SHIP_FILENAME];
         }
         _shipView = shipView;
         _destinationCoordinates = c;
@@ -37,8 +40,7 @@
             _ship.coordinates = c;
             [self refreshShipView];
         }
-        
-        _waitSeconds = 1.0;
+
         _isMoving = NO;
     }
     return self;
@@ -46,7 +48,7 @@
 
 - (void)activateAI {
     if (!_aiTimer) {
-        _aiTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(randomMove) userInfo:nil repeats:YES];
+        _aiTimer = [NSTimer scheduledTimerWithTimeInterval:KLB_ANIMATION_INTERVAL target:self selector:@selector(randomMove) userInfo:nil repeats:YES];
         
         //weapons
         NSMutableDictionary *turretDict = _ship.turrets;
@@ -90,7 +92,7 @@
         if (CGPointEqualToPoint(_destinationCoordinates, _ship.coordinates)) {
             // wait for waitSeconds time
             if (!_waitTimer) {
-                _waitTimer = [NSTimer scheduledTimerWithTimeInterval:_waitSeconds
+                _waitTimer = [NSTimer scheduledTimerWithTimeInterval:KLB_ENEMY_SHIP_WAIT_BEFORE_MOVE_SECONDS
                                                               target:self
                                                             selector:@selector(doneWaiting)
                                                             userInfo:nil

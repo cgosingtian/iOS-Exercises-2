@@ -9,6 +9,8 @@
 #import "KLBShipView.h"
 #import "KLBShip.h"
 
+NSString *const KLB_NEUTRAL_SHIP_FILENAME = @"neutral.png";
+
 @implementation KLBShipView
 
 #pragma mark - Initializers
@@ -17,7 +19,7 @@
     if (self) {
         float x = 0.0;
         float y = 0.0;
-        UIImage *shipImage = [UIImage imageNamed:@"neutral.png"];
+        UIImage *shipImage = [UIImage imageNamed:KLB_NEUTRAL_SHIP_FILENAME];
         self.image = shipImage;
         self.frame = CGRectMake(x, y, self.image.size.width, self.image.size.height);
     }
@@ -29,7 +31,7 @@
     if (self) {
         float x = coordinates.x;
         float y = coordinates.y;
-        UIImage *shipImage = [UIImage imageNamed:@"neutral.png"];
+        UIImage *shipImage = [UIImage imageNamed:KLB_NEUTRAL_SHIP_FILENAME];
         self.image = shipImage;
         self.frame = CGRectMake(x, y, self.image.size.width, self.image.size.height);
         // add self to active view
@@ -72,14 +74,5 @@
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 125.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
     layer.transform = rotationAndPerspectiveTransform;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

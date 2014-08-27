@@ -52,7 +52,7 @@
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
     
     CGFloat maxWidth = window.frame.size.width - _playerView.frame.size.width;
-    CGFloat minWidth = 0;
+    CGFloat minWidth = KLB_ZERO_F;
     
     if (x < maxWidth && x > minWidth) {
         _playerShip.coordinates = CGPointMake(x, y);
@@ -66,7 +66,7 @@
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
     
     CGFloat maxWidth = window.frame.size.width - _playerView.frame.size.width;
-    CGFloat minWidth = 0;
+    CGFloat minWidth = KLB_ZERO_F;
     
     if (x < maxWidth && x > minWidth) {
         _playerShip.coordinates = CGPointMake(x, y);
