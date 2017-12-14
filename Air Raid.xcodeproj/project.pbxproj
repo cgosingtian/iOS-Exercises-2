@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F07C00219AC290400F8FEC3 /* KLBEnemyShipController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F07C00119AC290400F8FEC3 /* KLBEnemyShipController.m */; };
+		4F1A2AD419A46D9E001AAB94 /* KLBBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AD319A46D9E001AAB94 /* KLBBackgroundView.m */; };
+		4F1A2AD619A47828001AAB94 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2AD519A47828001AAB94 /* QuartzCore.framework */; };
+		4F1A2AD919A4785A001AAB94 /* KLBCloudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AD819A4785A001AAB94 /* KLBCloudView.m */; };
+		4F1A2AE019A49062001AAB94 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2ADF19A49062001AAB94 /* AudioToolbox.framework */; };
+		4F1A2AE219A493A3001AAB94 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A2AE119A493A3001AAB94 /* AVFoundation.framework */; };
+		4F1A2AE719A49EA1001AAB94 /* KLBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2AE619A49EA1001AAB94 /* KLBConstants.m */; };
+		4F58729F19A32B2800CF0264 /* KLBPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F58729E19A32B2800CF0264 /* KLBPlayerController.m */; };
+		4F5872AA19A34D3700CF0264 /* KLBBulletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5872A919A34D3700CF0264 /* KLBBulletView.m */; };
+		4F5872AD19A3502100CF0264 /* KLBBulletController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5872AC19A3502100CF0264 /* KLBBulletController.m */; };
+		4F9F0D5619A43A4400C40A37 /* KLBTurretController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F0D5519A43A4400C40A37 /* KLBTurretController.m */; };
 		4FC6BABF19A2D371001DC678 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BABE19A2D371001DC678 /* Foundation.framework */; };
 		4FC6BAC119A2D371001DC678 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BAC019A2D371001DC678 /* CoreGraphics.framework */; };
 		4FC6BAC319A2D371001DC678 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BAC219A2D371001DC678 /* UIKit.framework */; };
@@ -22,6 +33,28 @@
 		4FC6BAE019A2D371001DC678 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC6BAC419A2D371001DC678 /* CoreData.framework */; };
 		4FC6BAE819A2D371001DC678 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6BAE619A2D371001DC678 /* InfoPlist.strings */; };
 		4FC6BAEA19A2D371001DC678 /* Air_RaidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BAE919A2D371001DC678 /* Air_RaidTests.m */; };
+		4FC6BAF619A2E863001DC678 /* KLBShip.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BAF519A2E863001DC678 /* KLBShip.m */; };
+		4FC6BAF919A2E943001DC678 /* KLBTurret.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BAF819A2E943001DC678 /* KLBTurret.m */; };
+		4FC6BAFC19A2E9BB001DC678 /* KLBBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BAFB19A2E9BB001DC678 /* KLBBullet.m */; };
+		4FC6BB0319A3017C001DC678 /* KLBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BB0219A3017C001DC678 /* KLBPlayer.m */; };
+		4FC6BB0819A30432001DC678 /* KLBBattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BB0619A30432001DC678 /* KLBBattleViewController.m */; };
+		4FC6BB0919A30432001DC678 /* KLBBattleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC6BB0719A30432001DC678 /* KLBBattleViewController.xib */; };
+		4FC6BB0C19A30944001DC678 /* KLBShipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BB0B19A30944001DC678 /* KLBShipView.m */; };
+		4FC6BB1619A325C3001DC678 /* KLBPlayerShipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC6BB1519A325C3001DC678 /* KLBPlayerShipView.m */; };
+		4FEEBB0819A58C1600420779 /* bullet_cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBAFC19A58C1600420779 /* bullet_cannon.png */; };
+		4FEEBB0919A58C1600420779 /* bullet_cannon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBAFD19A58C1600420779 /* bullet_cannon2.png */; };
+		4FEEBB0A19A58C1600420779 /* bullet_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBAFE19A58C1600420779 /* bullet_default.png */; };
+		4FEEBB0B19A58C1600420779 /* bullet_default2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBAFF19A58C1600420779 /* bullet_default2.png */; };
+		4FEEBB0C19A58C1600420779 /* bullet_machinegun.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB0019A58C1600420779 /* bullet_machinegun.png */; };
+		4FEEBB0D19A58C1600420779 /* bullet_machinegun2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB0119A58C1600420779 /* bullet_machinegun2.png */; };
+		4FEEBB0E19A58C1600420779 /* cloud1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB0219A58C1600420779 /* cloud1.png */; };
+		4FEEBB0F19A58C1600420779 /* cloud2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB0319A58C1600420779 /* cloud2.png */; };
+		4FEEBB1019A58C1600420779 /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB0419A58C1600420779 /* enemy.png */; };
+		4FEEBB1119A58C1600420779 /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB0519A58C1600420779 /* floor.png */; };
+		4FEEBB1219A58C1600420779 /* neutral.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB0619A58C1600420779 /* neutral.png */; };
+		4FEEBB1319A58C1600420779 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB0719A58C1600420779 /* player.png */; };
+		4FEEBB1519A58C2800420779 /* laser.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB1419A58C2800420779 /* laser.aifc */; };
+		4FEEBB1719A58C4200420779 /* OCRAStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB1619A58C4200420779 /* OCRAStd.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +68,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F07C00019AC290400F8FEC3 /* KLBEnemyShipController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBEnemyShipController.h; sourceTree = "<group>"; };
+		4F07C00119AC290400F8FEC3 /* KLBEnemyShipController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBEnemyShipController.m; sourceTree = "<group>"; };
+		4F1A2AD219A46D9E001AAB94 /* KLBBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBBackgroundView.h; sourceTree = "<group>"; };
+		4F1A2AD319A46D9E001AAB94 /* KLBBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBBackgroundView.m; sourceTree = "<group>"; };
+		4F1A2AD519A47828001AAB94 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4F1A2AD719A4785A001AAB94 /* KLBCloudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBCloudView.h; sourceTree = "<group>"; };
+		4F1A2AD819A4785A001AAB94 /* KLBCloudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBCloudView.m; sourceTree = "<group>"; };
+		4F1A2ADF19A49062001AAB94 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4F1A2AE119A493A3001AAB94 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4F1A2AE519A49EA1001AAB94 /* KLBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBConstants.h; sourceTree = "<group>"; };
+		4F1A2AE619A49EA1001AAB94 /* KLBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBConstants.m; sourceTree = "<group>"; };
+		4F58729D19A32B2800CF0264 /* KLBPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBPlayerController.h; sourceTree = "<group>"; };
+		4F58729E19A32B2800CF0264 /* KLBPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBPlayerController.m; sourceTree = "<group>"; };
+		4F5872A119A32B8600CF0264 /* KLBShipControlProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLBShipControlProtocol.h; sourceTree = "<group>"; };
+		4F5872A819A34D3700CF0264 /* KLBBulletView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBBulletView.h; sourceTree = "<group>"; };
+		4F5872A919A34D3700CF0264 /* KLBBulletView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBBulletView.m; sourceTree = "<group>"; };
+		4F5872AB19A3502100CF0264 /* KLBBulletController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBBulletController.h; sourceTree = "<group>"; };
+		4F5872AC19A3502100CF0264 /* KLBBulletController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBBulletController.m; sourceTree = "<group>"; };
+		4F9F0D5419A43A4400C40A37 /* KLBTurretController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBTurretController.h; sourceTree = "<group>"; };
+		4F9F0D5519A43A4400C40A37 /* KLBTurretController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBTurretController.m; sourceTree = "<group>"; };
 		4FC6BABB19A2D371001DC678 /* Air Raid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air Raid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC6BABE19A2D371001DC678 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FC6BAC019A2D371001DC678 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +106,35 @@
 		4FC6BAE519A2D371001DC678 /* Air RaidTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Air RaidTests-Info.plist"; sourceTree = "<group>"; };
 		4FC6BAE719A2D371001DC678 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FC6BAE919A2D371001DC678 /* Air_RaidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Air_RaidTests.m; sourceTree = "<group>"; };
+		4FC6BAF419A2E863001DC678 /* KLBShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBShip.h; sourceTree = "<group>"; };
+		4FC6BAF519A2E863001DC678 /* KLBShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBShip.m; sourceTree = "<group>"; };
+		4FC6BAF719A2E943001DC678 /* KLBTurret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBTurret.h; sourceTree = "<group>"; };
+		4FC6BAF819A2E943001DC678 /* KLBTurret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBTurret.m; sourceTree = "<group>"; };
+		4FC6BAFA19A2E9BB001DC678 /* KLBBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBBullet.h; sourceTree = "<group>"; };
+		4FC6BAFB19A2E9BB001DC678 /* KLBBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBBullet.m; sourceTree = "<group>"; };
+		4FC6BB0119A3017C001DC678 /* KLBPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBPlayer.h; sourceTree = "<group>"; };
+		4FC6BB0219A3017C001DC678 /* KLBPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBPlayer.m; sourceTree = "<group>"; };
+		4FC6BB0519A30432001DC678 /* KLBBattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBBattleViewController.h; sourceTree = "<group>"; };
+		4FC6BB0619A30432001DC678 /* KLBBattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBBattleViewController.m; sourceTree = "<group>"; };
+		4FC6BB0719A30432001DC678 /* KLBBattleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KLBBattleViewController.xib; sourceTree = "<group>"; };
+		4FC6BB0A19A30944001DC678 /* KLBShipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBShipView.h; sourceTree = "<group>"; };
+		4FC6BB0B19A30944001DC678 /* KLBShipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBShipView.m; sourceTree = "<group>"; };
+		4FC6BB1419A325C3001DC678 /* KLBPlayerShipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBPlayerShipView.h; sourceTree = "<group>"; };
+		4FC6BB1519A325C3001DC678 /* KLBPlayerShipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBPlayerShipView.m; sourceTree = "<group>"; };
+		4FEEBAFC19A58C1600420779 /* bullet_cannon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullet_cannon.png; path = Resources/Images/bullet_cannon.png; sourceTree = "<group>"; };
+		4FEEBAFD19A58C1600420779 /* bullet_cannon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullet_cannon2.png; path = Resources/Images/bullet_cannon2.png; sourceTree = "<group>"; };
+		4FEEBAFE19A58C1600420779 /* bullet_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullet_default.png; path = Resources/Images/bullet_default.png; sourceTree = "<group>"; };
+		4FEEBAFF19A58C1600420779 /* bullet_default2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullet_default2.png; path = Resources/Images/bullet_default2.png; sourceTree = "<group>"; };
+		4FEEBB0019A58C1600420779 /* bullet_machinegun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullet_machinegun.png; path = Resources/Images/bullet_machinegun.png; sourceTree = "<group>"; };
+		4FEEBB0119A58C1600420779 /* bullet_machinegun2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullet_machinegun2.png; path = Resources/Images/bullet_machinegun2.png; sourceTree = "<group>"; };
+		4FEEBB0219A58C1600420779 /* cloud1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cloud1.png; path = Resources/Images/cloud1.png; sourceTree = "<group>"; };
+		4FEEBB0319A58C1600420779 /* cloud2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cloud2.png; path = Resources/Images/cloud2.png; sourceTree = "<group>"; };
+		4FEEBB0419A58C1600420779 /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy.png; path = Resources/Images/enemy.png; sourceTree = "<group>"; };
+		4FEEBB0519A58C1600420779 /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = floor.png; path = Resources/Images/floor.png; sourceTree = "<group>"; };
+		4FEEBB0619A58C1600420779 /* neutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = neutral.png; path = Resources/Images/neutral.png; sourceTree = "<group>"; };
+		4FEEBB0719A58C1600420779 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = Resources/Images/player.png; sourceTree = "<group>"; };
+		4FEEBB1419A58C2800420779 /* laser.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; name = laser.aifc; path = "Resources/Sound Effects/laser.aifc"; sourceTree = "<group>"; };
+		4FEEBB1619A58C4200420779 /* OCRAStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OCRAStd.otf; path = Resources/OCRAStd.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +142,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1A2AE219A493A3001AAB94 /* AVFoundation.framework in Frameworks */,
+				4F1A2AE019A49062001AAB94 /* AudioToolbox.framework in Frameworks */,
+				4F1A2AD619A47828001AAB94 /* QuartzCore.framework in Frameworks */,
 				4FC6BAC119A2D371001DC678 /* CoreGraphics.framework in Frameworks */,
 				4FC6BAC519A2D371001DC678 /* CoreData.framework in Frameworks */,
 				4FC6BAC319A2D371001DC678 /* UIKit.framework in Frameworks */,
@@ -81,6 +166,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F1A2ADC19A48FE7001AAB94 /* Sound Effects */ = {
+			isa = PBXGroup;
+			children = (
+				4FEEBB1419A58C2800420779 /* laser.aifc */,
+			);
+			name = "Sound Effects";
+			sourceTree = "<group>";
+		};
+		4F5872A019A32B5600CF0264 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4F5872A119A32B8600CF0264 /* KLBShipControlProtocol.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		4FC6BAB219A2D371001DC678 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +204,9 @@
 		4FC6BABD19A2D371001DC678 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4F1A2AE119A493A3001AAB94 /* AVFoundation.framework */,
+				4F1A2ADF19A49062001AAB94 /* AudioToolbox.framework */,
+				4F1A2AD519A47828001AAB94 /* QuartzCore.framework */,
 				4FC6BABE19A2D371001DC678 /* Foundation.framework */,
 				4FC6BAC019A2D371001DC678 /* CoreGraphics.framework */,
 				4FC6BAC219A2D371001DC678 /* UIKit.framework */,
@@ -115,6 +219,12 @@
 		4FC6BAC619A2D371001DC678 /* Air Raid */ = {
 			isa = PBXGroup;
 			children = (
+				4F1A2ADC19A48FE7001AAB94 /* Sound Effects */,
+				4F5872A019A32B5600CF0264 /* Protocols */,
+				4FC6BB0D19A31C45001DC678 /* Images */,
+				4FC6BB0419A302E3001DC678 /* Views */,
+				4FC6BAFD19A2FF8F001DC678 /* Controllers */,
+				4FC6BAF319A2E848001DC678 /* Models */,
 				4FC6BACF19A2D371001DC678 /* KLBAppDelegate.h */,
 				4FC6BAD019A2D371001DC678 /* KLBAppDelegate.m */,
 				4FC6BAD519A2D371001DC678 /* Images.xcassets */,
@@ -127,6 +237,7 @@
 		4FC6BAC719A2D371001DC678 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4FEEBB1619A58C4200420779 /* OCRAStd.otf */,
 				4FC6BAC819A2D371001DC678 /* Air Raid-Info.plist */,
 				4FC6BAC919A2D371001DC678 /* InfoPlist.strings */,
 				4FC6BACC19A2D371001DC678 /* main.m */,
@@ -151,6 +262,77 @@
 				4FC6BAE619A2D371001DC678 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4FC6BAF319A2E848001DC678 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4FC6BAFA19A2E9BB001DC678 /* KLBBullet.h */,
+				4FC6BAFB19A2E9BB001DC678 /* KLBBullet.m */,
+				4FC6BAF419A2E863001DC678 /* KLBShip.h */,
+				4FC6BAF519A2E863001DC678 /* KLBShip.m */,
+				4FC6BAF719A2E943001DC678 /* KLBTurret.h */,
+				4FC6BAF819A2E943001DC678 /* KLBTurret.m */,
+				4FC6BB0119A3017C001DC678 /* KLBPlayer.h */,
+				4FC6BB0219A3017C001DC678 /* KLBPlayer.m */,
+				4F1A2AE519A49EA1001AAB94 /* KLBConstants.h */,
+				4F1A2AE619A49EA1001AAB94 /* KLBConstants.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4FC6BAFD19A2FF8F001DC678 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4FC6BB0519A30432001DC678 /* KLBBattleViewController.h */,
+				4FC6BB0619A30432001DC678 /* KLBBattleViewController.m */,
+				4FC6BB0719A30432001DC678 /* KLBBattleViewController.xib */,
+				4F58729D19A32B2800CF0264 /* KLBPlayerController.h */,
+				4F58729E19A32B2800CF0264 /* KLBPlayerController.m */,
+				4F5872AB19A3502100CF0264 /* KLBBulletController.h */,
+				4F5872AC19A3502100CF0264 /* KLBBulletController.m */,
+				4F9F0D5419A43A4400C40A37 /* KLBTurretController.h */,
+				4F9F0D5519A43A4400C40A37 /* KLBTurretController.m */,
+				4F07C00019AC290400F8FEC3 /* KLBEnemyShipController.h */,
+				4F07C00119AC290400F8FEC3 /* KLBEnemyShipController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4FC6BB0419A302E3001DC678 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4FC6BB0A19A30944001DC678 /* KLBShipView.h */,
+				4FC6BB0B19A30944001DC678 /* KLBShipView.m */,
+				4FC6BB1419A325C3001DC678 /* KLBPlayerShipView.h */,
+				4FC6BB1519A325C3001DC678 /* KLBPlayerShipView.m */,
+				4F5872A819A34D3700CF0264 /* KLBBulletView.h */,
+				4F5872A919A34D3700CF0264 /* KLBBulletView.m */,
+				4F1A2AD219A46D9E001AAB94 /* KLBBackgroundView.h */,
+				4F1A2AD319A46D9E001AAB94 /* KLBBackgroundView.m */,
+				4F1A2AD719A4785A001AAB94 /* KLBCloudView.h */,
+				4F1A2AD819A4785A001AAB94 /* KLBCloudView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4FC6BB0D19A31C45001DC678 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4FEEBAFC19A58C1600420779 /* bullet_cannon.png */,
+				4FEEBAFD19A58C1600420779 /* bullet_cannon2.png */,
+				4FEEBAFE19A58C1600420779 /* bullet_default.png */,
+				4FEEBAFF19A58C1600420779 /* bullet_default2.png */,
+				4FEEBB0019A58C1600420779 /* bullet_machinegun.png */,
+				4FEEBB0119A58C1600420779 /* bullet_machinegun2.png */,
+				4FEEBB0219A58C1600420779 /* cloud1.png */,
+				4FEEBB0319A58C1600420779 /* cloud2.png */,
+				4FEEBB0419A58C1600420779 /* enemy.png */,
+				4FEEBB0519A58C1600420779 /* floor.png */,
+				4FEEBB0619A58C1600420779 /* neutral.png */,
+				4FEEBB0719A58C1600420779 /* player.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +383,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "KLab Cyscorpions, Inc.";
 				TargetAttributes = {
+					4FC6BABA19A2D371001DC678 = {
+						DevelopmentTeam = 59636WNZ2S;
+					};
 					4FC6BADA19A2D371001DC678 = {
 						TestTargetID = 4FC6BABA19A2D371001DC678;
 					};
@@ -229,8 +414,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FEEBB0B19A58C1600420779 /* bullet_default2.png in Resources */,
+				4FEEBB1319A58C1600420779 /* player.png in Resources */,
+				4FEEBB0A19A58C1600420779 /* bullet_default.png in Resources */,
+				4FC6BB0919A30432001DC678 /* KLBBattleViewController.xib in Resources */,
 				4FC6BACB19A2D371001DC678 /* InfoPlist.strings in Resources */,
+				4FEEBB0D19A58C1600420779 /* bullet_machinegun2.png in Resources */,
+				4FEEBB0919A58C1600420779 /* bullet_cannon2.png in Resources */,
+				4FEEBB0819A58C1600420779 /* bullet_cannon.png in Resources */,
+				4FEEBB0E19A58C1600420779 /* cloud1.png in Resources */,
+				4FEEBB0C19A58C1600420779 /* bullet_machinegun.png in Resources */,
+				4FEEBB0F19A58C1600420779 /* cloud2.png in Resources */,
+				4FEEBB1119A58C1600420779 /* floor.png in Resources */,
 				4FC6BAD619A2D371001DC678 /* Images.xcassets in Resources */,
+				4FEEBB1719A58C4200420779 /* OCRAStd.otf in Resources */,
+				4FEEBB1219A58C1600420779 /* neutral.png in Resources */,
+				4FEEBB1019A58C1600420779 /* enemy.png in Resources */,
+				4FEEBB1519A58C2800420779 /* laser.aifc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +449,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F58729F19A32B2800CF0264 /* KLBPlayerController.m in Sources */,
+				4FC6BB0819A30432001DC678 /* KLBBattleViewController.m in Sources */,
 				4FC6BAD119A2D371001DC678 /* KLBAppDelegate.m in Sources */,
+				4FC6BAF619A2E863001DC678 /* KLBShip.m in Sources */,
+				4FC6BAF919A2E943001DC678 /* KLBTurret.m in Sources */,
+				4FC6BAFC19A2E9BB001DC678 /* KLBBullet.m in Sources */,
+				4FC6BB0C19A30944001DC678 /* KLBShipView.m in Sources */,
+				4FC6BB0319A3017C001DC678 /* KLBPlayer.m in Sources */,
+				4F07C00219AC290400F8FEC3 /* KLBEnemyShipController.m in Sources */,
+				4FC6BB1619A325C3001DC678 /* KLBPlayerShipView.m in Sources */,
+				4F1A2AD919A4785A001AAB94 /* KLBCloudView.m in Sources */,
+				4F9F0D5619A43A4400C40A37 /* KLBTurretController.m in Sources */,
 				4FC6BACD19A2D371001DC678 /* main.m in Sources */,
+				4F5872AD19A3502100CF0264 /* KLBBulletController.m in Sources */,
+				4F1A2AE719A49EA1001AAB94 /* KLBConstants.m in Sources */,
+				4F5872AA19A34D3700CF0264 /* KLBBulletView.m in Sources */,
 				4FC6BAD419A2D371001DC678 /* Air_Raid.xcdatamodeld in Sources */,
+				4F1A2AD419A46D9E001AAB94 /* KLBBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +515,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -309,7 +524,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: CYSCORPIONS INC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CYSCORPIONS INC";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -338,7 +554,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -347,7 +563,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: CYSCORPIONS INC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CYSCORPIONS INC";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -368,6 +585,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Air Raid/Air Raid-Prefix.pch";
 				INFOPLIST_FILE = "Air Raid/Air Raid-Info.plist";
@@ -381,6 +599,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Air Raid/Air Raid-Prefix.pch";
 				INFOPLIST_FILE = "Air Raid/Air Raid-Info.plist";
@@ -448,6 +667,7 @@
 				4FC6BAEF19A2D371001DC678 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FC6BAF019A2D371001DC678 /* Build configuration list for PBXNativeTarget "Air RaidTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +676,7 @@
 				4FC6BAF219A2D371001DC678 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

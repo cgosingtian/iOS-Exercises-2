@@ -7,6 +7,7 @@
 //
 
 #import "KLBAppDelegate.h"
+#import "KLBBattleViewController.h"
 
 @implementation KLBAppDelegate
 
@@ -18,6 +19,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    KLBBattleViewController *battleViewController = [[KLBBattleViewController alloc] init];
+
+    self.window.rootViewController = battleViewController;
+    [battleViewController release];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
