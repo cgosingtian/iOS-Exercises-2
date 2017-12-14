@@ -384,7 +384,7 @@
 				ORGANIZATIONNAME = "KLab Cyscorpions, Inc.";
 				TargetAttributes = {
 					4FC6BABA19A2D371001DC678 = {
-						DevelopmentTeam = 59636WNZ2S;
+						DevelopmentTeam = T59E5438VR;
 					};
 					4FC6BADA19A2D371001DC678 = {
 						TestTargetID = 4FC6BABA19A2D371001DC678;
@@ -586,9 +586,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = T59E5438VR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Air Raid/Air Raid-Prefix.pch";
 				INFOPLIST_FILE = "Air Raid/Air Raid-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chase.gosingtian.Air-Raid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -600,9 +602,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = T59E5438VR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Air Raid/Air Raid-Prefix.pch";
 				INFOPLIST_FILE = "Air Raid/Air Raid-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chase.gosingtian.Air-Raid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
